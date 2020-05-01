@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ConflictContent } from '../../common/constants';
 import { ReactComponent as CheckSvg } from './../../images/ui/check.svg';
+import { gsap, Linear } from 'gsap'
+import { TextPlugin } from 'gsap/all';
+
+gsap.registerPlugin(TextPlugin);
 
 interface Props {
   content: ConflictContent;
@@ -9,6 +13,21 @@ interface Props {
 const ConflictModalContent = (props: Props) => {
   const {content} = props;
   const [selectedOption, selectOption] = useState<number | null>(null);
+  const [reaction, setReaction] = useState<string | null>(null);
+  const balloonTextRef = useRef(null);
+
+  useEffect(() => {
+    gsap.to(balloonTextRef.current, {
+      delay: 1,
+      duration: 2,
+      text: {
+        value: content.situationSpeech, 
+        oldClass: "hidden",
+        newClass: "visible"
+      },
+      ease: Linear.easeNone,
+    });
+  }, [content.situationSpeech]);
 
   return (
     <div className="modal-content modal-conflict">
@@ -28,16 +47,20 @@ const ConflictModalContent = (props: Props) => {
             </li>
           ))}
         </ul>
-        <button disabled={selectedOption === null} >
+        { reaction && (
+          <div>
+
+          </div>
+        )}
+        {/* <button disabled={selectedOption === null} >
           <b>Okay</b>
-        </button>
+        </button> */}
       </div>
       <div className="right">
-          <div className="balloon">
-            {content.situationSpeech}
-          </div>
-          <div className="situation" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/${content.situationImg})`}}>
+        <div className="balloon" >
+          <span ref={balloonTextRef}>{content.situationSpeech}</span>
         </div>
+        <div className="situation" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/${content.situationImg})`}} />
       </div>
     </div>
   )

@@ -1,9 +1,26 @@
 [{
   "position": [822, 839],
-  "type": "youtube",
-  "header": "Picking & Packing",
+  "type": "conflict",
+  "header": "The Trouble with Kumar",
   "content": {
-    "url": "https://www.youtube.com/watch?v=HW0uJefN8S0"
+    "situationImg": "images/conflict/conflict1-situation.svg",
+    "situationSpeech": "Kumar and I are scheduled for the same warehouse shift. Kumar regularly plays games on his cell phone while I take inventory. I have to do the bulk of the work while he plays. I've asked him on four different occasions to help me, but he doesn't listen to me.",
+    "bannerImg": "images/ui/banner/fire.jpg",
+    "options": [
+      "Send Kumar a notification of termination as he is hampering warehouse productivity",
+      "Reprimand Kumar in the morning meeting so as to discourage others from behaving this way too",
+      "Have Kumar report his productivity numbers to you or a team leader at the end of every shift"
+    ],
+    "reactions": [{
+      "correct": false,
+      "text": "You picked the wrong choice. You chose to send Kumar a notification of termination without giving him a chance to change his behaviour. In such a situation, you should try to engage the employee in a meaningful conversation about his behaviour and allow him to take responsibility. In his way you will be able to cultivate a more trusting relationship with the employee in which he feels supported. "
+    }, {
+      "correct": false,
+      "text": "You picked the wrong choice. You chose to reprimand Kumar in front of other employees in a morning meeting. In such a situation you should try to engage the employee in a meaningful private conversation about his behaviour and allow him to take responsibility. Reprimanding an employee publicly will lower the chances of affecting change or building trust in the employees. "
+    }, {
+      "correct": true,
+      "text": "You picked the right choice. You chose to have Kumar report his productivity numbers to you or a team leader at the end of every shift. In this way you allowed the employee a chance to take responsibility and become more professional. "
+    }]
   }
 }, {
   "position": [1458, 650],

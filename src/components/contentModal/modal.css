@@ -136,6 +136,8 @@
 .modal .modal-content.modal-conflict .right {
   flex: 1;
   padding-left: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal .modal-content.modal-conflict .situation {
@@ -143,13 +145,13 @@
   height: 100%;
   background-repeat: no-repeat;
   background-size: contain;
-  margin-top: 64px;
+  margin-top: -32px;
 }
 
 .modal .modal-content.modal-conflict .balloon {
-	position: absolute;
+	position: relative;
 	max-width: 30em;
-	background-color: #fff;
+  background-color: #fff;
 	padding: 1.125em 1.5em;
 	font-size: 1.25em;
 	border-radius: 1rem;
@@ -159,6 +161,14 @@
   animation: pop 0.5s ease-out .5s;
   transform: scale(0);
   animation-fill-mode: forwards;
+}
+
+.modal .modal-content.modal-conflict .balloon span {
+  visibility: hidden; /** will be shown via gsap animation */
+}
+
+.modal .modal-content.modal-conflict .balloon span.visible {
+  visibility: visible; 
 }
 
 .modal .modal-content.modal-conflict .balloon::after {
