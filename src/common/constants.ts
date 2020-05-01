@@ -12,16 +12,17 @@ export enum ContentType {
   youtube = "youtube",
   options = "options",
   iframe = "iframe",
+  conflict = "conflict",
 }
   
-export interface IContent<T extends YoutubeContent | OptionsContent> {
+export interface IContent<T extends YoutubeContent | OptionsContent | IframeContent | ConflictContent> {
   position: number[];
   type: ContentType;
   header: string;
   content: T;
 }
 
-export type AnyContent = IContent<YoutubeContent> | IContent<OptionsContent> | IContent<IframeContent>;
+export type AnyContent = IContent<YoutubeContent> | IContent<OptionsContent> | IContent<IframeContent> | IContent<ConflictContent>;
 
 export interface YoutubeContent {
   url: string;
@@ -37,4 +38,11 @@ export interface OptionsContent {
   bannerImg: string;
   options: string[];
   correctAnswers: number[];
+}
+export interface ConflictContent {
+  description: string;
+  situationImg: string;
+  situationSpeech: string;
+  options: string[];
+  correctAnswer: number;
 }

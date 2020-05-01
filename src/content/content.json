@@ -6,19 +6,22 @@
     "url": "https://www.youtube.com/watch?v=HW0uJefN8S0"
   }
 }, {
-  "position": [1842, 839],
-  "type": "options",
-  "header": "Fire hazard",
+  "position": [1458, 650],
+  "type": "conflict",
+  "header": "Stacker overflow",
   "content": {
-    "description": "The warehouse is on fire. What do we do?",
+    "situationImg": "images/conflict/conflict1-situation.svg",
+    "situationSpeech": "Sir, the guys from warehouse B keep using the MHE stacker. We need this for our accuracy check.",
     "bannerImg": "images/ui/banner/fire.jpg",
     "options": [
-      "Put out the fire",
-      "Call the fire brigade",
-      "Add some oil",
-      "Make an instagram story about it"
+      "Allocate the MHE based upon load and priority of both customer operations",
+      "Allow the two teams to work out a compromise between themselves",
+      "Give priority to the customer that brings in greater business",
+      "Ask your management to buy another MHE stacker to work more efficiently"
     ],
-    "correctAnswers": [0]
+    "reactions": [
+
+    ]
   }
 }, {
   "position": [1947, 1223],

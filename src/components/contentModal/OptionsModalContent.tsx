@@ -22,7 +22,7 @@ console.log(content.bannerImg)
             <div className="checkbox">
               <CheckSvg className="check" />
             </div>
-            <div>
+            <div className="text">
               {option}
             </div>
           </li>

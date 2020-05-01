@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import './modal.css';
-import { AnyContent, ContentType, YoutubeContent, OptionsContent, IframeContent } from '../../common/constants';
+import { AnyContent, ContentType, YoutubeContent, OptionsContent, IframeContent, ConflictContent } from '../../common/constants';
 import YoutubeModalContent from './YoutubeModalContent';
 import OptionsModalContent from './OptionsModalContent';
 import IframeModalContent from './IFrameModalContent';
+import ConflictModalContent from './ConflictModalContent';
 
 interface Props {
   content: AnyContent;
@@ -21,11 +22,13 @@ const ContentModal = (props: Props) => {
   const renderContent = () => {
     switch(content.type) {
       case ContentType.youtube: 
-        return <YoutubeModalContent content={content.content as YoutubeContent} />
+        return <YoutubeModalContent content={content.content as YoutubeContent} />;
       case ContentType.options: 
-        return <OptionsModalContent content={content.content as OptionsContent} />
+        return <OptionsModalContent content={content.content as OptionsContent} />;
       case ContentType.iframe: 
-        return <IframeModalContent content={content.content as IframeContent} />
+        return <IframeModalContent content={content.content as IframeContent} />;
+      case ContentType.conflict: 
+        return <ConflictModalContent content={content.content as ConflictContent} />;
     }
   }
 
@@ -33,8 +36,8 @@ const ContentModal = (props: Props) => {
     <ReactModal
       isOpen={true}
       ariaHideApp={false}
-      overlayClassName={"modal-overlay"}
-      className={`modal-content`}
+      overlayClassName="modal-overlay"
+      className="modal"
       onRequestClose={() => handleClose()}
     >
       <>

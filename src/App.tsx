@@ -23,12 +23,12 @@ if (process.env.NODE_ENV === "development") {
 
 function App() {
   const viewportRef = useRef<PixiViewport>(null);
-  const forkliftRef = useRef<PIXI.Sprite>(null);
+  //const forkliftRef = useRef<PIXI.Sprite>(null);
   const [selectedContent, selectContent] = useState<AnyContent | null>(null);
 
-  const worldWidth = 3588;
-  const worldHeight = 2388;
-  const scaleFactor = 1.86875; //scaled the original map up
+  const worldWidth = 3369;
+  const worldHeight = 1483;
+  //const scaleFactor = 1.86875; //scaled the original map up
 
   const [canvasWidth, setCanvasWidth] = useState(1200);
   const [canvasHeight, setCanvasHeight] = useState(600);
@@ -81,7 +81,7 @@ function App() {
   //   ])
   // }
 
-  useEffect(() => {
+  /*useEffect(() => {
     // The forklift drives a square
     const forklift = forkliftRef!.current!;
     var tl = gsap.timeline({repeat: -1, repeatDelay: 1});
@@ -115,7 +115,7 @@ function App() {
       }, 
       duration: 2
     });
-  }, []);
+  }, []);*/
 
   // const renderMarker = (situation: string, position: PIXI.Point, delay: number) => {
   //   if (situationOrder.some(s => s === situation)) {
@@ -136,20 +136,19 @@ function App() {
     <>
       <Stage width={canvasWidth} height={canvasHeight} >
         <Viewport screenWidth={canvasWidth} screenHeight={canvasHeight} worldWidth={worldWidth} worldHeight={worldHeight} ref={viewportRef} >
-          <Sprite image={`${process.env.PUBLIC_URL}/images/map/map.jpg`}  />
-          <Sprite image={`${process.env.PUBLIC_URL}/images/map/forklift1.png`} x={477 * scaleFactor} y={510 * scaleFactor} ref={forkliftRef}>
+          <Sprite image={`${process.env.PUBLIC_URL}/images/map/warehouse-type2-80.jpg`}  />
+          {/* <Sprite image={`${process.env.PUBLIC_URL}/images/map/forklift1.png`} x={477 * scaleFactor} y={510 * scaleFactor} ref={forkliftRef} /> */}
       
-          </Sprite>
           {/* {renderMarker('fire', new PIXI.Point(440 * scaleFactor, 449 * scaleFactor), 0.5)}
           {renderMarker('theft', new PIXI.Point(986 * scaleFactor, 724 * scaleFactor), 1)}
           {renderMarker('absenteeism', new PIXI.Point(1437 * scaleFactor, 447 * scaleFactor), 1.5)} */}
-          <ParticleEmitter
+          {/* <ParticleEmitter
               name="smoke"
               x={1931}
               y={1293}
               image={`${process.env.PUBLIC_URL}/images/map/smoke.png`} 
               config={smoke} 
-            />
+            /> */}
           {content.map((contentItem, index) => renderMarker(contentItem, index * 0.5))}
         </Viewport>
       </Stage>

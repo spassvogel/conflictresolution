@@ -1,5 +1,5 @@
 import rawJson from './content.json';
-import { IContent, ContentType, OptionsContent, YoutubeContent, IframeContent } from '../common/constants';
+import { IContent, ContentType, OptionsContent, YoutubeContent, IframeContent, ConflictContent } from '../common/constants';
 
 const parsed = rawJson.map((json) => {
   const type: ContentType = (ContentType as any)[json.type];
@@ -10,6 +10,8 @@ const parsed = rawJson.map((json) => {
       return json as any as IContent<YoutubeContent>;
     case ContentType.iframe: 
       return json as any as IContent<IframeContent>;
+    case ContentType.conflict: 
+      return json as any as IContent<ConflictContent>;
   }
 });
 export default parsed;

@@ -7,6 +7,17 @@ body {
   overflow: hidden;
 }
 
+@media only screen and (max-width: 1200px) {
+  body {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  body {
+    font-size: 14px;
+  }
+}
+
 button {
   font-size: 18pt;
   padding: 8px;
@@ -16,7 +27,3 @@ h1 {
   font-size: 28pt;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
