@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  font-family: Calibri, "Trebuchet MS",Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size: 18pt;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+button {
+  font-size: 18pt;
+  padding: 8px;
+}
+
+h1 {
+  font-size: 28pt;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
