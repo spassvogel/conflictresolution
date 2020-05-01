@@ -2,7 +2,7 @@
   "name": "warehousemap",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://spassvogel.github.io/warehousemap",
+  "homepage": "https://spassvogel.github.io/conflictresolution",
   "dependencies": {
     "@inlet/react-pixi": "^1.2.18",
     "@testing-library/jest-dom": "^4.2.4",
