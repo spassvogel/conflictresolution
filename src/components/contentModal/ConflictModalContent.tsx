@@ -14,7 +14,6 @@ interface Props {
 const ConflictModalContent = (props: Props) => {
   const {content} = props;
   const [selectedOption, selectOption] = useState<number | null>(null);
-  //const [reaction, setReaction] = useState<string | null>(null);
   const balloonTextRef = useRef(null);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -63,13 +62,13 @@ const ConflictModalContent = (props: Props) => {
 
   // Reaction based on current selection
   const reaction = useMemo(() => {
-    if (!selectedOption) return null;
+    if (selectedOption === null) return null;
     return props.content.reactions[selectedOption];
   }, [props.content.reactions, selectedOption])
 
 
   const renderOption = (option: string, index: number) => {
-    if (!selectedOption) {
+    if (selectedOption === null) {
       // Nothing selected, render all
       return (
         <li key={option} className="normal" onClick={(e) => handleOptionClick(e.currentTarget, index)} >

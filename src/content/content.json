@@ -4,6 +4,7 @@
   "header": "The Trouble with Kumar",
   "content": {
     "situationImg": "images/conflict/conflict1-situation.svg",
+    "description": "After establishing the complaint to be true and giving Kumar a warning, what kind of disciplinary action should you take against Kumar if his behaviour persists?",
     "situationSpeech": "Kumar and I are scheduled for the same warehouse shift. Kumar regularly plays games on his cell phone while I take inventory. I have to do the bulk of the work while he plays. I've asked him on four different occasions to help me, but he doesn't listen to me.",
     "bannerImg": "images/ui/banner/fire.jpg",
     "options": [
@@ -28,6 +29,7 @@
   "header": "Stacker overflow",
   "content": {
     "situationImg": "images/conflict/conflict1-situation.svg",
+    "description": "The SLC has only one MHE stacker, and so there is conflict between the two teams as to who gets priority. What should you do in such a case?",
     "situationSpeech": "Sir, the guys from warehouse B keep using the MHE stacker. We need this for our accuracy check.",
     "bannerImg": "images/ui/banner/fire.jpg",
     "options": [
@@ -36,9 +38,19 @@
       "Give priority to the customer that brings in greater business",
       "Ask your management to buy another MHE stacker to work more efficiently"
     ],
-    "reactions": [
-
-    ]
+    "reactions": [{
+      "correct": true,
+      "text": "That’s correct. You should allocate the MHE based upon load and priority of both customer operations.       "
+    }, {
+      "correct": false,
+      "text": "That’s incorrect. You should allocate the MHE based upon load and priority of both customer operations.       "
+    }, {
+      "correct": false,
+      "text": "That’s incorrect. You should allocate the MHE based upon load and priority of both customer operations.       "
+    }, {
+      "correct": false,
+      "text": "That’s incorrect. You should allocate the MHE based upon load and priority of both customer operations.       "
+    }]
   }
 }, {
   "position": [1947, 1223],
