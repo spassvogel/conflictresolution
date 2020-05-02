@@ -44,5 +44,5 @@ export interface ConflictContent {
   situationImg: string;
   situationSpeech: string;
   options: string[];
-  correctAnswer: number;
+  reactions: { correct: boolean, text: string }[];
 }

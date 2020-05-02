@@ -38,7 +38,7 @@ const ContentModal = (props: Props) => {
       ariaHideApp={false}
       overlayClassName="modal-overlay"
       className="modal"
-      onRequestClose={() => handleClose()}
+      onRequestClose={handleClose}
     >
       <>
         <div className="header">

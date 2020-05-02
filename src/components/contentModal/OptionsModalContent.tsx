@@ -9,9 +9,9 @@ interface Props {
 const OptionsModalContent = (props: Props) => {
   const {content} = props;
   const [selectedOption, selectOption] = useState<number | null>(null);
-console.log(content.bannerImg)
+
   return (
-    <>
+    <div className="modal-content modal-options">
       <p>
         {content.description}
       </p>
@@ -31,7 +31,7 @@ console.log(content.bannerImg)
       <button disabled={selectedOption === null} >
         <b>Okay</b>
       </button>
-    </>
+    </div>
   )
 }
 
