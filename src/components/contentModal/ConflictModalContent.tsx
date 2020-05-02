@@ -4,6 +4,8 @@ import { ReactComponent as CheckSvg } from './../../images/ui/check.svg';
 import { gsap, Linear } from 'gsap'
 import { TextPlugin } from 'gsap/all';
 import "./conflictModal.css";
+import { useApp } from '@inlet/react-pixi';
+import sound from 'pixi-sound';
 
 gsap.registerPlugin(TextPlugin);
 
@@ -57,8 +59,20 @@ const ConflictModalContent = (props: Props) => {
           selectOption(index);
         }, 250);
       }
-    })
+    });
+    if ( props.content.reactions[index].correct) {
+      sound.play('correct');
+    } else {
+      sound.play('wrong');
+    }
+
   };
+
+  useEffect(() => {
+    sound.add('correct', `${process.env.PUBLIC_URL}/sound/correct.mp3`);    
+    sound.add('wrong', `${process.env.PUBLIC_URL}/sound/wrong.mp3`);
+  }, [])
+
 
   // Reaction based on current selection
   const reaction = useMemo(() => {
