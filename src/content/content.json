@@ -58,10 +58,32 @@
   }
 }, {
   "position": [2135, 1039],
-  "type": "iframe",
-  "header": "Scan and store",
+  "type": "conflict",
+  "header": "Inbound for efficiency",
   "content": {
-    "url": "https://21cceducation.nl/content/webgl/scan_store/",
-    "height": "600px"
+    "situationImg": "images/conflict/inbound-0.svg",
+    "description": "They stating that they are paid wages and will only do work load assigned. What should you do?",
+    "situationSpeech": "Inbound teams regularly complete their targets for the day by 4 p.m. but do not move on to help the outbound teams. ",
+    "options": [
+      "Move a few people from the inbound team to the outbound team to balance the work load",
+      "Encourage teams to collaborate and deliver operations excellence to the customer",
+      "Hire more people to help out the outbound team so that they can also finish work earlier",
+      "Lay off some people from the inbound team as they don't need that"
+    ],
+    "reactions": [{
+      "correct": false,
+      "text": "That’s incorrect. You should encourage teams to collaborate to deliver operations excellence to the customers."
+    }, {
+      "correct": true,
+      "text": "That’s correct. You should encourage teams to collaborate to deliver operations excellence to the customers."
+    }, {
+      "correct": false,
+      "text": "That’s incorrect. You should encourage teams to collaborate to deliver operations excellence to the customers."
+    }, {
+      "correct": false,
+      "text": "That’s incorrect. You should encourage teams to collaborate to deliver operations excellence to the customers."
+    }]
   }
 }]
+
+
