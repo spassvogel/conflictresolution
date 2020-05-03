@@ -30,7 +30,7 @@ const ConflictModalContent = (props: Props) => {
       },
       ease: Linear.easeNone,
     });
-  }, [content.situationSpeech]);
+  }, [content.situationSpeech, selectedOption]);
 
   const handleOptionClick = (element: HTMLLIElement, index: number) => {
     element.className = "animating";
@@ -73,6 +73,10 @@ const ConflictModalContent = (props: Props) => {
     sound.add('wrong', `${process.env.PUBLIC_URL}/sound/wrong.mp3`);
   }, [])
 
+
+  const handleReplay = () => {
+    selectOption(null);
+  }
 
   // Reaction based on current selection
   const reaction = useMemo(() => {
@@ -134,9 +138,16 @@ const ConflictModalContent = (props: Props) => {
           {content.options.map((option, index) => renderOption(option, index))}
         </ul>
         { reaction && (
+          <>
           <div className="reaction-text">
             {reaction.text}
           </div>
+          { (!reaction?.correct) && (
+            <button onClick={handleReplay} className="replay">
+               Replay
+            </button>
+          )}
+          </>
         )}
         {/* <button disabled={selectedOption === null} >
           <b>Okay</b>

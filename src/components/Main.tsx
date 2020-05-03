@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import { Viewport as PixiViewport } from "pixi-viewport";
 import { AnyContent } from "../common/constants";
 import sound from 'pixi-sound';
@@ -25,8 +25,8 @@ interface Props {
 const Main = (props: Props) => {
   const { content } = props;
   const viewportRef = useRef<PixiViewport>(null);
-  //const forkliftRef = useRef<PIXI.Sprite>(null);
-  const [selectedContent, selectContent] = useState<AnyContent | null>(null);
+  const [selectedSituation, setSelectedSituation] = useState<number | null>(null);
+  const [answers, setAnswers] = useState<number[]>([]);
 
   const worldWidth = 3369;
   const worldHeight = 1483;
@@ -62,12 +62,12 @@ const Main = (props: Props) => {
 
   useEffect(() => {
     // Blur the map when situation is selected
-    if (selectedContent) {
+    if (selectedSituation) {
       gsap.to(viewportRef.current, {duration: .5, pixi: {blur:20}});
     } else {
       gsap.to(viewportRef.current, {duration: .5, pixi: {blur:0}});
     }
-  }, [selectedContent]);
+  }, [selectedSituation]);
 
   useEffect(() => {
     sound.add('plops', {
@@ -76,19 +76,28 @@ const Main = (props: Props) => {
     });    
   }, []);
 
-  const handleMarkerClick = (content: AnyContent) => {
-    selectContent(content);
+  const handleMarkerClick = (content: AnyContent, index: number) => {
+    setSelectedSituation(index);
   }
 
   const handleClose = () => {
-    selectContent(null);
+    setSelectedSituation(null);
   }
+
+  const selectedContent = useMemo(() => {
+    if (selectedSituation === null) {
+      return null;
+    }
+    return content?.[selectedSituation];
+  }, [content, selectedSituation]);
   
-  const renderMarker = (contentItem: AnyContent, delay: number) => {
+  const renderMarker = (contentItem: AnyContent, index: number) => {
+    const delay = index * 0.5;
     const position = new PIXI.Point(contentItem.position[0], contentItem.position[1]);
     return (
-      <Marker position={position} 
-        pointerdown={() => handleMarkerClick(contentItem)}
+      <Marker 
+        position={position} 
+        pointerdown={() => handleMarkerClick(contentItem, index)}
         delay={delay} />
     );
   }
@@ -98,7 +107,7 @@ const Main = (props: Props) => {
       <Stage width={canvasWidth} height={canvasHeight} >
       <Viewport screenWidth={canvasWidth} screenHeight={canvasHeight} worldWidth={worldWidth} worldHeight={worldHeight} ref={viewportRef} >
         <Sprite image={`${process.env.PUBLIC_URL}/images/map/warehouse-type2-80.jpg`}  />
-        {content.map((contentItem, index) => renderMarker(contentItem, index * 0.5))}
+        {content.map((contentItem, index) => renderMarker(contentItem, index))}
       </Viewport>
     </Stage>
     { selectedContent && <ContentModal content={selectedContent} onClose={handleClose} /> }

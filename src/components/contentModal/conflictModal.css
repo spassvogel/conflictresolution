@@ -54,6 +54,14 @@
   animation: draw-around 1s;
 }
 
+.modal .modal-content.modal-conflict .replay {
+  margin-top: 16px;
+  background: #009FE3;
+  border: 0;
+  color: white;
+  padding: 16px 32px;
+}
+
 .modal .modal-content.modal-conflict {
   display: flex;
   height: 100%;
