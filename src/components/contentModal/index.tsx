@@ -10,10 +10,12 @@ import ConflictModalContent from './ConflictModalContent';
 interface Props {
   content: AnyContent;
   onClose: () => void;
+  setCorrectAnswer: (answer: number) => void;
+  selectedAnswer?: number;
 }
 
 const ContentModal = (props: Props) => {
-  const { content, onClose } = props;
+  const { content, onClose, setCorrectAnswer, selectedAnswer } = props;
 
   const handleClose = () => {
     onClose();
@@ -28,7 +30,7 @@ const ContentModal = (props: Props) => {
       case ContentType.iframe: 
         return <IframeModalContent content={content.content as IframeContent} />;
       case ContentType.conflict: 
-        return <ConflictModalContent content={content.content as ConflictContent} />;
+        return <ConflictModalContent content={content.content as ConflictContent} setCorrectAnswer={setCorrectAnswer} selectedAnswer={selectedAnswer} />;
     }
   }
 

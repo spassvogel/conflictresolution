@@ -74,7 +74,7 @@ function App() {
 
   return (
     <>
-      { intro && (<IntroModal onClose={() => {setIntro(false)}}/>)}
+      { intro && (<IntroModal onClose={() => {setIntro(false)}} />)}
       { !intro && <Main content={content}/> }
     </>  
   )

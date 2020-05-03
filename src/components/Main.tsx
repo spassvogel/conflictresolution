@@ -84,6 +84,15 @@ const Main = (props: Props) => {
     setSelectedSituation(null);
   }
 
+  const handleCorrectAnswer = (answer: number) => {
+    // gets called from within modal once the correct answer is selected
+    const copy = [...answers];
+    copy[selectedSituation!] = answer;
+
+    setAnswers(copy);
+  }
+  console.log(answers);
+
   const selectedContent = useMemo(() => {
     if (selectedSituation === null) {
       return null;
@@ -94,11 +103,15 @@ const Main = (props: Props) => {
   const renderMarker = (contentItem: AnyContent, index: number) => {
     const delay = index * 0.5;
     const position = new PIXI.Point(contentItem.position[0], contentItem.position[1]);
+    const bounce = !answers.hasOwnProperty(index);
+
     return (
       <Marker 
         position={position} 
         pointerdown={() => handleMarkerClick(contentItem, index)}
-        delay={delay} />
+        delay={delay}
+        bounce={bounce} 
+      />
     );
   }
 
@@ -110,7 +123,14 @@ const Main = (props: Props) => {
         {content.map((contentItem, index) => renderMarker(contentItem, index))}
       </Viewport>
     </Stage>
-    { selectedContent && <ContentModal content={selectedContent} onClose={handleClose} /> }
+    { selectedContent && (
+      <ContentModal 
+        content={selectedContent} 
+        onClose={handleClose} 
+        setCorrectAnswer={handleCorrectAnswer}
+        selectedAnswer={(answers[selectedSituation!])}
+      /> 
+    )}
 
     </>
   )

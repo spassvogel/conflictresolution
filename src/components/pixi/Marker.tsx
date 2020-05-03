@@ -31,9 +31,10 @@ const Marker = (props: Props & React.ComponentProps<typeof Sprite>) => {
     }, [props.delay]);
 
     useEffect(() => {
+        let bounceAnim: gsap.core.Tween;
         // Bounce animation!
         if (props.bounce !== false) {
-            gsap.to(ref.current, { 
+            bounceAnim = gsap.to(ref.current, { 
                 duration: .5,
                 yoyo: true,
                 repeat: -1,
@@ -41,6 +42,9 @@ const Marker = (props: Props & React.ComponentProps<typeof Sprite>) => {
                   y: '-=40', 
                 }
               }).delay(popInDuration + Math.random());      
+        }
+        return () => {
+            bounceAnim.kill();
         }
     }, [props.bounce]);
 

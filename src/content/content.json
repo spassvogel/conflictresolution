@@ -44,16 +44,20 @@
     ],
     "reactions": [{
       "correct": true,
-      "text": "That’s correct. You should allocate the MHE based upon load and priority of both customer operations.       "
+      "text": "That’s correct. You should allocate the MHE based upon load and priority of both customer operations.",
+      "image": "images/conflict/inbound-1.svg"
     }, {
       "correct": false,
-      "text": "That’s incorrect. You should allocate the MHE based upon load and priority of both customer operations.       "
+      "text": "That’s incorrect. You should allocate the MHE based upon load and priority of both customer operations.",
+      "image": "images/conflict/inbound-1.svg"
     }, {
       "correct": false,
-      "text": "That’s incorrect. You should allocate the MHE based upon load and priority of both customer operations.       "
+      "text": "That’s incorrect. You should allocate the MHE based upon load and priority of both customer operations.",
+      "image": "images/conflict/inbound-1.svg"
     }, {
       "correct": false,
-      "text": "That’s incorrect. You should allocate the MHE based upon load and priority of both customer operations.       "
+      "text": "That’s incorrect. You should allocate the MHE based upon load and priority of both customer operations.",
+      "image": "images/conflict/inbound-1.svg"
     }]
   }
 }, {

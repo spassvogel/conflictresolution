@@ -4,32 +4,36 @@ import { ReactComponent as CheckSvg } from './../../images/ui/check.svg';
 import { gsap, Linear } from 'gsap'
 import { TextPlugin } from 'gsap/all';
 import "./conflictModal.css";
-import { useApp } from '@inlet/react-pixi';
 import sound from 'pixi-sound';
 
 gsap.registerPlugin(TextPlugin);
 
 interface Props {
   content: ConflictContent;
+  setCorrectAnswer: (index: number) => void;
+  selectedAnswer?: number; // When answer has been set correctly before
 }
 
 const ConflictModalContent = (props: Props) => {
-  const {content} = props;
-  const [selectedOption, selectOption] = useState<number | null>(null);
+  const {content, selectedAnswer = null} = props;
+  const [selectedOption, selectOption] = useState<number | null>(selectedAnswer);
   const balloonTextRef = useRef(null);
   const ref = useRef<HTMLDivElement>(null);
 
+  console.log(selectedAnswer);
   useEffect(() => {
-    gsap.to(balloonTextRef.current, {
-      delay: 1,
-      duration: 2,
-      text: {
-        value: content.situationSpeech, 
-        oldClass: "hidden",
-        newClass: "visible"
-      },
-      ease: Linear.easeNone,
-    });
+    if (selectedOption === null) {
+      gsap.to(balloonTextRef.current, {
+        delay: 1,
+        duration: 2,
+        text: {
+          value: content.situationSpeech, 
+          oldClass: "hidden",
+          newClass: "visible"
+        },
+        ease: Linear.easeNone,
+      });
+    }
   }, [content.situationSpeech, selectedOption]);
 
   const handleOptionClick = (element: HTMLLIElement, index: number) => {
@@ -62,6 +66,7 @@ const ConflictModalContent = (props: Props) => {
     });
     if ( props.content.reactions[index].correct) {
       sound.play('correct');
+      props.setCorrectAnswer(index);
     } else {
       sound.play('wrong');
     }
@@ -149,9 +154,6 @@ const ConflictModalContent = (props: Props) => {
           )}
           </>
         )}
-        {/* <button disabled={selectedOption === null} >
-          <b>Okay</b>
-        </button> */}
       </div>
       <div className="right">
         {renderRightside()}
