@@ -62,8 +62,9 @@
   "header": "Inbound for efficiency",
   "content": {
     "situationImg": "images/conflict/inbound-0.svg",
-    "description": "They stating that they are paid wages and will only do work load assigned. What should you do?",
+    "description": "They are stating that they are paid wages and will only do work load assigned. What should you do?",
     "situationSpeech": "Inbound teams regularly complete their targets for the day by 4 p.m. but do not move on to help the outbound teams. ",
+    "situationBalloonClass": "balloon-15",
     "options": [
       "Move a few people from the inbound team to the outbound team to balance the work load",
       "Encourage teams to collaborate and deliver operations excellence to the customer",
@@ -72,16 +73,20 @@
     ],
     "reactions": [{
       "correct": false,
-      "text": "That’s incorrect. You should encourage teams to collaborate to deliver operations excellence to the customers."
+      "text": "That’s incorrect. You should encourage teams to collaborate to deliver operations excellence to the customers.",
+      "image": "images/conflict/inbound-1.svg"
     }, {
       "correct": true,
-      "text": "That’s correct. You should encourage teams to collaborate to deliver operations excellence to the customers."
+      "text": "That’s correct. You should encourage teams to collaborate to deliver operations excellence to the customers.",
+      "image": "images/conflict/inbound-1.svg"
     }, {
       "correct": false,
-      "text": "That’s incorrect. You should encourage teams to collaborate to deliver operations excellence to the customers."
+      "text": "That’s incorrect. You should encourage teams to collaborate to deliver operations excellence to the customers.",
+      "image": "images/conflict/inbound-1.svg"
     }, {
       "correct": false,
-      "text": "That’s incorrect. You should encourage teams to collaborate to deliver operations excellence to the customers."
+      "text": "That’s incorrect. You should encourage teams to collaborate to deliver operations excellence to the customers.",
+      "image": "images/conflict/inbound-1.svg"
     }]
   }
 }]

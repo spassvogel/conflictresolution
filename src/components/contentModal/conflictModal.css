@@ -119,6 +119,9 @@
 .modal .modal-content.modal-conflict .balloon.balloon-44::after {
   left: 44%;
 }
+.modal .modal-content.modal-conflict .balloon.balloon-15::after {
+  left: 15%;
+}
 
 .modal .modal-content.modal-conflict .reaction-text {
   animation: fadein .2s linear;
