@@ -43,6 +43,7 @@ export interface ConflictContent {
   description: string;
   situationImg: string;
   situationSpeech: string;
+  situationBalloonClass?: string;
   options: string[];
-  reactions: { correct: boolean, text: string }[];
+  reactions: { correct: boolean, text: string, image: string }[];
 }

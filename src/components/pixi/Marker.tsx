@@ -5,7 +5,7 @@ import { CustomBounce } from 'gsap/all';
 import { gsap } from 'gsap'
 
 
-const CAN_DRAG = false;
+const CAN_DRAG = true;
 interface Props {
     position?: PIXI.Point;
     delay?: number; // Wait this long before showing

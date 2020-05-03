@@ -3,7 +3,8 @@
   "type": "conflict",
   "header": "The Trouble with Kumar",
   "content": {
-    "situationImg": "images/conflict/conflict1-situation.svg",
+    "situationImg": "images/conflict/kumar-0.svg",
+    "situationBalloonClass": "balloon-44",
     "description": "After establishing the complaint to be true and giving Kumar a warning, what kind of disciplinary action should you take against Kumar if his behaviour persists?",
     "situationSpeech": "Kumar and I are scheduled for the same warehouse shift. Kumar regularly plays games on his cell phone while I take inventory. I have to do the bulk of the work while he plays. I've asked him on four different occasions to help me, but he doesn't listen to me.",
     "bannerImg": "images/ui/banner/fire.jpg",
@@ -14,13 +15,16 @@
     ],
     "reactions": [{
       "correct": false,
-      "text": "You picked the wrong choice. You chose to send Kumar a notification of termination without giving him a chance to change his behaviour. In such a situation, you should try to engage the employee in a meaningful conversation about his behaviour and allow him to take responsibility. In his way you will be able to cultivate a more trusting relationship with the employee in which he feels supported. "
+      "text": "You picked the wrong choice. You chose to send Kumar a notification of termination without giving him a chance to change his behaviour. In such a situation, you should try to engage the employee in a meaningful conversation about his behaviour and allow him to take responsibility. In his way you will be able to cultivate a more trusting relationship with the employee in which he feels supported. ",
+      "image": "images/conflict/kumar-1.svg"
     }, {
       "correct": false,
-      "text": "You picked the wrong choice. You chose to reprimand Kumar in front of other employees in a morning meeting. In such a situation you should try to engage the employee in a meaningful private conversation about his behaviour and allow him to take responsibility. Reprimanding an employee publicly will lower the chances of affecting change or building trust in the employees. "
+      "text": "You picked the wrong choice. You chose to reprimand Kumar in front of other employees in a morning meeting. In such a situation you should try to engage the employee in a meaningful private conversation about his behaviour and allow him to take responsibility. Reprimanding an employee publicly will lower the chances of affecting change or building trust in the employees. ",
+      "image": "images/conflict/kumar-2.svg"
     }, {
       "correct": true,
-      "text": "You picked the right choice. You chose to have Kumar report his productivity numbers to you or a team leader at the end of every shift. In this way you allowed the employee a chance to take responsibility and become more professional. "
+      "text": "You picked the right choice. You chose to have Kumar report his productivity numbers to you or a team leader at the end of every shift. In this way you allowed the employee a chance to take responsibility and become more professional. ",
+      "image": "images/conflict/kumar-3.svg"
     }]
   }
 }, {
@@ -53,7 +57,7 @@
     }]
   }
 }, {
-  "position": [1947, 1223],
+  "position": [2135, 1039],
   "type": "iframe",
   "header": "Scan and store",
   "content": {

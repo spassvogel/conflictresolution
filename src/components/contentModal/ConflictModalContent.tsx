@@ -80,7 +80,6 @@ const ConflictModalContent = (props: Props) => {
     return props.content.reactions[selectedOption];
   }, [props.content.reactions, selectedOption])
 
-
   const renderOption = (option: string, index: number) => {
     if (selectedOption === null) {
       // Nothing selected, render all
@@ -106,9 +105,23 @@ const ConflictModalContent = (props: Props) => {
           </div>
         </li>
       );
-
     }
+  }
 
+  const renderRightside = () => {
+    if (!reaction) {
+      return (
+        <>
+          <div className={`balloon ${content.situationBalloonClass}`} >
+            <span ref={balloonTextRef}>{content.situationSpeech}</span>
+          </div>
+          <div className="situation" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/${content.situationImg})`}} />
+        </>
+      )  
+    }
+    return (
+      <div className="situation" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/${reaction.image})`}} />
+    )
   }
 
   return (
@@ -130,10 +143,7 @@ const ConflictModalContent = (props: Props) => {
         </button> */}
       </div>
       <div className="right">
-        <div className="balloon" >
-          <span ref={balloonTextRef}>{content.situationSpeech}</span>
-        </div>
-        <div className="situation" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/${content.situationImg})`}} />
+        {renderRightside()}
       </div>
     </div>
   )

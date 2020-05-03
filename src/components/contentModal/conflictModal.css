@@ -108,12 +108,16 @@
   width: 0;
   height: 0;
   top: 100%;
-  right: 25%;
+  left: 75%;
   border: .75rem solid transparent;
   border-bottom: none;
 
   border-top-color: #fff;
   filter: drop-shadow(0 0.0625rem 0.0625rem rgba(0, 0, 0, .1));
+}
+
+.modal .modal-content.modal-conflict .balloon.balloon-44::after {
+  left: 44%;
 }
 
 .modal .modal-content.modal-conflict .reaction-text {

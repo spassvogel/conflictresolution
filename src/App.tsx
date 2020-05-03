@@ -12,67 +12,13 @@ import smoke from './smoke.json';
 import content from './content/parseContent';
 import { AnyContent } from './common/constants';
 import ContentModal from './components/contentModal';
+import Main from './components/Main';
+import IntroModal from './components/introModal/introModal';
 
-PixiPlugin.registerPIXI(PIXI);
-gsap.registerPlugin(PixiPlugin);
 
-if (process.env.NODE_ENV === "development") {
-  // @ts-ignore
-  window.__PIXI_INSPECTOR_GLOBAL_HOOK__ && window.__PIXI_INSPECTOR_GLOBAL_HOOK__.register({ PIXI: PIXI });
-}
 
 function App() {
-  const viewportRef = useRef<PixiViewport>(null);
-  //const forkliftRef = useRef<PIXI.Sprite>(null);
-  const [selectedContent, selectContent] = useState<AnyContent | null>(null);
 
-  const worldWidth = 3369;
-  const worldHeight = 1483;
-  //const scaleFactor = 1.86875; //scaled the original map up
-
-  const [canvasWidth, setCanvasWidth] = useState(1200);
-  const [canvasHeight, setCanvasHeight] = useState(600);
-
-  useEffect(() => {
-    // This will set the dimensions of the canvas to that of the window
-    const resize = () => {
-      const width = Math.min(window.innerWidth, window.outerWidth);
-      const height = Math.min(window.innerHeight, window.outerHeight);
-      setCanvasWidth(width);
-      setCanvasHeight(height); 
-    }
-    resize();
-
-    window.addEventListener("resize", resize);
-    return () => {
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
-
-  useEffect(() => {
-    // Center the map
-    if (viewportRef.current) {
-      const viewport = viewportRef.current;
-      viewport.moveCenter(worldWidth / 2, worldHeight / 2);  
-    }
-  }, [canvasWidth, canvasHeight]);
-
-  useEffect(() => {
-    // Blur the map when situation is selected
-    if (selectedContent) {
-      gsap.to(viewportRef.current, {duration: .5, pixi: {blur:20}});
-    } else {
-      gsap.to(viewportRef.current, {duration: .5, pixi: {blur:0}});
-    }
-  }, [selectedContent]);
-
-  const handleMarkerClick = (content: AnyContent) => {
-    selectContent(content);
-  }
-
-  const handleClose = () => {
-    selectContent(null);
-  }
 
   // const handleChooseOption = (option: number) => {
   //   setsituationOrder([
@@ -123,37 +69,13 @@ function App() {
   //   }
   //   return <Marker position={position} pointerdown={() => handleMarkerClick(situation)} delay={delay} />
   // }
-  const renderMarker = (contentItem: AnyContent, delay: number) => {
-    const position = new PIXI.Point(contentItem.position[0], contentItem.position[1]);
-    return (
-      <Marker position={position} 
-        pointerdown={() => handleMarkerClick(contentItem)}
-        delay={delay} />
-    );
-  }
+
+  const [intro, setIntro] = useState(true);
 
   return (
     <>
-      <Stage width={canvasWidth} height={canvasHeight} >
-        <Viewport screenWidth={canvasWidth} screenHeight={canvasHeight} worldWidth={worldWidth} worldHeight={worldHeight} ref={viewportRef} >
-          <Sprite image={`${process.env.PUBLIC_URL}/images/map/warehouse-type2-80.jpg`}  />
-          {/* <Sprite image={`${process.env.PUBLIC_URL}/images/map/forklift1.png`} x={477 * scaleFactor} y={510 * scaleFactor} ref={forkliftRef} /> */}
-      
-          {/* {renderMarker('fire', new PIXI.Point(440 * scaleFactor, 449 * scaleFactor), 0.5)}
-          {renderMarker('theft', new PIXI.Point(986 * scaleFactor, 724 * scaleFactor), 1)}
-          {renderMarker('absenteeism', new PIXI.Point(1437 * scaleFactor, 447 * scaleFactor), 1.5)} */}
-          {/* <ParticleEmitter
-              name="smoke"
-              x={1931}
-              y={1293}
-              image={`${process.env.PUBLIC_URL}/images/map/smoke.png`} 
-              config={smoke} 
-            /> */}
-          {content.map((contentItem, index) => renderMarker(contentItem, index * 0.5))}
-        </Viewport>
-      </Stage>
-      {/* <SituationOrder situationOrder={situationOrder} /> */}
-      { selectedContent && <ContentModal content={selectedContent} onClose={handleClose} /> }
+      { intro && (<IntroModal onClose={() => {setIntro(false)}}/>)}
+      { !intro && <Main content={content}/> }
     </>  
   )
 };
