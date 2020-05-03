@@ -32,10 +32,9 @@
   "type": "conflict",
   "header": "Stacker overflow",
   "content": {
-    "situationImg": "images/conflict/conflict1-situation.svg",
+    "situationImg": "images/conflict/stacker.svg",
     "description": "The SLC has only one MHE stacker, and so there is conflict between the two teams as to who gets priority. What should you do in such a case?",
     "situationSpeech": "Sir, the guys from warehouse B keep using the MHE stacker. We need this for our accuracy check.",
-    "bannerImg": "images/ui/banner/fire.jpg",
     "options": [
       "Allocate the MHE based upon load and priority of both customer operations",
       "Allow the two teams to work out a compromise between themselves",
@@ -45,19 +44,19 @@
     "reactions": [{
       "correct": true,
       "text": "That’s correct. You should allocate the MHE based upon load and priority of both customer operations.",
-      "image": "images/conflict/inbound-1.svg"
+      "image": "images/conflict/stacker.svg"
     }, {
       "correct": false,
       "text": "That’s incorrect. You should allocate the MHE based upon load and priority of both customer operations.",
-      "image": "images/conflict/inbound-1.svg"
+      "image": "images/conflict/stacker.svg"
     }, {
       "correct": false,
       "text": "That’s incorrect. You should allocate the MHE based upon load and priority of both customer operations.",
-      "image": "images/conflict/inbound-1.svg"
+      "image": "images/conflict/stacker.svg"
     }, {
       "correct": false,
       "text": "That’s incorrect. You should allocate the MHE based upon load and priority of both customer operations.",
-      "image": "images/conflict/inbound-1.svg"
+      "image": "images/conflict/stacker.svg"
     }]
   }
 }, {
