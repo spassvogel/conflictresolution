@@ -9,6 +9,7 @@ import Viewport from "./pixi/Viewport";
 import * as PIXI from 'pixi.js';
 import { PixiPlugin } from 'gsap/all';
 import { gsap } from 'gsap'
+import Conveyor from "./pixi/Conveyor";
 
 PixiPlugin.registerPIXI(PIXI);
 gsap.registerPlugin(PixiPlugin);
@@ -28,8 +29,8 @@ const Main = (props: Props) => {
   const [selectedSituation, setSelectedSituation] = useState<number | null>(null);
   const [answers, setAnswers] = useState<number[]>([]);
 
-  const worldWidth = 3369;
-  const worldHeight = 1483;
+  const worldWidth = 3497;
+  const worldHeight = 1419;
   //const scaleFactor = 1.86875; //scaled the original map up
 
   const [canvasWidth, setCanvasWidth] = useState(1200);
@@ -119,8 +120,11 @@ const Main = (props: Props) => {
     <>
       <Stage width={canvasWidth} height={canvasHeight} >
       <Viewport screenWidth={canvasWidth} screenHeight={canvasHeight} worldWidth={worldWidth} worldHeight={worldHeight} ref={viewportRef} >
-        <Sprite image={`${process.env.PUBLIC_URL}/images/map/warehouse-type2-80.jpg`}  />
+        <Sprite image={`${process.env.PUBLIC_URL}/images/map/warehouse-back.png`} >
+          <Sprite image={`${process.env.PUBLIC_URL}/images/map/warehouse-front-wall.png`} y={730}/>
+          <Conveyor name={"Conveyor"} x={334} y={674} />
         {content.map((contentItem, index) => renderMarker(contentItem, index))}
+        </Sprite>
       </Viewport>
     </Stage>
     { selectedContent && (
