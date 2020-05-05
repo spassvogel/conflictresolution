@@ -4,10 +4,7 @@ import * as PIXI from 'pixi.js';
 import { gsap, Linear } from 'gsap'
 
 const boxImagePath = `${process.env.PUBLIC_URL}/images/map/conveyor-box.png`;
-const boxMovePath = [
-  [568, 160],
-  [956, 256]
-]
+
 const Conveyor = (props: React.ComponentProps<typeof Container>) => {
   const boxContainerRef = useRef<PIXI.Container>(null);
   const [boxTexture, setBoxTexture] = useState<PIXI.Texture>();
@@ -28,7 +25,7 @@ const Conveyor = (props: React.ComponentProps<typeof Container>) => {
     if (!boxTexture) return;
 
     const spawnBox = (delay: number) => {
-      let sprite = new PIXI.Sprite(boxTexture);
+      const sprite = new PIXI.Sprite(boxTexture);
       boxContainerRef.current?.addChild(sprite);
       sprite.x = 568;
       sprite.y = 160;

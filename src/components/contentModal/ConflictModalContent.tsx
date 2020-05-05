@@ -20,7 +20,6 @@ const ConflictModalContent = (props: Props) => {
   const balloonTextRef = useRef(null);
   const ref = useRef<HTMLDivElement>(null);
 
-  console.log(selectedAnswer);
   useEffect(() => {
     if (selectedOption === null) {
       gsap.to(balloonTextRef.current, {

@@ -129,7 +129,7 @@ const Main = (props: Props) => {
           <Sprite image={`${process.env.PUBLIC_URL}/images/map/packing.png`} x={995} y={848} name="packing-table"/>
 
           <Sprite image={`${process.env.PUBLIC_URL}/images/map/warehouse-front-wall.png`} y={705} name="front-wall"/>
-        {content.map((contentItem, index) => renderMarker(contentItem, index))}
+          {content.map((contentItem, index) => renderMarker(contentItem, index))}
         </Sprite>
       </Viewport>
     </Stage>
