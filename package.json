@@ -5,6 +5,8 @@
   "homepage": "https://spassvogel.github.io/conflictresolution",
   "dependencies": {
     "@inlet/react-pixi": "^1.2.18",
+    "@pixi/filter-outline": "^3.1.1",
+    "@pixi/filter-reflection": "^3.1.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -14,6 +16,7 @@
     "@types/react-dom": "^16.9.7",
     "gsap": "^3.2.6",
     "pixi-particles": "^4.2.0",
+    "pixi-sound": "^3.0.4",
     "pixi-viewport": "^4.11.0",
     "pixi.js": "^5.2.3",
     "react": "^16.13.1",

@@ -5,7 +5,6 @@ import Viewport from './components/pixi/Viewport';
 import { Viewport as PixiViewport } from "pixi-viewport";
 import Marker from './components/pixi/Marker';
 import { PixiPlugin } from 'gsap/all';
-import { gsap } from 'gsap'
 import './App.css';
 import ParticleEmitter from './components/pixi/ParticleEmitter';
 import smoke from './smoke.json';
@@ -71,10 +70,11 @@ function App() {
   // }
 
   const [intro, setIntro] = useState(true);
+  const [avatar, setAvatar] = useState("avatar1");
 
   return (
     <>
-      { intro && (<IntroModal onClose={() => {setIntro(false)}} />)}
+      { intro && (<IntroModal selectedAvatar={avatar} onClose={() => {setIntro(false)}} onChangeAvatar={setAvatar}/>)}
       { !intro && <Main content={content}/> }
     </>  
   )
