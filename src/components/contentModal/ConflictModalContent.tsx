@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { ConflictContent } from '../../common/constants';
-import { ReactComponent as CheckSvg } from './../../images/ui/check.svg';
-import { gsap, Linear, Bounce } from 'gsap'
+import { gsap, Linear, Bounce, Sine } from 'gsap'
 import { TextPlugin } from 'gsap/all';
 import "./conflictModal.css";
 import sound from 'pixi-sound';
@@ -18,30 +17,21 @@ interface Props {
 const ConflictModalContent = (props: Props) => {
   const {content, selectedAnswer = null} = props;
   const [selectedOption, selectOption] = useState<number | null>(selectedAnswer);
-  const [situationImage, setSituationImage] = useState<string>(content.situationImage);
+  // Reaction based on current selection
+  const reaction = useMemo(() => {
+    if (selectedOption === null) return null;
+    return props.content.reactions[selectedOption];
+  }, [props.content.reactions, selectedOption]);
+  
+  const [confirmed, setConfirmed] = useState(selectedAnswer != null);
+  const [situationImage, setSituationImage] = useState<string>(reaction?.situationImage || content.situationImage);
   const balloonRef = useRef<HTMLDivElement>(null);
   const balloonTextRef = useRef<HTMLSpanElement>(null);
   const insetRef = useRef<HTMLDivElement>(null);
   const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (selectedOption === null) {
-      // gsap.to(balloonTextRef.current, {
-      //   delay: 1,
-      //   duration: 2,
-      //   text: {
-      //     value: content.situationSpeech, 
-      //     oldClass: "hidden",
-      //     newClass: "visible"
-      //   },
-      //   ease: Linear.easeNone,
-      // });
-    }
-  }, [content.situationSpeech, selectedOption]);
-
   const handleOptionClick = (element: HTMLLIElement, index: number) => {
     element.className = "animating";
-    //selectOption(index);
     if (!ref.current) return;
 
     // Fade out the non selected options
@@ -68,13 +58,6 @@ const ConflictModalContent = (props: Props) => {
         }, 250);
       }
     });
-    if ( props.content.reactions[index].correct) {
-      sound.play('correct');
-      props.setCorrectAnswer(index);
-    } else {
-      sound.play('wrong');
-    }
-
   };
 
   useEffect(() => {
@@ -89,9 +72,8 @@ const ConflictModalContent = (props: Props) => {
     gsap.killTweensOf(balloonText);
 
     // Reset
-    balloonRef.current!.style.visibility = 'visible';
-    balloonRef.current!.style.opacity = '1';
-    inset.style.left = '-50%';
+    balloonRef.current!.removeAttribute('style');
+    inset.removeAttribute('style');
 
     // Build timeline
     balloonText.innerHTML =  content.sequence[0].text;
@@ -122,7 +104,7 @@ const ConflictModalContent = (props: Props) => {
 
     // Fade the balloon out
     tl.to(balloonRef.current, {
-      delay: 3,
+      delay: 3 / SPEED_MODIFIER,
       duration: .5,
       autoAlpha: 0,
       ease: Linear.easeNone,
@@ -132,33 +114,69 @@ const ConflictModalContent = (props: Props) => {
     tl.to(inset, {
       duration: .5,
       left: 0,
-      ease: Bounce.easeInOut,
-    });
+      ease: Sine.easeInOut,
+    }, "-=1");
 
   }, [content.sequence]);
 
   useEffect(() => {
-    playSequence();
-  }, [content.sequence, playSequence])
-
-
+    if (selectedAnswer) {
+      insetRef.current!.style.left = '0px';
+      balloonRef.current!.style.visibility = 'hidden';
+    }
+    else {
+      playSequence();
+    }
+  }, [content.sequence, playSequence, selectedAnswer]);
 
   const handleReplay = () => {
+    setSituationImage(content.situationImage);
+    selectOption(null);
     playSequence();
   }
 
-  // Reaction based on current selection
-  const reaction = useMemo(() => {
-    if (selectedOption === null) return null;
-    return props.content.reactions[selectedOption];
-  }, [props.content.reactions, selectedOption])
+  const handleYes = () => {
+    setConfirmed(true);
+    setSituationImage(reaction!.situationImage);
+
+    if (reaction!.correct) {
+      sound.play('correct');
+      props.setCorrectAnswer(selectedOption!);
+    } else {
+      sound.play('wrong');
+    }
+  }
+
+  const renderReaction = () => {
+    if (!reaction) {
+      return null;
+    }
+    if (!confirmed) {
+      return (
+        <>
+          <p>{reaction.confirmText}</p>
+          <button onClick={handleYes}>yes</button>
+          <button onClick={handleReplay}>no</button>
+        </>
+      )
+    }
+    return (
+      <>
+        <p>{reaction.text}</p>
+        { (!reaction?.correct) && (
+         <button onClick={handleReplay} className="replay">
+           Replay
+         </button>
+        )}     
+      </>
+    )
+  }
 
   const renderOption = (option: string, index: number) => {
     if (selectedOption === null) {
       // Nothing selected, render all
       return (
         <li key={option} className="normal" onClick={(e) => handleOptionClick(e.currentTarget, index)} >
-          <div className="checkbox"/>
           <div className="text">
             {option}
           </div>
@@ -167,12 +185,13 @@ const ConflictModalContent = (props: Props) => {
     }
     if (selectedOption === index) {
       // Render only selected option
-      const className = reaction?.correct ? "correct" : "wrong";
+      let className = '';
+      if (confirmed) {
+        className = reaction?.correct ? "correct" : "wrong";
+      }
+
       return (
         <li key={option} className={className} >
-          <div className="checkbox">
-            <CheckSvg className="check" />
-          </div>
           <div className="text">
             {option}
           </div>
@@ -181,10 +200,8 @@ const ConflictModalContent = (props: Props) => {
     }
   }
 
-
   return (
     <div className="modal-content modal-conflict" ref={ref}>
-      {/* */}
       <div className="situation">
         <div className="inset" ref={insetRef}>
           <p>
@@ -193,30 +210,20 @@ const ConflictModalContent = (props: Props) => {
           <ul className="options">
             {content.options.map((option, index) => renderOption(option, index))}
           </ul>
-          { reaction && (
-            <>
-            <div className="reaction-text">
-              {reaction.text}
-            </div>
-            { (!reaction?.correct) && (
-              <button onClick={handleReplay} className="replay">
-                Replay
-              </button>
-            )}
-            </>
-          )}
+          { renderReaction() }
         </div> 
         <div className={`balloon`} ref={balloonRef}>
           <span ref={balloonTextRef}></span>
         </div>
         <div className="situation-image" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/${situationImage})`}} />
       </div>
-      <button className="button-replay" onClick={handleReplay}>
-        replay
-      </button>
+      { !selectedOption && (
+        <button className="button-replay" onClick={handleReplay}>
+          replay
+        </button>
+      )}
     </div>
   )
 }
 
 export default ConflictModalContent;
-

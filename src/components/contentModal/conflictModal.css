@@ -80,7 +80,7 @@
   position: absolute;
   left: -50%;
   background: white;
-  padding: 8px;
+  padding-right: 16px;
   height: 100%;
   box-sizing: border-box;
 }
