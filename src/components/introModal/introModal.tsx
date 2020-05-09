@@ -45,11 +45,18 @@ const IntroModal = (props: Props) => {
       <div >
         <h1 className="header">Conflict situations</h1>
         <p>
-          Select your player avatar
+          You’re a warehouse manager at Express Warehousing Ltd. 
+          Choose an avatar.       
         </p>
         <div className="avatar-selection">
           <Stage width={stageWidth} height={stageHeight} options={{ backgroundColor: 0xffffff}}>
-            <Sprite image={`${process.env.PUBLIC_URL}/images/avatars/background.png`} filters={[new PIXI.filters.BlurFilter()]}/>
+            <Sprite image={`${process.env.PUBLIC_URL}/images/avatars/background.png`} 
+              filters={[new PIXI.filters.BlurFilter(4)]} 
+              scale={.95} 
+              anchor={.5}
+              y={stageHeight / 2}
+              x={stageWidth / 2}
+            />
             <Container sortableChildren>
               { renderAvatar('avatar1', 0) }
               { renderAvatar('avatar2', 1) }

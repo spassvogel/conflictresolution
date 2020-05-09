@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { ConflictContent } from '../../common/constants';
 import { ReactComponent as CheckSvg } from './../../images/ui/check.svg';
-import { gsap, Linear } from 'gsap'
+import { gsap, Linear, Bounce } from 'gsap'
 import { TextPlugin } from 'gsap/all';
 import "./conflictModal.css";
 import sound from 'pixi-sound';
 
 gsap.registerPlugin(TextPlugin);
+const SPEED_MODIFIER = 4; // for debugging
 
 interface Props {
   content: ConflictContent;
@@ -17,21 +18,24 @@ interface Props {
 const ConflictModalContent = (props: Props) => {
   const {content, selectedAnswer = null} = props;
   const [selectedOption, selectOption] = useState<number | null>(selectedAnswer);
-  const balloonTextRef = useRef(null);
+  const [situationImage, setSituationImage] = useState<string>(content.situationImage);
+  const balloonRef = useRef<HTMLDivElement>(null);
+  const balloonTextRef = useRef<HTMLSpanElement>(null);
+  const insetRef = useRef<HTMLDivElement>(null);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (selectedOption === null) {
-      gsap.to(balloonTextRef.current, {
-        delay: 1,
-        duration: 2,
-        text: {
-          value: content.situationSpeech, 
-          oldClass: "hidden",
-          newClass: "visible"
-        },
-        ease: Linear.easeNone,
-      });
+      // gsap.to(balloonTextRef.current, {
+      //   delay: 1,
+      //   duration: 2,
+      //   text: {
+      //     value: content.situationSpeech, 
+      //     oldClass: "hidden",
+      //     newClass: "visible"
+      //   },
+      //   ease: Linear.easeNone,
+      // });
     }
   }, [content.situationSpeech, selectedOption]);
 
@@ -52,6 +56,7 @@ const ConflictModalContent = (props: Props) => {
     var parentTop = ref.current!.querySelector(".options")!.getBoundingClientRect().top; // Initial parent's top distance from the top of the viewport;
     var childTop = element.getBoundingClientRect().top;
     var distance = Math.abs(parentTop - childTop);
+
     gsap.to(element, {
       duration: 0.5,
       top: -distance,
@@ -75,11 +80,71 @@ const ConflictModalContent = (props: Props) => {
   useEffect(() => {
     sound.add('correct', `${process.env.PUBLIC_URL}/sound/correct.mp3`);    
     sound.add('wrong', `${process.env.PUBLIC_URL}/sound/wrong.mp3`);
-  }, [])
+  }, []);
+
+  const playSequence = useCallback(() => {
+    const tl = gsap.timeline();
+    const balloonText = balloonTextRef!.current!;
+    const inset = insetRef.current!;
+    gsap.killTweensOf(balloonText);
+
+    // Reset
+    balloonRef.current!.style.visibility = 'visible';
+    balloonRef.current!.style.opacity = '1';
+    inset.style.left = '-50%';
+
+    // Build timeline
+    balloonText.innerHTML =  content.sequence[0].text;
+    let sequenceBalloonCls = '';
+    content.sequence.forEach((sequenceItem, index) => {
+      sequenceBalloonCls = sequenceItem.balloonClass || sequenceBalloonCls;  // if specified use balloonClass, otherwise use one of previous sequence    
+      const balloonCls = `balloon ${sequenceItem.type} ${sequenceBalloonCls}`;
+
+      const onStart = () => {
+        balloonRef.current!.className = balloonCls;
+        if (sequenceItem.situationImage) {
+          setSituationImage(sequenceItem.situationImage);
+        }
+      }
+
+      tl.to(balloonText, {
+        onStart,
+        delay: (index > 0 ? 3 : 0) / SPEED_MODIFIER,
+        duration: sequenceItem.text.length * 0.025 / SPEED_MODIFIER,
+        text: {
+          value: sequenceItem.text, 
+          oldClass: "hidden",
+          newClass: "visible"
+        },
+        ease: Linear.easeNone,
+      });  
+    });
+
+    // Fade the balloon out
+    tl.to(balloonRef.current, {
+      delay: 3,
+      duration: .5,
+      autoAlpha: 0,
+      ease: Linear.easeNone,
+    });
+
+    // Slide inset in
+    tl.to(inset, {
+      duration: .5,
+      left: 0,
+      ease: Bounce.easeInOut,
+    });
+
+  }, [content.sequence]);
+
+  useEffect(() => {
+    playSequence();
+  }, [content.sequence, playSequence])
+
 
 
   const handleReplay = () => {
-    selectOption(null);
+    playSequence();
   }
 
   // Reaction based on current selection
@@ -116,47 +181,39 @@ const ConflictModalContent = (props: Props) => {
     }
   }
 
-  const renderRightside = () => {
-    if (!reaction) {
-      return (
-        <>
-          <div className={`balloon ${content.situationBalloonClass}`} >
-            <span ref={balloonTextRef}>{content.situationSpeech}</span>
-          </div>
-          <div className="situation" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/${content.situationImg})`}} />
-        </>
-      )  
-    }
-    return (
-      <div className="situation" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/${reaction.image})`}} />
-    )
-  }
 
   return (
     <div className="modal-content modal-conflict" ref={ref}>
-      <div className="left">
-        <p>
-          {content.description}
-        </p>
-        <ul className="options">
-          {content.options.map((option, index) => renderOption(option, index))}
-        </ul>
-        { reaction && (
-          <>
-          <div className="reaction-text">
-            {reaction.text}
-          </div>
-          { (!reaction?.correct) && (
-            <button onClick={handleReplay} className="replay">
-               Replay
-            </button>
+      {/* */}
+      <div className="situation">
+        <div className="inset" ref={insetRef}>
+          <p>
+            {content.description}
+          </p>
+          <ul className="options">
+            {content.options.map((option, index) => renderOption(option, index))}
+          </ul>
+          { reaction && (
+            <>
+            <div className="reaction-text">
+              {reaction.text}
+            </div>
+            { (!reaction?.correct) && (
+              <button onClick={handleReplay} className="replay">
+                Replay
+              </button>
+            )}
+            </>
           )}
-          </>
-        )}
+        </div> 
+        <div className={`balloon`} ref={balloonRef}>
+          <span ref={balloonTextRef}></span>
+        </div>
+        <div className="situation-image" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/${situationImage})`}} />
       </div>
-      <div className="right">
-        {renderRightside()}
-      </div>
+      <button className="button-replay" onClick={handleReplay}>
+        replay
+      </button>
     </div>
   )
 }

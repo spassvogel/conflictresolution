@@ -76,7 +76,6 @@ const BigRacks = (props: React.ComponentProps<typeof Container>) => {
       }, 
       duration: 5
     });
-    console.log(forkliftRef.current?.zIndex);
   }, []);
 
   /** note, this z order stuff friggin blows */

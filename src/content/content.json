@@ -3,7 +3,26 @@
   "type": "conflict",
   "header": "The Trouble with Kumar",
   "content": {
-    "situationImg": "images/conflict/kumar-0.svg",
+    "situationImage": "images/conflict/kumar-0a.png",
+    "sequence": [{
+      "type": "caption",
+      "text": "As you’re taking a round in the warehouse in the morning, Dev approaches you with a complaint against his team mate, Kumar"
+    }, {
+      "type": "speech",
+      "text": "Kumar and I are scheduled for the same warehouse shift.",
+      "balloonClass": "balloon-69"
+    }, {
+      "type": "speech",
+      "text": "He regularly plays games on his cell phone while I pick the orders.",
+      "situationImage": "images/conflict/kumar-0b.png"
+      }, {
+      "type": "speech",
+      "text": "I have to do the bulk of the work while he plays.",
+      "situationImage": "images/conflict/kumar-0a.png"
+      }, {
+      "type": "speech",
+      "text": "I've asked him on four different occasions to help me, but he doesn't listen to me."
+    }],
     "situationBalloonClass": "balloon-44",
     "description": "After establishing the complaint to be true and giving Kumar a warning, what kind of disciplinary action should you take against Kumar if his behaviour persists?",
     "situationSpeech": "Kumar and I are scheduled for the same warehouse shift. Kumar regularly plays games on his cell phone while I take inventory. I have to do the bulk of the work while he plays. I've asked him on four different occasions to help me, but he doesn't listen to me.",
@@ -32,7 +51,7 @@
   "type": "conflict",
   "header": "Stacker overflow",
   "content": {
-    "situationImg": "images/conflict/stacker.svg",
+    "situationImage": "images/conflict/stacker.svg",
     "description": "The SLC has only one MHE stacker, and so there is conflict between the two teams as to who gets priority. What should you do in such a case?",
     "situationSpeech": "Sir, the guys from warehouse B keep using the MHE stacker. We need this for our accuracy check.",
     "options": [
@@ -64,7 +83,7 @@
   "type": "conflict",
   "header": "Inbound for efficiency",
   "content": {
-    "situationImg": "images/conflict/inbound-0.svg",
+    "situationImage": "images/conflict/inbound-0.svg",
     "description": "They are stating that they are paid wages and will only do work load assigned. What should you do?",
     "situationSpeech": "Inbound teams regularly complete their targets for the day by 4 p.m. but do not move on to help the outbound teams. ",
     "situationBalloonClass": "balloon-15",
