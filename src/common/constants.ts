@@ -46,13 +46,22 @@ export interface ConflictContent {
   situationSpeech: string;
   situationBalloonClass?: string;
   options: string[];
-  reactions: { correct: boolean, text: string, situationImage: string, confirmText: string }[];
+  reactions: ConflictReaction[];
+}
+
+export interface ConflictReaction { 
+  correct: boolean, 
+  text: string, 
+  situationImage: string, 
+  confirmText: string, 
+  confirmImage?: string 
 }
 
 export enum SequenceItemType {
   caption = 'caption',
   speech = 'speech'
 }
+
 export interface SequenceItem {
   type: SequenceItemType,
   text: string,

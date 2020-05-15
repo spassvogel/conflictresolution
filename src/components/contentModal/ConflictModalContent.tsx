@@ -6,7 +6,7 @@ import "./conflictModal.css";
 import sound from 'pixi-sound';
 
 gsap.registerPlugin(TextPlugin);
-const SPEED_MODIFIER = 4; // for debugging
+const SPEED_MODIFIER = 1; // for debugging
 
 interface Props {
   content: ConflictContent;
