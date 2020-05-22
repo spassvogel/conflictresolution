@@ -25,8 +25,6 @@
     }],
     "situationBalloonClass": "balloon-44",
     "description": "You’ve already reprimanded Kumar in the past about his slack behaviour. What kind of disciplinary action should you take against him now?",
-    "situationSpeech": "Kumar and I are scheduled for the same warehouse shift. Kumar regularly plays games on his cell phone while I take inventory. I have to do the bulk of the work while he plays. I've asked him on four different occasions to help me, but he doesn't listen to me.",
-    "bannerImg": "images/ui/banner/fire.jpg",
     "options": [
       "Send Kumar a notification of termination",
       "Scold Kumar in front of his team mates",
@@ -36,6 +34,54 @@
       "confirmText": "Are you sure you want to terminate Kumar without giving him a chance to take responsibility?",
       "correct": false,
       "text": "You’ve fired Kumar without allowing him a chance to take responsibility. This has negatively affected the morale of the employees. Workers feel that your response was disproportionate to Kumar’s offence and now feel discouraged and worried about their own job security.",
+      "situationImage": "images/conflict/kumar-1.png"
+    }, {
+      "confirmText": "Are you sure you want to embarrass Kumar like that?",
+      "correct": false,
+      "text": "You gave Kumar a dressing down in front of others. He resents you now as he has become a laughing stock for a group of warehouse workers. He wants to quit and his friends are not happy about how things panned out either.",
+      "situationImage": "images/conflict/kumar-2.svg"
+    }, {
+      "confirmText": "Are you sure you want to give Kumar a second chance?",
+      "correct": true,
+      "text": "You did the right thing by giving Kumar a chance to take responsibility and become more professional. You made him and—by extension—others in the team feel supported and laid the ground for cultivating a more trusting relationship with the employees.",
+      "situationImage": "images/conflict/kumar-3.svg"
+    }]
+  }
+}, {
+  "position": [2135, 1039],
+  "type": "conflict",
+  "header": "Scenario2 (TODO: better name)",
+  "content": {
+    "situationImage": "images/conflict/cantina-0a.png",
+    "sequence": [{
+      "type": "caption",
+      "text": "You’re having a meal in the break room when you hear some gossip about Maya shouting at Jay the day before. You see Jay and Maya separately and ask them what had happened."
+    }, {
+      "type": "speech",
+      "text": "I clean out the shared refrigerator regularly and accidentally threw out Maya’s leftovers yesterday. She absolutely went off at me for that! No one appreciates the effort I put in to keep this place clean.",
+      "situationImage": "images/conflict/cantina-0b.png",
+      "balloonClass": "balloon-69"
+    }, {
+      "type": "speech",
+      "text": "I had left some food in the fridge and found it missing! What gave Jay the right to discard it? People should respect others’ personal belongings..",
+      "situationImage": "images/conflict/cantina-0c.png",
+      "balloonClass": "balloon-75"      
+    }, {
+      "type": "speech",
+      "text": "",
+      "situationImage": "images/conflict/cantina-0d.png"
+    }],
+    "situationBalloonClass": "balloon-44",
+    "description": "Jay and Maya are not speaking to each other. How should you handle this situation?",
+    "options": [
+      "Avoid confrontation as long as it doesn’t affect their productivity",
+      "Talk to Maya and tell her not to take Jay’s action personally",
+      "Facilitate a discussion between the two to arrive at a resolution"
+    ],
+    "reactions": [{
+      "confirmText": "Are you sure you want to avoid any confrontations?",
+      "correct": false,
+      "text": "It’s not good to let conflicts fester in the workplace. It may not affect their productivity, but it might affect the general environment at work and there’s a real chance that one or both individuals may engage in passive-aggressive behaviour.",
       "situationImage": "images/conflict/kumar-1.png"
     }, {
       "confirmText": "Are you sure you want to embarrass Kumar like that?",
