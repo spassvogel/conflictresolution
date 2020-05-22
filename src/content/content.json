@@ -24,28 +24,28 @@
       "text": "I've asked him on four different occasions to help me, but he doesn't listen to me."
     }],
     "situationBalloonClass": "balloon-44",
-    "description": "After establishing the complaint to be true and giving Kumar a warning, what kind of disciplinary action should you take against Kumar if his behaviour persists?",
+    "description": "You’ve already reprimanded Kumar in the past about his slack behaviour. What kind of disciplinary action should you take against him now?",
     "situationSpeech": "Kumar and I are scheduled for the same warehouse shift. Kumar regularly plays games on his cell phone while I take inventory. I have to do the bulk of the work while he plays. I've asked him on four different occasions to help me, but he doesn't listen to me.",
     "bannerImg": "images/ui/banner/fire.jpg",
     "options": [
-      "Send Kumar a notification of termination as he is hampering warehouse productivity",
-      "Reprimand Kumar in the morning meeting so as to discourage others from behaving this way too",
-      "Have Kumar report his productivity numbers to you or a team leader at the end of every shift"
+      "Send Kumar a notification of termination",
+      "Scold Kumar in front of his team mates",
+      "Set strict productivity targets for Kumar"
     ],
     "reactions": [{
       "confirmText": "Are you sure you want to terminate Kumar without giving him a chance to take responsibility?",
       "correct": false,
-      "text": "You picked the wrong choice. You chose to send Kumar a notification of termination without giving him a chance to change his behaviour. In such a situation, you should try to engage the employee in a meaningful conversation about his behaviour and allow him to take responsibility. In his way you will be able to cultivate a more trusting relationship with the employee in which he feels supported. ",
+      "text": "You’ve fired Kumar without allowing him a chance to take responsibility. This has negatively affected the morale of the employees. Workers feel that your response was disproportionate to Kumar’s offence and now feel discouraged and worried about their own job security.",
       "situationImage": "images/conflict/kumar-1.png"
     }, {
       "confirmText": "Are you sure you want to embarrass Kumar like that?",
       "correct": false,
-      "text": "You picked the wrong choice. You chose to reprimand Kumar in front of other employees in a morning meeting. In such a situation you should try to engage the employee in a meaningful private conversation about his behaviour and allow him to take responsibility. Reprimanding an employee publicly will lower the chances of affecting change or building trust in the employees. ",
+      "text": "You gave Kumar a dressing down in front of others. He resents you now as he has become a laughing stock for a group of warehouse workers. He wants to quit and his friends are not happy about how things panned out either.",
       "situationImage": "images/conflict/kumar-2.svg"
     }, {
       "confirmText": "Are you sure you want to give Kumar a second chance?",
       "correct": true,
-      "text": "You picked the right choice. You chose to have Kumar report his productivity numbers to you or a team leader at the end of every shift. In this way you allowed the employee a chance to take responsibility and become more professional. ",
+      "text": "You did the right thing by giving Kumar a chance to take responsibility and become more professional. You made him and—by extension—others in the team feel supported and laid the ground for cultivating a more trusting relationship with the employees.",
       "situationImage": "images/conflict/kumar-3.svg"
     }]
   }

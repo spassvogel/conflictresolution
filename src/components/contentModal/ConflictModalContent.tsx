@@ -162,6 +162,7 @@ const ConflictModalContent = (props: Props) => {
     }
     return (
       <>
+        { reaction?.correct && (<p>You’ve chosen the right option!</p>)}
         <p>{reaction.text}</p>
         { (!reaction?.correct) && (
          <button onClick={handleReplay} className="replay">
