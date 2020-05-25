@@ -111,7 +111,8 @@ const Main = (props: Props) => {
         position={position} 
         pointerdown={() => handleMarkerClick(contentItem, index)}
         delay={delay}
-        bounce={bounce} 
+        bounce={bounce}
+        key={contentItem.position.join('-')}
       />
     ); 
   }

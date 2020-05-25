@@ -13,13 +13,13 @@ interface Props {
   onClose: () => void;
   onChangeAvatar: (name: string) => void;
 }
-const stageHeight = 550;
-const stageWidth = 1000;
+const stageHeight = 720;
+const stageWidth = 1280;
 const IntroModal = (props: Props) => {
   const {selectedAvatar} = props;
 
   const renderAvatar = (name: string, index: number) => {
-    const filters = selectedAvatar === name ? [new OutlineFilter(3, 0x3FA535)] : undefined;
+    const filters = selectedAvatar === name ? [new OutlineFilter(4, 0xffcc00)] : [];
     const scale = selectedAvatar === name ? .7 : .6;
     const zIndex = selectedAvatar === name ? 2 : 0;
     return <Sprite image={`${process.env.PUBLIC_URL}/images/avatars/${name}.png`} 
@@ -38,13 +38,14 @@ const IntroModal = (props: Props) => {
     <ReactModal
       isOpen={true}
       ariaHideApp={false}
+      portalClassName="modal-portal"
       overlayClassName="modal-overlay modal-intro-overlay"
       className="modal modal-intro"
       onRequestClose={props.onClose}
     >
-      <div >
+      <div className="modal-content">
         <h1 className="header">Conflict situations</h1>
-        <p>
+        <p className="subtext">
           You’re a warehouse manager at Express Warehousing Ltd. 
           Choose an avatar.       
         </p>
@@ -65,9 +66,9 @@ const IntroModal = (props: Props) => {
             </Container>
           </Stage>
         </div>
-        <p className="footer">
+        <div className="footer">
           <button onClick={props.onClose}>Start</button>
-        </p>
+        </div>
       </div>
     </ReactModal>  
     )

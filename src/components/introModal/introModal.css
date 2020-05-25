@@ -1,9 +1,10 @@
 .modal-intro {
-  left: inherit;
+  /* left: inherit;
   top: inherit;
   right: inherit;
   bottom: inherit;
-  width: 80%;
+  width: 80%; */
+  overflow: hidden;
 }
 
 .modal-intro-overlay {
@@ -20,14 +21,25 @@
   text-align: center;
 }
 
+.modal-intro .subtext {
+  position: absolute;
+}
+
 .modal-intro .avatar-selection {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .modal-intro .avatar-selection canvas {
-  margin: auto
+  margin: auto;
+  max-width: 100%;
 }
 
 .modal-intro .footer {
   display: flex;
   justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }

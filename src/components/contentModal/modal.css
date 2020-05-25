@@ -1,21 +1,50 @@
+.modal-portal {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.modal-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
 
 .modal {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  right: 40px;
-  bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(16, 5.625vw);
+  grid-auto-rows: 5.625vw;
+  border-radius: 16px;
+  padding: 16px;
+  background: white;
+}
+
+.modal-content {
+  grid-column: span 16;
+  grid-row: span 9;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+  /* position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-bottom: 56.25%;  
+  width: calc(100% - 40px);
   border: 1px solid rgb(204, 204, 204);
   background: rgb(255, 255, 255);
   overflow: auto;
   border-radius: 8px;
   outline: none;
   padding: 20px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
 
-  animation: pop 0.5s ease-in-out 1, fadein .2s linear;
-}
+  animation: pop 0.5s ease-in-out 1, fadein .2s linear; */
+/* } */
 
 
 @keyframes pop {
@@ -65,13 +94,31 @@
   }
 }
 
+.modal .header {
+  grid-column: span 16;
+  position: relative;
+  z-index: 2;
+  padding-left: 16px;
+}
+
 .modal-close {
   /* close button on the modal */
+
   position: absolute;
-  right: 16px;
-  top: 16px;
-  height: 32px;
-  width: 32px;
-  background: url("/conflictresolution/images/ui/close.png");
+  right: 0;
+  bottom: 2px;
+  background: url(/conflictresolution/images/ui/close.png);
   cursor: pointer;
+  height: 100%;
+  max-height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center right;
 }
+
+.modal-close:before {
+  content: '';
+  padding-left: 100%;
+  display: block;
+  width: 32px;
+} 

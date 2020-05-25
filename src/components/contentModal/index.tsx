@@ -38,6 +38,7 @@ const ContentModal = (props: Props) => {
     <ReactModal
       isOpen={true}
       ariaHideApp={false}
+      portalClassName="modal-portal"
       overlayClassName="modal-overlay"
       className="modal"
       onRequestClose={handleClose}

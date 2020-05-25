@@ -1,8 +1,18 @@
 [{
-  "position": [822, 839],
+  "position": [1381, 848],
   "type": "conflict",
   "header": "The Trouble with Kumar",
   "content": {
+    "scene": [{
+      "image":  "images/conflict/kumar/background.png"
+    }, {
+      "image":  "images/conflict/kumar/dev.png",
+      "position": [784, 175]
+    }, {
+      "type": "avatar",
+      "image":  "images/conflict/kumar/dev.png",
+      "position": [784, 175]
+    }],
     "situationImage": "images/conflict/kumar-0a.png",
     "sequence": [{
       "type": "caption",
@@ -84,14 +94,14 @@
       "text": "It’s not good to let conflicts fester in the workplace. It may not affect their productivity, but it might affect the general environment at work and there’s a real chance that one or both individuals may engage in passive-aggressive behaviour.",
       "situationImage": "images/conflict/kumar-1.png"
     }, {
-      "confirmText": "Are you sure you want to embarrass Kumar like that?",
+      "confirmText": "Are you sure you want to talk to only Maya?",
       "correct": false,
-      "text": "You gave Kumar a dressing down in front of others. He resents you now as he has become a laughing stock for a group of warehouse workers. He wants to quit and his friends are not happy about how things panned out either.",
+      "text": "Research has shown that telling people not to take conflicts personally doesn’t work. Regardless of such a disclaimer, Maya is very likely to hold a grudge against Jay that will ultimately affect their working relationship.",
       "situationImage": "images/conflict/kumar-2.svg"
     }, {
-      "confirmText": "Are you sure you want to give Kumar a second chance?",
+      "confirmText": "Are you sure you want to spend time on discussing such a minor issue?",
       "correct": true,
-      "text": "You did the right thing by giving Kumar a chance to take responsibility and become more professional. You made him and—by extension—others in the team feel supported and laid the ground for cultivating a more trusting relationship with the employees.",
+      "text": "The sooner you address an issue and allow employees to engage in a dialogue, the sooner they can go back to a healthy working relationship and remain productive and engaged. \nAsk both parties to share their perspectives and invite them to come up with ideas for a resolution that may include apologies or changes in behaviour (labelling food containers, in this case, for instance) to prevent similar disputes from recurring.",
       "situationImage": "images/conflict/kumar-3.svg"
     }]
   }

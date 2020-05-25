@@ -4,6 +4,7 @@ import { gsap, Linear, Bounce, Sine } from 'gsap'
 import { TextPlugin } from 'gsap/all';
 import "./conflictModal.css";
 import sound from 'pixi-sound';
+import SituationScene from '../pixi/SituationScene';
 
 gsap.registerPlugin(TextPlugin);
 const SPEED_MODIFIER = 1; // for debugging
@@ -29,6 +30,7 @@ const ConflictModalContent = (props: Props) => {
   const balloonTextRef = useRef<HTMLSpanElement>(null);
   const insetRef = useRef<HTMLDivElement>(null);
   const ref = useRef<HTMLDivElement>(null);
+  const nextButtonRef = useRef<HTMLButtonElement>(null);
 
   const handleOptionClick = (element: HTMLLIElement, index: number) => {
     element.className = "animating";
@@ -65,29 +67,38 @@ const ConflictModalContent = (props: Props) => {
     sound.add('wrong', `${process.env.PUBLIC_URL}/sound/wrong.mp3`);
   }, []);
 
+  const sequence = useRef<gsap.core.Timeline>();
   const playSequence = useCallback(() => {
     const tl = gsap.timeline();
+    sequence.current = tl;
     const balloonText = balloonTextRef!.current!;
     const inset = insetRef.current!;
     gsap.killTweensOf(balloonText);
 
     // Reset
+    if (nextButtonRef.current) nextButtonRef.current!.removeAttribute('style');
     balloonRef.current!.removeAttribute('style');
     inset.removeAttribute('style');
 
     // Build timeline
     balloonText.innerHTML =  content.sequence[0].text;
     let sequenceBalloonCls = '';
+    
+
+    // All the sequences
     content.sequence.forEach((sequenceItem, index) => {
       sequenceBalloonCls = sequenceItem.balloonClass || sequenceBalloonCls;  // if specified use balloonClass, otherwise use one of previous sequence    
       const balloonCls = `balloon ${sequenceItem.type} ${sequenceBalloonCls}`;
 
       const onStart = () => {
-        balloonRef.current!.className = balloonCls;
+        if (balloonRef.current)
+          balloonRef.current!.className = balloonCls;
+        
         if (sequenceItem.situationImage) {
           setSituationImage(sequenceItem.situationImage);
         }
       }
+      //tl.to(, )
 
       tl.to(balloonText, {
         onStart,
@@ -99,7 +110,7 @@ const ConflictModalContent = (props: Props) => {
           newClass: "visible"
         },
         ease: Linear.easeNone,
-      });  
+      }, `seq-${index}`);  
     });
 
     // Fade the balloon out
@@ -112,12 +123,21 @@ const ConflictModalContent = (props: Props) => {
 
     // Slide inset in
     tl.to(inset, {
+      onStart: () => {
+        if (nextButtonRef.current) 
+          nextButtonRef.current!.style.display = "none";
+      },
       duration: .5,
       left: 0,
       ease: Sine.easeInOut,
     }, "-=1");
-
   }, [content.sequence]);
+
+  const handleSkipSequenceStep = () => {
+    if (!sequence.current) return;
+    const currentIndex = parseInt(sequence.current.currentLabel().substring('seq-'.length), 2);
+    sequence.current.seek(`seq-${currentIndex+1}`);
+  }
 
   useEffect(() => {
     if (selectedAnswer) {
@@ -162,8 +182,8 @@ const ConflictModalContent = (props: Props) => {
     }
     return (
       <>
-        { reaction?.correct && (<p>You’ve chosen the right option!</p>)}
-        <p>{reaction.text}</p>
+        { reaction?.correct && (<p className="right-option">You’ve chosen the right option!</p>)}
+        {reaction.text.split("\n").map(p => <p key={p.substring(0, 10)}>{p}</p>)}
         { (!reaction?.correct) && (
          <button onClick={handleReplay} className="replay">
            Replay
@@ -204,6 +224,8 @@ const ConflictModalContent = (props: Props) => {
   return (
     <div className="modal-content modal-conflict" ref={ref}>
       <div className="situation">
+        {/* <div className="situation-image" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/${situationImage})`}} /> */}
+        { props.content.scene && <SituationScene sceneConfig={props.content.scene} />}
         <div className="inset" ref={insetRef}>
           <p>
             {content.description}
@@ -216,12 +238,16 @@ const ConflictModalContent = (props: Props) => {
         <div className={`balloon`} ref={balloonRef}>
           <span ref={balloonTextRef}></span>
         </div>
-        <div className="situation-image" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/${situationImage})`}} />
       </div>
       { !selectedOption && (
-        <button className="button-replay" onClick={handleReplay}>
-          replay
-        </button>
+        <div className="controls-bottomright">
+          <button className="button-replay" onClick={handleReplay}>
+            replay
+          </button>
+          <button className="button-next" ref={nextButtonRef} onClick={handleSkipSequenceStep}>
+            >
+          </button>
+        </div>
       )}
     </div>
   )

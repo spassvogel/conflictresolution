@@ -42,11 +42,30 @@ export interface OptionsContent {
 export interface ConflictContent {
   description: string;
   sequence: SequenceItem[];
+  scene: SceneElement[];
   situationImage: string;
   situationSpeech: string;
   situationBalloonClass?: string;
   options: string[];
   reactions: ConflictReaction[];
+}
+
+export interface SceneElement {
+  image?: string;
+  type?: SceneElementType;
+  position?: [number, number];
+  pose: AvatarPose;
+}
+
+export enum SceneElementType {
+  sprite = "sprite",
+  avatar = "avatar",
+}
+
+export enum AvatarPose {
+  angle = "angle",
+  front = "front",
+  side = "side"
 }
 
 export interface ConflictReaction { 

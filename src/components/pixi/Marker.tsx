@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Sprite } from '@inlet/react-pixi';
 import * as PIXI from 'pixi.js';
-import { CustomBounce } from 'gsap/all';
 import { gsap } from 'gsap'
 
 
