@@ -31,7 +31,16 @@ button {
   background: #009FE3;
   color: #FFF;
   border: 0;
+  cursor: pointer;
 }
+
+button:disabled,
+button[disabled]{
+  border: 2px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 
 h1 {
   font-size: 18pt;

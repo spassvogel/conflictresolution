@@ -9,12 +9,12 @@ import IntroModal from './components/introModal/introModal';
 function App() {
 
   const [intro, setIntro] = useState(true);
-  const [avatar, setAvatar] = useState("avatar1");
+  const [avatar, setAvatar] = useState<string>();
 
   return (
     <>
       { intro && (<IntroModal selectedAvatar={avatar} onClose={() => {setIntro(false)}} onChangeAvatar={setAvatar}/>)}
-      { !intro && <Main content={content} avatar={avatar}/> }
+      { !intro && avatar && <Main content={content} avatar={avatar}/> }
     </>  
   )
 };

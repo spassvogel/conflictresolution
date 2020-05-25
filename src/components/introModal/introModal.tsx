@@ -3,13 +3,10 @@ import ReactModal from 'react-modal';
 import './introModal.css';
 import { Stage, Sprite, Container } from '@inlet/react-pixi';
 import {OutlineFilter} from '@pixi/filter-outline';
-import {ReflectionFilter} from '@pixi/filter-reflection';
-import { gsap } from 'gsap'
-import { PixiPlugin } from 'gsap/all';
 import * as PIXI from 'pixi.js';
 
 interface Props {
-  selectedAvatar: string;
+  selectedAvatar?: string;
   onClose: () => void;
   onChangeAvatar: (name: string) => void;
 }
@@ -73,7 +70,12 @@ const IntroModal = (props: Props) => {
           </Stage>
         </div>
         <div className="footer">
-          <button onClick={props.onClose}>Start</button>
+          <button 
+            onClick={props.onClose} 
+            disabled={props.selectedAvatar === undefined}
+          >
+            Start
+          </button>
         </div>
       </div>
     </ReactModal>  
