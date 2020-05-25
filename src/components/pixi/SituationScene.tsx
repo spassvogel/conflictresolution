@@ -1,12 +1,18 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Sprite, Container, Stage } from '@inlet/react-pixi';
 import { SceneElement, SceneElementType } from '../../common/constants';
+import * as PIXI from 'pixi.js';
 
 interface Props {
   sceneConfig: SceneElement[];
   avatar: string;
 }
 
+
+if (process.env.NODE_ENV === "development") {
+  // @ts-ignore
+  window.__PIXI_INSPECTOR_GLOBAL_HOOK__ && window.__PIXI_INSPECTOR_GLOBAL_HOOK__.register({ PIXI: PIXI });
+}
 
 const SituationScene = (props: Props & React.ComponentProps<typeof Container>) => {
   // const ref = useRef<PIXI.Sprite>(null);

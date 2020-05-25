@@ -79,7 +79,8 @@ export interface ConflictReaction {
 
 export enum SequenceItemType {
   caption = 'caption',
-  speech = 'speech'
+  speech = 'speech',
+  image = 'image',  // image, no speech
 }
 
 export interface SequenceItem {

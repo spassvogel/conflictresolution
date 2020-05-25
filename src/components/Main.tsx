@@ -15,10 +15,10 @@ import BigRacks from "./pixi/BigRacks";
 PixiPlugin.registerPIXI(PIXI);
 gsap.registerPlugin(PixiPlugin);
 
-if (process.env.NODE_ENV === "development") {
-  // @ts-ignore
-  window.__PIXI_INSPECTOR_GLOBAL_HOOK__ && window.__PIXI_INSPECTOR_GLOBAL_HOOK__.register({ PIXI: PIXI });
-}
+// if (process.env.NODE_ENV === "development") {
+//   // @ts-ignore
+//   window.__PIXI_INSPECTOR_GLOBAL_HOOK__ && window.__PIXI_INSPECTOR_GLOBAL_HOOK__.register({ PIXI: PIXI });
+// }
 
 interface Props {
   content: AnyContent[];

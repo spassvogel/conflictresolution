@@ -83,22 +83,24 @@ const ConflictModalContent = (props: Props) => {
     inset.removeAttribute('style');
 
     // Build timeline
-    let balloonPos = 0;
     balloonText.innerHTML = content.sequence[0].text;
 
     // All the sequences
     content.sequence.forEach((sequenceItem, index) => {
-      balloonPos = sequenceItem.balloonArrowPos || balloonPos;  // 
 
       const onStart = () => {
-        if (balloonRef.current)
-          balloonRef.current!.className = `balloon ${sequenceItem.type}`;
-        
-        balloonText.innerHTML = sequenceItem.text;
-        
         if (balloonArrowRef.current) {
           balloonArrowRef.current.style.visibility = sequenceItem.type === SequenceItemType.speech ? 'visible' : 'hidden';
-          balloonArrowRef.current.style.right = `${balloonPos}%`;  
+        }
+        if (sequenceItem.type !== SequenceItemType.image) {
+          if (balloonRef.current) {
+            balloonRef.current!.className = `balloon ${sequenceItem.type}`;
+          }
+          balloonText.innerHTML = sequenceItem.text;
+          
+          if (sequenceItem.balloonArrowPos) {
+            balloonArrowRef.current!.style.right = `${sequenceItem.balloonArrowPos}%`;  
+          }
           positionArrow();
         }
 
@@ -107,12 +109,20 @@ const ConflictModalContent = (props: Props) => {
         }
       }
 
+      let duration = 0;
+      if (sequenceItem.type === SequenceItemType.image) {
+        duration = 2 / SPEED_MODIFIER;
+        balloonRef.current!.style.visibility = 'visible';
+      } else {
+        duration = sequenceItem.text.length * 0.025 / SPEED_MODIFIER;
+      }
+
       tl.add(`seq-${index}`);
       if (sequenceItem.type === SequenceItemType.caption) {
         tl.to(balloonText, {
           onStart,
           delay: 0 / SPEED_MODIFIER,
-          duration: sequenceItem.text.length * 0.025 / SPEED_MODIFIER,
+          duration,
           text: {
             value: sequenceItem.text, 
             oldClass: "hidden",
@@ -125,7 +135,7 @@ const ConflictModalContent = (props: Props) => {
         tl.to(balloonText, {
           onStart,
           delay: 3 / SPEED_MODIFIER,
-          duration: sequenceItem.text.length * 0.025 / SPEED_MODIFIER,
+          duration,
           ease: Linear.easeNone,
         });
       }

@@ -101,7 +101,7 @@
 }, {
   "position": [2135, 1039],
   "type": "conflict",
-  "header": "Scenario2 (TODO: better name)",
+  "header": "Jay and Maya",
   "content": {
     "scene": [{
       "image":  "images/conflict/cantina/intro.png"
@@ -119,19 +119,31 @@
         "type": "avatar",
         "position": [424, 155],
         "pose": "closeup"
-      }],
-      "balloonClass": "balloon-69"
+      }]
     }, {
       "type": "speech",
       "text": "I had left some food in the fridge and found it missing! What gave Jay the right to discard it? People should respect others’ personal belongings..",
-      "situationImage": "images/conflict/cantina-0c.png",
-      "balloonClass": "balloon-75"      
+      "balloonArrowPos": 20,
+      "scene": [{
+        "image":  "images/conflict/cantina/maya-sitting.png"
+      }, {
+        "type": "avatar",
+        "position": [424, 155],
+        "pose": "closeup"
+      }, {
+        "image":  "images/conflict/cantina/table.png",
+        "position": [228, 490]
+      }]
     }, {
-      "type": "speech",
-      "text": "",
-      "situationImage": "images/conflict/cantina-0d.png"
+      "type": "image",
+      "scene": [{
+        "type": "avatar",
+        "position": [969, 74],
+        "pose": "front"
+      }, {
+        "image": "images/conflict/cantina/jay-and-maya.png"
+      }]
     }],
-    "situationBalloonClass": "balloon-44",
     "description": "Jay and Maya are not speaking to each other. How should you handle this situation?",
     "options": [
       "Avoid confrontation as long as it doesn’t affect their productivity",
@@ -141,18 +153,18 @@
     "reactions": [{
       "confirmText": "Are you sure you want to avoid any confrontations?",
       "correct": false,
-      "text": "It’s not good to let conflicts fester in the workplace. It may not affect their productivity, but it might affect the general environment at work and there’s a real chance that one or both individuals may engage in passive-aggressive behaviour.",
-      "situationImage": "images/conflict/kumar-1.png"
+      "text": "It’s not good to let conflicts fester in the workplace. \nIt may not affect their productivity, but it might affect the general environment at work and there’s a real chance that one or both individuals may engage in passive-aggressive behaviour.",
+      "scene": []
     }, {
       "confirmText": "Are you sure you want to talk to only Maya?",
       "correct": false,
-      "text": "Research has shown that telling people not to take conflicts personally doesn’t work. Regardless of such a disclaimer, Maya is very likely to hold a grudge against Jay that will ultimately affect their working relationship.",
-      "situationImage": "images/conflict/kumar-2.svg"
+      "text": "Research has shown that telling people not to take conflicts personally doesn’t work. \nRegardless of such a disclaimer, Maya is very likely to hold a grudge against Jay that will ultimately affect their working relationship.",
+      "scene": []
     }, {
       "confirmText": "Are you sure you want to spend time on discussing such a minor issue?",
       "correct": true,
       "text": "The sooner you address an issue and allow employees to engage in a dialogue, the sooner they can go back to a healthy working relationship and remain productive and engaged. \nAsk both parties to share their perspectives and invite them to come up with ideas for a resolution that may include apologies or changes in behaviour (labelling food containers, in this case, for instance) to prevent similar disputes from recurring.",
-      "situationImage": "images/conflict/kumar-3.svg"
+      "scene": []
     }]
   }
 }]
