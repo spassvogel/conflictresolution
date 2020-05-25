@@ -22,17 +22,17 @@ if (process.env.NODE_ENV === "development") {
 
 interface Props {
   content: AnyContent[];
+  avatar: string;
 }
 
 const Main = (props: Props) => {
-  const { content } = props;
+  const { content, avatar } = props;
   const viewportRef = useRef<PixiViewport>(null);
   const [selectedSituation, setSelectedSituation] = useState<number | null>(null);
   const [answers, setAnswers] = useState<number[]>([]);
 
   const worldWidth = 3497;
   const worldHeight = 1419;
-  //const scaleFactor = 1.86875; //scaled the original map up
 
   const [canvasWidth, setCanvasWidth] = useState(1200);
   const [canvasHeight, setCanvasHeight] = useState(600);
@@ -137,7 +137,8 @@ const Main = (props: Props) => {
     { selectedContent && (
       <ContentModal 
         content={selectedContent} 
-        onClose={handleClose} 
+        onClose={handleClose}
+        avatar={avatar}
         setCorrectAnswer={handleCorrectAnswer}
         selectedAnswer={(answers[selectedSituation!])}
       /> 

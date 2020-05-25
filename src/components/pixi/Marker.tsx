@@ -4,7 +4,7 @@ import * as PIXI from 'pixi.js';
 import { gsap } from 'gsap'
 
 
-const CAN_DRAG = true;
+const CAN_DRAG = false;
 interface Props {
     position?: PIXI.Point;
     delay?: number; // Wait this long before showing

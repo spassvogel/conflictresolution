@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import { ConflictContent } from '../../common/constants';
+import { ConflictContent, SequenceItemType, SceneElement } from '../../common/constants';
 import { gsap, Linear, Bounce, Sine } from 'gsap'
 import { TextPlugin } from 'gsap/all';
 import "./conflictModal.css";
@@ -11,12 +11,13 @@ const SPEED_MODIFIER = 1; // for debugging
 
 interface Props {
   content: ConflictContent;
+  avatar: string;
   setCorrectAnswer: (index: number) => void;
   selectedAnswer?: number; // When answer has been set correctly before
 }
 
 const ConflictModalContent = (props: Props) => {
-  const {content, selectedAnswer = null} = props;
+  const {content, avatar, selectedAnswer = null} = props;
   const [selectedOption, selectOption] = useState<number | null>(selectedAnswer);
   // Reaction based on current selection
   const reaction = useMemo(() => {
@@ -25,8 +26,9 @@ const ConflictModalContent = (props: Props) => {
   }, [props.content.reactions, selectedOption]);
   
   const [confirmed, setConfirmed] = useState(selectedAnswer != null);
-  const [situationImage, setSituationImage] = useState<string>(reaction?.situationImage || content.situationImage);
+  const [sceneConfig, setSceneConfig] = useState<SceneElement[]>(reaction?.scene || props.content.scene);
   const balloonRef = useRef<HTMLDivElement>(null);
+  const balloonArrowRef = useRef<HTMLDivElement>(null);
   const balloonTextRef = useRef<HTMLSpanElement>(null);
   const insetRef = useRef<HTMLDivElement>(null);
   const ref = useRef<HTMLDivElement>(null);
@@ -81,37 +83,55 @@ const ConflictModalContent = (props: Props) => {
     inset.removeAttribute('style');
 
     // Build timeline
-    balloonText.innerHTML =  content.sequence[0].text;
-    let sequenceBalloonCls = '';
-    
+    let balloonPos = 0;
+    balloonText.innerHTML = content.sequence[0].text;
 
     // All the sequences
     content.sequence.forEach((sequenceItem, index) => {
-      sequenceBalloonCls = sequenceItem.balloonClass || sequenceBalloonCls;  // if specified use balloonClass, otherwise use one of previous sequence    
-      const balloonCls = `balloon ${sequenceItem.type} ${sequenceBalloonCls}`;
+      balloonPos = sequenceItem.balloonArrowPos || balloonPos;  // 
 
       const onStart = () => {
         if (balloonRef.current)
-          balloonRef.current!.className = balloonCls;
+          balloonRef.current!.className = `balloon ${sequenceItem.type}`;
         
-        if (sequenceItem.situationImage) {
-          setSituationImage(sequenceItem.situationImage);
+        balloonText.innerHTML = sequenceItem.text;
+        
+        if (balloonArrowRef.current) {
+          balloonArrowRef.current.style.visibility = sequenceItem.type === SequenceItemType.speech ? 'visible' : 'hidden';
+          balloonArrowRef.current.style.right = `${balloonPos}%`;  
+          positionArrow();
+        }
+
+        if (sequenceItem.scene) {
+          setSceneConfig(sequenceItem.scene);
         }
       }
-      //tl.to(, )
 
-      tl.to(balloonText, {
-        onStart,
-        delay: (index > 0 ? 3 : 0) / SPEED_MODIFIER,
-        duration: sequenceItem.text.length * 0.025 / SPEED_MODIFIER,
-        text: {
-          value: sequenceItem.text, 
-          oldClass: "hidden",
-          newClass: "visible"
-        },
-        ease: Linear.easeNone,
-      }, `seq-${index}`);  
+      tl.add(`seq-${index}`);
+      if (sequenceItem.type === SequenceItemType.caption) {
+        tl.to(balloonText, {
+          onStart,
+          delay: 0 / SPEED_MODIFIER,
+          duration: sequenceItem.text.length * 0.025 / SPEED_MODIFIER,
+          text: {
+            value: sequenceItem.text, 
+            oldClass: "hidden",
+            newClass: "visible"
+          },
+          ease: Linear.easeNone,
+        });
+      }
+      else {
+        tl.to(balloonText, {
+          onStart,
+          delay: 3 / SPEED_MODIFIER,
+          duration: sequenceItem.text.length * 0.025 / SPEED_MODIFIER,
+          ease: Linear.easeNone,
+        });
+      }
     });
+
+    tl.add(`seq-${content.sequence.length}`);
 
     // Fade the balloon out
     tl.to(balloonRef.current, {
@@ -126,6 +146,9 @@ const ConflictModalContent = (props: Props) => {
       onStart: () => {
         if (nextButtonRef.current) 
           nextButtonRef.current!.style.display = "none";
+
+        if (balloonArrowRef.current)
+          balloonArrowRef.current.style.visibility = 'hidden';
       },
       duration: .5,
       left: 0,
@@ -133,10 +156,23 @@ const ConflictModalContent = (props: Props) => {
     }, "-=1");
   }, [content.sequence]);
 
+  const positionArrow = () => {
+    if (!balloonRef.current || !balloonArrowRef.current) return;
+    const rect = balloonRef.current.getBoundingClientRect();
+    balloonArrowRef.current.style.top = `${balloonRef.current.offsetTop + rect.height}px`;
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', positionArrow);
+    return () => {
+      window.removeEventListener('resize', positionArrow);
+    }
+  }, []);
+
   const handleSkipSequenceStep = () => {
     if (!sequence.current) return;
-    const currentIndex = parseInt(sequence.current.currentLabel().substring('seq-'.length), 2);
-    sequence.current.seek(`seq-${currentIndex+1}`);
+    const currentIndex = parseInt(sequence.current.currentLabel().substring('seq-'.length));
+    sequence.current.seek(`seq-${currentIndex+1}`, false);
   }
 
   useEffect(() => {
@@ -150,14 +186,15 @@ const ConflictModalContent = (props: Props) => {
   }, [content.sequence, playSequence, selectedAnswer]);
 
   const handleReplay = () => {
-    setSituationImage(content.situationImage);
+    setSceneConfig(props.content.scene);
     selectOption(null);
+    setConfirmed(false);
     playSequence();
   }
 
   const handleYes = () => {
     setConfirmed(true);
-    setSituationImage(reaction!.situationImage);
+    setSceneConfig(reaction!.scene);
 
     if (reaction!.correct) {
       sound.play('correct');
@@ -224,8 +261,7 @@ const ConflictModalContent = (props: Props) => {
   return (
     <div className="modal-content modal-conflict" ref={ref}>
       <div className="situation">
-        {/* <div className="situation-image" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/${situationImage})`}} /> */}
-        { props.content.scene && <SituationScene sceneConfig={props.content.scene} />}
+        { props.content.scene && <SituationScene sceneConfig={sceneConfig} avatar={avatar}/>}
         <div className="inset" ref={insetRef}>
           <p>
             {content.description}
@@ -238,6 +274,7 @@ const ConflictModalContent = (props: Props) => {
         <div className={`balloon`} ref={balloonRef}>
           <span ref={balloonTextRef}></span>
         </div>
+        <div className="balloon-arrow" ref={balloonArrowRef} style={{visibility: 'hidden'}}/>
       </div>
       { !selectedOption && (
         <div className="controls-bottomright">

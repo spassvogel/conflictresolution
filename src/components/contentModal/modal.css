@@ -19,6 +19,8 @@
   border-radius: 16px;
   padding: 16px;
   background: white;
+
+  animation: pop 0.5s ease-in-out 1, fadein .2s linear; 
 }
 
 .modal-content {
@@ -28,23 +30,7 @@
   height: 100%;
   position: relative;
 }
-  /* position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding-bottom: 56.25%;  
-  width: calc(100% - 40px);
-  border: 1px solid rgb(204, 204, 204);
-  background: rgb(255, 255, 255);
-  overflow: auto;
-  border-radius: 8px;
-  outline: none;
-  padding: 20px;
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
 
-  animation: pop 0.5s ease-in-out 1, fadein .2s linear; */
-/* } */
 
 
 @keyframes pop {
@@ -75,9 +61,6 @@
   align-items: center;
 }
 
-.modal .control .warning span {
-}
-
 .modal .control button {
   margin-right: 16px;
 }
@@ -106,7 +89,7 @@
 
   position: absolute;
   right: 0;
-  bottom: 2px;
+  bottom: 4px;
   background: url(/conflictresolution/images/ui/close.png);
   cursor: pointer;
   height: 100%;

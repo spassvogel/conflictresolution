@@ -10,8 +10,10 @@
       "position": [784, 175]
     }, {
       "type": "avatar",
-      "image":  "images/conflict/kumar/dev.png",
-      "position": [784, 175]
+      "position": [1124, 155],
+      "pose": "angle",
+      "scale": 0.85,
+      "flipped": true
     }],
     "situationImage": "images/conflict/kumar-0a.png",
     "sequence": [{
@@ -20,20 +22,45 @@
     }, {
       "type": "speech",
       "text": "Kumar and I are scheduled for the same warehouse shift.",
-      "balloonClass": "balloon-69"
+      "balloonArrowPos": 33
     }, {
       "type": "speech",
       "text": "He regularly plays games on his cell phone while I pick the orders.",
-      "situationImage": "images/conflict/kumar-0b.png"
+      "scene": [{
+        "image":  "images/conflict/kumar/background.png"
       }, {
-      "type": "speech",
-      "text": "I have to do the bulk of the work while he plays.",
-      "situationImage": "images/conflict/kumar-0a.png"
+        "image":  "images/conflict/kumar/dev.png",
+        "position": [784, 175]
       }, {
+        "image":  "images/conflict/kumar/kumar-playing.png",
+        "position": [112, 77]
+      }, {
+        "type": "avatar",
+        "image":  "images/conflict/kumar/dev.png",
+        "position": [1124, 155],
+        "pose": "angle",
+        "scale": 0.85,
+        "flipped": true
+      }]
+    }, {
       "type": "speech",
-      "text": "I've asked him on four different occasions to help me, but he doesn't listen to me."
+      "text": "I have to do the bulk of the work while he plays."
+    }, {
+      "type": "speech",
+      "text": "I've asked him on four different occasions to help me, but he doesn't listen to me.",
+      "scene": [{
+        "image":  "images/conflict/kumar/background.png"
+      }, {
+        "image":  "images/conflict/kumar/dev-handsup.png",
+        "position": [758, 175]
+      }, {
+        "type": "avatar",
+        "position": [1124, 155],
+        "pose": "angle",
+        "scale": 0.85,
+        "flipped": true
+      }]
     }],
-    "situationBalloonClass": "balloon-44",
     "description": "You’ve already reprimanded Kumar in the past about his slack behaviour. What kind of disciplinary action should you take against him now?",
     "options": [
       "Send Kumar a notification of termination",
@@ -43,18 +70,32 @@
     "reactions": [{
       "confirmText": "Are you sure you want to terminate Kumar without giving him a chance to take responsibility?",
       "correct": false,
-      "text": "You’ve fired Kumar without allowing him a chance to take responsibility. This has negatively affected the morale of the employees. Workers feel that your response was disproportionate to Kumar’s offence and now feel discouraged and worried about their own job security.",
-      "situationImage": "images/conflict/kumar-1.png"
+      "text": "You’ve fired Kumar without allowing him a chance to take responsibility. This has negatively affected the morale of the employees. \nWorkers feel that your response was disproportionate to Kumar’s offence and now feel discouraged and worried about their own job security.",
+      "scene": [{
+        "image":  "images/conflict/kumar/kumar-fired.png"
+      }]
     }, {
       "confirmText": "Are you sure you want to embarrass Kumar like that?",
       "correct": false,
-      "text": "You gave Kumar a dressing down in front of others. He resents you now as he has become a laughing stock for a group of warehouse workers. He wants to quit and his friends are not happy about how things panned out either.",
-      "situationImage": "images/conflict/kumar-2.svg"
+      "text": "You gave Kumar a dressing down in front of others. He resents you now as he has become a laughing stock for a group of warehouse workers. \nHe wants to quit and his friends are not happy about how things panned out either.",
+      "scene": [{
+        "image":  "images/conflict/kumar/kumar-humiliated.png"
+      }, {
+        "type": "avatar",
+        "position": [824, 125],
+        "pose": "angry"
+      }]
     }, {
       "confirmText": "Are you sure you want to give Kumar a second chance?",
       "correct": true,
       "text": "You did the right thing by giving Kumar a chance to take responsibility and become more professional. You made him and—by extension—others in the team feel supported and laid the ground for cultivating a more trusting relationship with the employees.",
-      "situationImage": "images/conflict/kumar-3.svg"
+      "scene": [{
+        "image":  "images/conflict/kumar/kumar-working.png"
+      }, {
+        "type": "avatar",
+        "position": [824, 125],
+        "pose": "angle"
+      }]
     }]
   }
 }, {
@@ -62,14 +103,23 @@
   "type": "conflict",
   "header": "Scenario2 (TODO: better name)",
   "content": {
-    "situationImage": "images/conflict/cantina-0a.png",
+    "scene": [{
+      "image":  "images/conflict/cantina/intro.png"
+    }],
     "sequence": [{
       "type": "caption",
       "text": "You’re having a meal in the break room when you hear some gossip about Maya shouting at Jay the day before. You see Jay and Maya separately and ask them what had happened."
     }, {
       "type": "speech",
       "text": "I clean out the shared refrigerator regularly and accidentally threw out Maya’s leftovers yesterday. She absolutely went off at me for that! No one appreciates the effort I put in to keep this place clean.",
-      "situationImage": "images/conflict/cantina-0b.png",
+      "balloonArrowPos": 27,
+      "scene": [{
+        "image":  "images/conflict/cantina/jay-stockroom.png"
+      }, {
+        "type": "avatar",
+        "position": [424, 155],
+        "pose": "closeup"
+      }],
       "balloonClass": "balloon-69"
     }, {
       "type": "speech",

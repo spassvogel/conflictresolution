@@ -13,8 +13,10 @@ interface Props {
   onClose: () => void;
   onChangeAvatar: (name: string) => void;
 }
+
 const stageHeight = 720;
 const stageWidth = 1280;
+
 const IntroModal = (props: Props) => {
   const {selectedAvatar} = props;
 
@@ -22,7 +24,11 @@ const IntroModal = (props: Props) => {
     const filters = selectedAvatar === name ? [new OutlineFilter(4, 0xffcc00)] : [];
     const scale = selectedAvatar === name ? .7 : .6;
     const zIndex = selectedAvatar === name ? 2 : 0;
-    return <Sprite image={`${process.env.PUBLIC_URL}/images/avatars/${name}.png`} 
+
+    const image = `${process.env.PUBLIC_URL}/images/avatars/${getAvatarImage(name)}.png`;
+
+    return <Sprite 
+      image={image} 
       filters={filters} 
       anchor={[0.5, 0.5]}
       scale={scale}
@@ -72,6 +78,19 @@ const IntroModal = (props: Props) => {
       </div>
     </ReactModal>  
     )
+}
+
+const getAvatarImage = (avatar: string) => {
+  switch (avatar) {
+    case "avatar1":
+      return "avatar1-angle";
+    case "avatar2":
+      return "avatar2-front";
+    case "avatar3":
+      return "avatar3-front";
+    case "avatar4":
+      return "avatar4-angle";
+  }
 }
 
 export default IntroModal;

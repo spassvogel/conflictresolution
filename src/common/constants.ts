@@ -43,9 +43,7 @@ export interface ConflictContent {
   description: string;
   sequence: SequenceItem[];
   scene: SceneElement[];
-  situationImage: string;
   situationSpeech: string;
-  situationBalloonClass?: string;
   options: string[];
   reactions: ConflictReaction[];
 }
@@ -54,6 +52,8 @@ export interface SceneElement {
   image?: string;
   type?: SceneElementType;
   position?: [number, number];
+  scale?: number;
+  flipped: boolean;
   pose: AvatarPose;
 }
 
@@ -65,13 +65,14 @@ export enum SceneElementType {
 export enum AvatarPose {
   angle = "angle",
   front = "front",
-  side = "side"
+  side = "side",
+  angry = "angry"
 }
 
 export interface ConflictReaction { 
   correct: boolean, 
   text: string, 
-  situationImage: string, 
+  scene: SceneElement[]; 
   confirmText: string, 
   confirmImage?: string 
 }
@@ -84,6 +85,7 @@ export enum SequenceItemType {
 export interface SequenceItem {
   type: SequenceItemType,
   text: string,
-  balloonClass?: string;
-  situationImage?: string;
+  balloonArrowPos?: number;
+  
+  scene?: SceneElement[]; // optional override
 }

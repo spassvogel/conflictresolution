@@ -26,10 +26,8 @@ body {
 
 button {
   font-size: 16pt;
-  padding: 8px;
-  padding-right: 16px;
-  padding-left: 16px;
-    margin-right: 8px;
+  padding: 8px 16px 10px 16px;
+  margin-right: 8px;
   background: #009FE3;
   color: #FFF;
   border: 0;

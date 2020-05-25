@@ -109,7 +109,8 @@
 }
   
 .modal .modal-content.modal-conflict .balloon {
-  position: relative;
+  position: absolute;
+  right: 16px;
   background-color: #fff;
   padding: 1.125em 1.5em;
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
@@ -124,7 +125,7 @@
   border-radius: 16px;
 }
 
-.modal .modal-content.modal-conflict .balloon span {
+.modal .modal-content.modal-conflict .balloon.caption span {
   visibility: hidden;
   /** will be shown via gsap animation */
 }
@@ -133,35 +134,15 @@
   visibility: visible;
 }
 
-.modal .modal-content.modal-conflict .balloon.speech::before {
-  content: '';
+.modal .modal-content.modal-conflict .balloon-arrow {
+  background: url("/conflictresolution/images/ui/text-balloon-arrow.png");
+  width: 16px;
+  height: 32px;
   position: absolute;
-  width: 0;
-  height: 0;
-  top: 100%;
-  left: 75%;
-  border: 32px solid transparent;
-  border-bottom: none;
-
-  border-top-color: #fff;
-  filter: blur(.1px);
-  transform: translate(-50%, -10px) rotate(-14deg) scale(0.25, 1);
+  right: 33%;
+  margin-top: -2px;
 }
 
-
-@media only screen and (min-width: 800px) {
-  /* Bigger speech arrow in medium screens */
-  .modal .modal-content.modal-conflict .balloon.speech::before { 
-    border-width: 32px;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  /* Biggest speech arrow in large screens */
-  .modal .modal-content.modal-conflict .balloon.speech::before { 
-    border-width: 64px;
-  }
-}
 
 .modal .modal-content.modal-conflict .balloon.balloon-44::before {
   left: 44%;
