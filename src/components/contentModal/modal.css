@@ -19,7 +19,8 @@
   border-radius: 16px;
   padding: 16px;
   background: white;
-  max-width: 1200px;
+  max-width: 1280px;
+  max-height: 720px;
 
   animation: pop 0.5s ease-in-out 1, fadein .2s linear; 
 }
@@ -28,7 +29,8 @@
   grid-column: span 16;
   grid-row: span 9;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
+  max-height: 630px;
   height: 100%;
   position: relative;
 }
@@ -82,7 +84,7 @@
   position: relative;
   z-index: 2;
   padding-left: 16px;
-  max-width: 1200px;
+  max-width: 1264px;
 }
 
 .modal-close {
@@ -90,7 +92,9 @@
 
   position: absolute;
   right: 0;
-  bottom: 4px;
+  bottom: 50%;
+  transform: translateY(50%);
+  margin-bottom: 6px;
   background: url(/conflictresolution/images/ui/close.png);
   cursor: pointer;
   height: 100%;

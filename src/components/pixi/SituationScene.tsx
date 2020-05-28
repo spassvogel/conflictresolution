@@ -31,7 +31,7 @@ const SituationScene = (props: Props & React.ComponentProps<typeof Container>) =
           <Sprite 
             image={`${process.env.PUBLIC_URL}/images/avatars/${avatar}-${sceneElement.pose || "front"}.png`} 
             key="avatar" 
-            position={sceneElement.position}
+            position={sceneElement.position || [0, 0]}
             scale={scale}
             anchor={[0.5, 0]}
           />
@@ -41,7 +41,7 @@ const SituationScene = (props: Props & React.ComponentProps<typeof Container>) =
           <Sprite 
             image={`${process.env.PUBLIC_URL}/${sceneElement.image}`} 
             key={sceneElement.image} 
-            position={sceneElement.position}
+            position={sceneElement.position || [0, 0]}
           />
         )
     }

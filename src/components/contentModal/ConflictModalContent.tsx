@@ -80,6 +80,7 @@ const ConflictModalContent = (props: Props) => {
     // Reset
     if (nextButtonRef.current) nextButtonRef.current!.removeAttribute('style');
     balloonRef.current!.removeAttribute('style');
+    balloonArrowRef.current!.removeAttribute('style');
     inset.removeAttribute('style');
 
     // Build timeline
@@ -107,37 +108,46 @@ const ConflictModalContent = (props: Props) => {
         if (sequenceItem.scene) {
           setSceneConfig(sequenceItem.scene);
         }
-      }
-
-      let duration = 0;
-      if (sequenceItem.type === SequenceItemType.image) {
-        duration = 2 / SPEED_MODIFIER;
-        balloonRef.current!.style.visibility = 'visible';
-      } else {
-        duration = sequenceItem.text.length * 0.025 / SPEED_MODIFIER;
-      }
+      } 
 
       tl.add(`seq-${index}`);
-      if (sequenceItem.type === SequenceItemType.caption) {
-        tl.to(balloonText, {
-          onStart,
-          delay: 0 / SPEED_MODIFIER,
-          duration,
-          text: {
-            value: sequenceItem.text, 
-            oldClass: "hidden",
-            newClass: "visible"
-          },
-          ease: Linear.easeNone,
-        });
-      }
-      else {
-        tl.to(balloonText, {
-          onStart,
-          delay: 3 / SPEED_MODIFIER,
-          duration,
-          ease: Linear.easeNone,
-        });
+      switch (sequenceItem.type) {
+        case SequenceItemType.caption:
+          tl.to(balloonText, {
+            onStart,
+            delay: 0 / SPEED_MODIFIER,
+            duration: sequenceItem.text.length * 0.025 / SPEED_MODIFIER,
+            text: {
+              value: sequenceItem.text, 
+              oldClass: "hidden",
+              newClass: "visible"
+            },
+            ease: Linear.easeNone,
+          });
+          break;
+        case SequenceItemType.speech:
+          tl.to(balloonText, {
+            onStart,
+            delay: 3 / SPEED_MODIFIER,
+            duration: sequenceItem.text.length * 0.025 / SPEED_MODIFIER,
+            ease: Linear.easeNone,
+          });
+          break;
+        case SequenceItemType.image:
+          tl.to(balloonRef.current, {
+            onStart,
+            delay: 3 / SPEED_MODIFIER,
+            duration: .5,
+            autoAlpha: 0,
+            ease: Linear.easeNone,
+          });
+          tl.to(balloonArrowRef.current, {
+            delay: 3 / SPEED_MODIFIER,
+            duration: .5,
+            autoAlpha: 0,
+            ease: Linear.easeNone,
+          }, "-=.5");
+          break;
       }
     });
 
@@ -270,7 +280,7 @@ const ConflictModalContent = (props: Props) => {
 
   return (
     <div className="modal-content modal-conflict" ref={ref}>
-      <div className="situation">
+      <div className="situation" onClick={handleSkipSequenceStep}>
         { props.content.scene && <SituationScene sceneConfig={sceneConfig} avatar={avatar}/>}
         <div className="inset" ref={insetRef}>
           <p>
