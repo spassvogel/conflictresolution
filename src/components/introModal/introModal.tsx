@@ -55,8 +55,8 @@ const IntroModal = (props: Props) => {
         <div className="avatar-selection">
           <Stage width={stageWidth} height={stageHeight} options={{ backgroundColor: 0xffffff}}>
             <Sprite image={`${process.env.PUBLIC_URL}/images/avatars/background.png`} 
-              filters={[new PIXI.filters.BlurFilter(4)]} 
-              scale={.95} 
+              // filters={[new PIXI.filters.BlurFilter(4)]} 
+              scale={1} 
               anchor={.5}
               y={stageHeight / 2}
               x={stageWidth / 2}
