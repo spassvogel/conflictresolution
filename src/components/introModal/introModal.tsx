@@ -48,10 +48,7 @@ const IntroModal = (props: Props) => {
     >
       <div className="modal-content">
         <h1 className="header">Conflict situations</h1>
-        <p className="subtext">
-          You’re a warehouse manager at Express Warehousing Ltd. 
-          Choose an avatar.       
-        </p>
+
         <div className="avatar-selection">
           <Stage width={stageWidth} height={stageHeight} options={{ backgroundColor: 0xffffff}}>
             <Sprite image={`${process.env.PUBLIC_URL}/images/avatars/background.png`} 
@@ -68,14 +65,18 @@ const IntroModal = (props: Props) => {
               { renderAvatar('avatar4', 3) }
             </Container>
           </Stage>
-        </div>
-        <div className="footer">
-          <button 
-            onClick={props.onClose} 
-            disabled={props.selectedAvatar === undefined}
-          >
-            Start
-          </button>
+          <div className="footer">
+            <p className="subtext">
+              You’re a warehouse manager at Express Warehousing Ltd. 
+              Choose an avatar.       
+            </p>
+            <button 
+              onClick={props.onClose} 
+              disabled={props.selectedAvatar === undefined}
+            >
+              Start
+            </button>
+          </div>
         </div>
       </div>
     </ReactModal>  

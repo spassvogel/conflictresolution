@@ -5,6 +5,11 @@
   bottom: inherit;
   width: 80%; */
   overflow: hidden;
+  position: relative;
+}
+
+.modal-intro .modal-content {
+  position: initial;
 }
 
 .modal-intro-overlay {
@@ -25,13 +30,7 @@
   color: rgba(51,77,128,1);
 }
 
-.modal-intro .subtext {
-  position: absolute;
-  left: 50%;
-  bottom: 60px;
-  transform: translateX(-50%);
-  color: #14508b;
-}
+
 
 @media only screen and (max-width: 600px) {
   .modal-intro .subtext {
@@ -53,7 +52,25 @@
 .modal-intro .footer {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, .8);
+}
+
+.modal-intro .footer .subtext {
+  /* position: absolute;
+  left: 50%;
+  bottom: 60px;
+  transform: translateX(-50%); */
+  color: #14508b;
+}
+
+.modal-intro .footer button {
+  margin-bottom: 32px;
+  align-self: flex-start;
+  margin-left: auto;
+  margin-right: auto;
 }

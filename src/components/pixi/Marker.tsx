@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, ComponentProps } from 'react';
 import { Sprite } from '@inlet/react-pixi';
 import * as PIXI from 'pixi.js';
 import { gsap } from 'gsap'
@@ -11,7 +11,7 @@ interface Props {
     bounce?: boolean;
 }
 
-const Marker = (props: Props & React.ComponentProps<typeof Sprite>) => {
+const Marker = (props: Props & ComponentProps<typeof Sprite>) => {
     const ref = useRef<PIXI.Sprite>(null);
     const data = useRef<PIXI.interaction.InteractionData>();
     const [position, setPosition] = useState<PIXI.Point>(props.position || new PIXI.Point());

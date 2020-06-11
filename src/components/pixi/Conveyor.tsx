@@ -1,11 +1,11 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, ComponentProps } from 'react';
 import { Sprite, Container, useApp } from '@inlet/react-pixi';
 import * as PIXI from 'pixi.js';
 import { gsap, Linear } from 'gsap'
 
 const boxImagePath = `${process.env.PUBLIC_URL}/images/map/conveyor-box.png`;
 
-const Conveyor = (props: React.ComponentProps<typeof Container>) => {
+const Conveyor = (props: ComponentProps<typeof Container>) => {
   const boxContainerRef = useRef<PIXI.Container>(null);
   const [boxTexture, setBoxTexture] = useState<PIXI.Texture>();
   const app = useApp();

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, ComponentProps } from 'react';
 import { Sprite, Container, Stage } from '@inlet/react-pixi';
 import { SceneElement, SceneElementType } from '../../common/constants';
 import * as PIXI from 'pixi.js';
@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === "development") {
   window.__PIXI_INSPECTOR_GLOBAL_HOOK__ && window.__PIXI_INSPECTOR_GLOBAL_HOOK__.register({ PIXI: PIXI });
 }
 
-const SituationScene = (props: Props & React.ComponentProps<typeof Container>) => {
+const SituationScene = (props: Props & ComponentProps<typeof Container>) => {
   // const ref = useRef<PIXI.Sprite>(null);
   // const data = useRef<PIXI.interaction.InteractionData>();
   // const [position, setPosition] = useState<PIXI.Point>(props.position || new PIXI.Point());

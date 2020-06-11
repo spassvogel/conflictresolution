@@ -1,9 +1,9 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, ComponentProps } from 'react';
 import { Sprite, Container } from '@inlet/react-pixi';
 import Forklift, { Orientation } from './Forklift';
 import { gsap, Linear } from 'gsap'
 
-const BigRacks = (props: React.ComponentProps<typeof Container>) => {
+const BigRacks = (props: ComponentProps<typeof Container>) => {
   const forkliftRef = useRef<PIXI.Container>(null);
   const [forkliftOrientation, setForkliftOrientation] = useState<Orientation>(Orientation.southWest);
   const [forkliftLane, setForkliftLane] = useState<number>(1); // lane 1 is furthest away, lane 2 is closest by
