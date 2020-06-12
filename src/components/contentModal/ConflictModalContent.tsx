@@ -76,6 +76,9 @@ const ConflictModalContent = (props: Props) => {
     const balloonText = balloonTextRef!.current!;
     const inset = insetRef.current!;
     gsap.killTweensOf(balloonText);
+    gsap.killTweensOf(balloonRef.current);
+    gsap.killTweensOf(inset);
+    gsap.killTweensOf(inset);
 
     // Reset
     if (nextButtonRef.current) nextButtonRef.current!.removeAttribute('style');
@@ -99,7 +102,7 @@ const ConflictModalContent = (props: Props) => {
           }
           balloonText.innerHTML = sequenceItem.text;
           
-          if (sequenceItem.balloonArrowPos) {
+          if (sequenceItem.balloonArrowPos && balloonArrowRef.current) {
             balloonArrowRef.current!.style.right = `${sequenceItem.balloonArrowPos}%`;  
           }
           positionArrow();
@@ -129,18 +132,17 @@ const ConflictModalContent = (props: Props) => {
           tl.to(balloonText, {
             onStart,
             delay: 3 / SPEED_MODIFIER,
-            duration: sequenceItem.text.length * 0.025 / SPEED_MODIFIER,
+            duration: sequenceItem.text.length * 0.045 / SPEED_MODIFIER,
             ease: Linear.easeNone,
           });
           break;
         case SequenceItemType.image:
           tl.to(balloonRef.current, {
             onStart,
-            delay: 3 / SPEED_MODIFIER,
-            duration: .5,
+            duration: .25,
             autoAlpha: 0,
             ease: Linear.easeNone,
-          });
+          }, "-=.5");
           tl.to(balloonArrowRef.current, {
             delay: 3 / SPEED_MODIFIER,
             duration: .5,
@@ -155,7 +157,7 @@ const ConflictModalContent = (props: Props) => {
 
     // Fade the balloon out
     tl.to(balloonRef.current, {
-      delay: 3 / SPEED_MODIFIER,
+      delay: 1 / SPEED_MODIFIER,
       duration: .5,
       autoAlpha: 0,
       ease: Linear.easeNone,

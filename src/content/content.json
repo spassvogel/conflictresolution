@@ -15,7 +15,6 @@
       "scale": 0.85,
       "flipped": true
     }],
-    "situationImage": "images/conflict/kumar-0a.png",
     "sequence": [{
       "type": "caption",
       "text": "As you’re taking a round in the warehouse in the morning, Dev approaches you with a complaint against his team mate, Kumar"
@@ -117,7 +116,7 @@
         "image":  "images/conflict/cantina/jay-stockroom.png"
       }, {
         "type": "avatar",
-        "position": [424, 155],
+        "position": [624, 155],
         "pose": "handup"
       }]
     }, {
@@ -129,10 +128,10 @@
       }, {
         "type": "avatar",
         "position": [424, 155],
-        "pose": "closeup"
+        "pose": "seatside"
       }, {
         "image":  "images/conflict/cantina/table.png",
-        "position": [228, 490]
+        "position": [228, 510]
       }]
     }, {
       "type": "image",
@@ -154,17 +153,107 @@
       "confirmText": "Are you sure you want to avoid any confrontations?",
       "correct": false,
       "text": "It’s not good to let conflicts fester in the workplace. \nIt may not affect their productivity, but it might affect the general environment at work and there’s a real chance that one or both individuals may engage in passive-aggressive behaviour.",
-      "scene": []
+      "scene": [{
+        "image": "images/conflict/cantina/fester.png"
+      }]
     }, {
       "confirmText": "Are you sure you want to talk to only Maya?",
       "correct": false,
       "text": "Research has shown that telling people not to take conflicts personally doesn’t work. \nRegardless of such a disclaimer, Maya is very likely to hold a grudge against Jay that will ultimately affect their working relationship.",
-      "scene": []
+      "scene": [{
+        "image": "images/conflict/cantina/grudge.png"
+      }]
     }, {
       "confirmText": "Are you sure you want to spend time on discussing such a minor issue?",
       "correct": true,
       "text": "The sooner you address an issue and allow employees to engage in a dialogue, the sooner they can go back to a healthy working relationship and remain productive and engaged. \nAsk both parties to share their perspectives and invite them to come up with ideas for a resolution that may include apologies or changes in behaviour (labelling food containers, in this case, for instance) to prevent similar disputes from recurring.",
-      "scene": []
+      "scene": [{
+        "type": "avatar",
+        "position": [924, 75],
+        "pose": "seatfront"
+      }, {
+        "image":  "images/conflict/cantina/handshake.png"
+      }]
+    }]
+  }
+}, {
+  "position": [500, 500],
+  "type": "conflict",
+  "header": "Stacked against us",
+  "content": {
+    "scene": [{
+      "image":  "images/conflict/stacker/background.png"
+      }, {
+      "type": "avatar",
+      "position": [824, 165],
+      "pose": "angle",
+      "scale": 0.85,
+      "flipped": true
+    }],
+    "sequence": [{
+      "type": "caption",
+      "text": "Two team leaders visit you in your office with a scheduling conflict for which they can’t work out an amiable solution. "
+    }, {
+      "type": "speech",
+      "text": "Both our teams are scheduled to carry out an inventory accuracy check right now for two different customers. As you know, we only have one electric stacker in the warehouse, and both our teams need it to bring down products from heavy duty racks",
+      "balloonArrowPos": 68
+    }, {
+      "type": "speech",
+      "text": "We can’t reach a compromise; which team should get the electric stacker?"
+    }, {
+      "type": "image",
+      "scene": [{
+        "image":  "images/conflict/stacker/question.png"
+      }, {
+        "type": "avatar",
+        "position": [960, 95],
+        "scale": 0.85,
+        "pose": "stress"
+      }]
+    }],
+    "description": "How should you manage this intergroup conflict?",
+    "options": [
+      "Analyse load and priority of customers and allocate stacker accordingly",
+      "Motivate the team leaders to collaborate on finding the best solution",
+      "Tell management you need to buy another stacker for the warehouse"
+    ],
+    "reactions": [{
+      "confirmText": "Are you sure you want to make this decision on behalf of both parties?",
+      "correct": false,
+      "text": "You analysed the load and priority of both customer operations and made the decision to allocate the stacker towards checking the inventory of the customer that brings in greater revenue. \n The team leader in charge of the other account is not happy about your decision and, in the absence of an open discussion, thinks that you showed favouritism.\nMoreover, it does not give people the confidence that they are capable of handling issues on their own.",
+      "scene": [{
+        "image":  "images/conflict/stacker/question.png"
+      }, {
+        "type": "avatar",
+        "position": [960, 95],
+        "scale": 0.85,
+        "pose": "stress"
+      }]
+    }, {
+      "confirmText": "Are you sure you want to spend time on motivating the team leaders to arrive at a solution together? It would easier to make a decision yourself.",
+      "correct": true,
+      "text": "Allowing members to work together in finding a resolution is a great approach. An open discussion that looks at the perspectives of both parties and identifies the conflict’s impacts on their separate operations leads to a greater understanding between colleagues.\nThis not only improves employee relationships but increases collaboration and efficiency as people learn to arrive at solutions together without always pushing the issues up the organisational chain.",
+      "scene": [{
+        "image":  "images/conflict/stacker/resolved.png"
+      }, {
+        "type": "avatar",
+        "position": [1060, 65],
+        "scaleXX": 0.85,
+        "pose": "happy",
+        "flipped": true
+      }]
+    }, {
+      "confirmText": "Are you sure you want to purchase an additional stacker?",
+      "correct": false,
+      "text": "The management tells you that they can purchase another stacker at the start of next quarter, ifthe budget allows it.",
+      "scene": [{
+        "image":  "images/conflict/stacker/call-mgmt.png"
+      }, {
+        "type": "avatar",
+        "position": [1060, 65],
+        "scaleXX": 0.85,
+        "pose": "call"
+      }]
     }]
   }
 }]
