@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { ConflictContent, SequenceItemType, SceneElement } from '../../common/constants';
-import { gsap, Linear, Bounce, Sine } from 'gsap'
+import { gsap, Linear, Sine } from 'gsap'
 import { TextPlugin } from 'gsap/all';
-import "./conflictModal.css";
 import sound from 'pixi-sound';
 import SituationScene from '../pixi/SituationScene';
+import "./conflictModal.css";
 
 gsap.registerPlugin(TextPlugin);
 const SPEED_MODIFIER = 1; // for debugging
