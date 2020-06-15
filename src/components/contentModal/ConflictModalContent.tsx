@@ -176,6 +176,7 @@ const ConflictModalContent = (props: Props) => {
       left: 0,
       ease: Sine.easeInOut,
     }, "-=1");
+    tl.add('end');
   }, [content.sequence]);
 
   const positionArrow = () => {
@@ -226,6 +227,14 @@ const ConflictModalContent = (props: Props) => {
     }
   }
 
+  const handleNo = () => {
+    if (!sequence.current) return;
+    setSceneConfig(props.content.scene);
+    selectOption(null);
+    setConfirmed(false);
+    sequence.current.seek('end', false);
+  }
+
   const renderReaction = () => {
     if (!reaction) {
       return null;
@@ -235,7 +244,7 @@ const ConflictModalContent = (props: Props) => {
         <>
           <p>{reaction.confirmText}</p>
           <button onClick={handleYes}>yes</button>
-          <button onClick={handleReplay}>no</button>
+          <button onClick={handleNo}>no</button>
         </>
       )
     }
