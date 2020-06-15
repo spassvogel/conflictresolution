@@ -238,7 +238,6 @@
       }, {
         "type": "avatar",
         "position": [1060, 65],
-        "scaleXX": 0.85,
         "pose": "happy",
         "flipped": true
       }]
@@ -251,8 +250,85 @@
       }, {
         "type": "avatar",
         "position": [1060, 65],
-        "scaleXX": 0.85,
         "pose": "call"
+      }]
+    }]
+  }
+}, {
+  "position": [2318, 500],
+  "type": "conflict",
+  "header": "Inbound/Outbound",
+  "content": {
+    "scene": [{
+      "image":  "images/conflict/inbound/intro.png"
+      }, {
+      "type": "avatar",
+      "position": [564, 326],
+      "pose": "back"
+    }],
+    "sequence": [{
+      "type": "caption",
+      "text": "You notice that the outbound team is struggling to meet their targets for the day while the inbound team is relaxing and having a chat. You talk to a floor supervisor about it."
+    }, {
+      "type": "speech",
+      "text": "The inbound team regularly completes their targets for the day by 4 p.m. but do not move on to help the outbound team.",
+      "balloonArrowPos": 10,
+      "scene": [{
+        "image":  "images/conflict/inbound/floor-supervisor.png"
+      }, {
+        "type": "avatar",
+        "position": [870, 125],
+        "scale": 0.85,
+        "pose": "bothhandsup"
+      }]
+    }, {
+      "type": "speech",
+      "text": "They say that they are paid wages and will only do the workload assigned to them in the morning.",
+      "balloonArrowPos": 10,
+      "scene": [{
+        "image":  "images/conflict/inbound/floor-supervisor.png"
+      }, {
+        "type": "avatar",
+        "position": [870, 125],
+        "scale": 0.85,
+        "pose": "bothhandsup"
+      }]
+    }],
+    "description": "How should you manage this contentious situation?",
+    "options": [
+      "Move a few people from the inbound to the outbound team",
+      "Encourage teams to collaborate to meet business objectives",
+      "Recruit extra workers for the outbound team"
+    ],
+    "reactions": [{
+      "confirmText": "Are you sure you want to permanently move some people from the inbound to the outbound team?",
+      "correct": false,
+      "text": "While moving a few people from one team to another will solve the issue for the time being, the situation is not likely to always remain the same. It’s more important to align each team’s goals       with the overall goals of the organisation so that whatever the conditions, the teams feel motivated to work out a way to achieve the organisational goals together.",
+      "scene": [{
+        "image":  "images/conflict/inbound/puzzle.png"
+      }]
+    }, {
+      "confirmText": "Are you sure you want to spend time motivating teams to collaborate instead of reorganising teams to achieve the productivity targets for the day?",
+      "correct": true,
+      "text": "Devoting time to encourage teams to collaborate and reminding everyone what the common objectives are helps to create accountability.\nFocus on finding long-term solutions through such actions as motivating teams to achieve group goals instead of always chasing short-term goals.",
+      "scene": [{
+        "image":  "images/conflict/inbound/both-groups.png"
+      }, {
+        "type": "avatar",
+        "position": [950, 295],
+        "pose": "backhandup",
+        "flipped": true
+      }]
+    }, {
+      "confirmText": "Are you sure you want to spend time and resources on recruiting more workers?",
+      "correct": false,
+      "text": "Adding more resources to a team would sure help to increase productivity but it will also add to the labour costs. As a manager, you have to be mindful of the costs while working towards increased throughput.",
+      "scene": [{
+        "image":  "images/conflict/inbound/costs-up.png"
+      }, {
+        "type": "avatar",
+        "position": [860, 65],
+        "pose": "stress"
       }]
     }]
   }

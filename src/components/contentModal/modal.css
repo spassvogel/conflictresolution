@@ -26,6 +26,10 @@
   position: relative;
 }
 
+.modal:focus {
+  outline: none;
+}
+
 .modal-content {
   grid-column: span 16;
   grid-row: span 9;
