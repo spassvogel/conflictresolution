@@ -78,7 +78,6 @@ const ConflictModalContent = (props: Props) => {
     gsap.killTweensOf(balloonText);
     gsap.killTweensOf(balloonRef.current);
     gsap.killTweensOf(inset);
-    gsap.killTweensOf(inset);
 
     // Reset
     if (nextButtonRef.current) nextButtonRef.current!.removeAttribute('style');
@@ -163,6 +162,7 @@ const ConflictModalContent = (props: Props) => {
       ease: Linear.easeNone,
     });
 
+    tl.add('end');
     // Slide inset in
     tl.to(inset, {
       onStart: () => {
@@ -176,7 +176,6 @@ const ConflictModalContent = (props: Props) => {
       left: 0,
       ease: Sine.easeInOut,
     }, "-=1");
-    tl.add('end');
   }, [content.sequence]);
 
   const positionArrow = () => {
