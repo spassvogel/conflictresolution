@@ -313,7 +313,7 @@ const ConflictModalContent = (props: Props) => {
             replay
           </button>
           <button className="button-next" ref={nextButtonRef} onClick={handleSkipSequenceStep}>
-            >
+            {">"}
           </button>
         </div>
       )}

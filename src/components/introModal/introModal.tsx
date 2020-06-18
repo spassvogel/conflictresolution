@@ -17,9 +17,9 @@ const stageWidth = 1280;
 const IntroModal = (props: Props) => {
   const {selectedAvatar} = props;
 
-  const renderAvatar = (name: string, index: number) => {
+  const renderAvatar = (name: string, index: number, flipped: boolean = false) => {
     const filters = selectedAvatar === name ? [new OutlineFilter(4, 0xffcc00)] : [];
-    const scale = selectedAvatar === name ? .7 : .6;
+    let scale = selectedAvatar === name ? .7 : .6;
     const zIndex = selectedAvatar === name ? 2 : 0;
 
     const image = `${process.env.PUBLIC_URL}/images/avatars/${getAvatarImage(name)}.png`;
@@ -28,7 +28,7 @@ const IntroModal = (props: Props) => {
       image={image} 
       filters={filters} 
       anchor={[0.5, 0.5]}
-      scale={scale}
+      scale={[(flipped ? -scale : scale), scale]}
       y={stageHeight / 2}
       x={stageWidth / 5 + (index * (stageWidth / 5))}
       zIndex={zIndex}
@@ -62,7 +62,7 @@ const IntroModal = (props: Props) => {
               { renderAvatar('avatar1', 0) }
               { renderAvatar('avatar2', 1) }
               { renderAvatar('avatar3', 2) }
-              { renderAvatar('avatar4', 3) }
+              { renderAvatar('avatar4', 3, true) }
             </Container>
           </Stage>
           <div className="footer">
