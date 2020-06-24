@@ -23,6 +23,7 @@ gsap.registerPlugin(PixiPlugin);
 interface Props {
   content: AnyContent[];
   avatar: string;
+  setCompleted: (value: boolean) => void;
 }
 
 const Main = (props: Props) => {
@@ -90,7 +91,9 @@ const Main = (props: Props) => {
     // gets called from within modal once the correct answer is selected
     const copy = [...answers];
     copy[selectedSituation!] = answer;
+    console.log(copy)
 
+    props.setCompleted(copy.filter(Boolean).length === content.length);
     setAnswers(copy);
   }
 
@@ -104,7 +107,7 @@ const Main = (props: Props) => {
   const renderMarker = (contentItem: AnyContent, index: number) => {
     const delay = index * 0.5;
     const position = new PIXI.Point(contentItem.position[0], contentItem.position[1]);
-    const bounce = !answers.hasOwnProperty(index);
+    const bounce = answers[index] === undefined;
 
     return (
       <Marker 

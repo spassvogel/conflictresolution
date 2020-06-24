@@ -44,7 +44,7 @@ const Marker = (props: Props & ComponentProps<typeof Sprite>) => {
               }).delay(popInDuration + Math.random());      
         }
         return () => {
-            bounceAnim.kill();
+            bounceAnim?.kill();
         }
     }, [props.bounce]);
 

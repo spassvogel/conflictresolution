@@ -1,0 +1,69 @@
+.Strife and Fracas {
+  overflow: hidden;
+  position: relative;
+}
+
+.modal-complete .modal-content {
+  position: initial;
+  margin-top: 0px;
+}
+
+.modal-complete-overlay {
+  background: rgb(81,155,206);
+  background: linear-gradient(146deg, rgba(81,155,206,1) 0%, rgba(51,77,128,1) 100%); 
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-complete .modal-content .header {
+  text-align: center;
+  position: absolute;
+  padding: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #3FA535;
+}
+
+@media only screen and (max-width: 600px) {
+  .modal-complete .subtext {
+    display: none;
+  }
+}
+
+.modal-complete .avatar-selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-complete .avatar-selection canvas {
+  margin: auto;
+  max-width: 100%;
+}
+
+.modal-complete .footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, .8);
+}
+
+.modal-complete .footer .subtext {
+  color: #14508b;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.modal-complete .footer button {
+  margin-bottom: 32px;
+  align-self: flex-start;
+  margin-left: auto;
+  margin-right: auto;
+}

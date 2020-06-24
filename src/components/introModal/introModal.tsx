@@ -47,7 +47,7 @@ const IntroModal = (props: Props) => {
       onRequestClose={props.onClose}
     >
       <div className="modal-content">
-        <h1 className="header">Conflict resolution</h1>
+        <h1 className="header">Strife and Fracas</h1>
 
         <div className="avatar-selection">
           <Stage width={stageWidth} height={stageHeight} options={{ backgroundColor: 0xffffff}}>
