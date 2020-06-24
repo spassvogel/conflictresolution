@@ -59,6 +59,8 @@
 
 .modal-intro .footer .subtext {
   color: #14508b;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .modal-intro .footer button {

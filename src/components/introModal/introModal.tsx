@@ -67,8 +67,11 @@ const IntroModal = (props: Props) => {
           </Stage>
           <div className="footer">
             <p className="subtext">
-              You’re a warehouse manager at Express Warehousing Ltd. 
-              Choose an avatar.       
+            Discord and tensions are particularly high in the warehouse today. 
+            As a manager, you have to play the role of a mediator to resolve conflicts and get people working towards common goals.
+            See if you can resolve the conflicts popping up all over the warehouse.
+            <br/>
+            Choose an avatar to start playing.    
             </p>
             <button 
               onClick={props.onClose} 
