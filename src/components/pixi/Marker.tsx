@@ -16,6 +16,7 @@ const Marker = (props: Props & ComponentProps<typeof Sprite>) => {
     const data = useRef<PIXI.interaction.InteractionData>();
     const [position, setPosition] = useState<PIXI.Point>(props.position || new PIXI.Point());
     const popInDuration = 1;
+    const image = props.bounce ? `${process.env.PUBLIC_URL}/images/ui/marker.svg` :  `${process.env.PUBLIC_URL}/images/ui/marker-green.svg`;
 
     useEffect(() => {
         // Pop in animation!
@@ -77,7 +78,7 @@ const Marker = (props: Props & ComponentProps<typeof Sprite>) => {
             position={position}
             ref={ref}
             interactive={true}
-            image={`${process.env.PUBLIC_URL}/images/ui/marker.svg`}
+            image={image}
             mousedown={onDragStart}
             touchstart={onDragStart}
             mouseup={onDragEnd}
