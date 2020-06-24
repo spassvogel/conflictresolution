@@ -5,6 +5,7 @@ import { Stage, Sprite } from '@inlet/react-pixi';
 
 interface Props {
   avatar: string;
+  restart: () => void;
 }
 
 const stageHeight = 720;
@@ -43,7 +44,7 @@ const CompleteModal = (props: Props) => {
             <p className="subtext">
             Congratulations, your warehouse is now a conflict-free zone!
             <br/>
-            <button>
+            <button onClick={props.restart}>
               Replay
             </button>
             </p>

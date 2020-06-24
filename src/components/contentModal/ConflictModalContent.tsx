@@ -242,8 +242,14 @@ const ConflictModalContent = (props: Props) => {
       return (
         <>
           <p>{reaction.confirmText}</p>
-          <button onClick={handleYes}>yes</button>
-          <button onClick={handleNo}>no</button>
+          <p>
+            <button onClick={handleYes}>yes</button>
+            <span className="motivation">{reaction.yesText}</span>
+          </p>
+          <p>
+            <button onClick={handleNo}>no</button>
+            <span className="motivation">{reaction.noText}</span>
+          </p>
         </>
       )
     }
@@ -273,7 +279,7 @@ const ConflictModalContent = (props: Props) => {
     }
     if (selectedOption === index) {
       // Render only selected option
-      let className = '';
+      let className = 'selected';
       if (confirmed) {
         className = reaction?.correct ? "correct" : "wrong";
       }

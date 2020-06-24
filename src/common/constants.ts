@@ -73,7 +73,9 @@ export interface ConflictReaction {
   correct: boolean, 
   text: string, 
   scene: SceneElement[]; 
-  confirmText: string, 
+  confirmText: string,
+  yesText: string;
+  noText: string;
   confirmImage?: string 
 }
 

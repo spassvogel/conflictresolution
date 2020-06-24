@@ -68,6 +68,8 @@
     ],
     "reactions": [{
       "confirmText": "Are you sure you want to terminate Kumar without giving him a chance to take responsibility?",
+      "yesText": "he’s hampering warehouse productivity",
+      "noText": "I’m a softie; I can’t fire anyone really",
       "correct": false,
       "text": "You’ve fired Kumar without allowing him a chance to take responsibility. This has negatively affected the morale of the employees. \nWorkers feel that your response was disproportionate to Kumar’s offence and now feel discouraged and worried about their own job security.",
       "scene": [{
@@ -75,6 +77,8 @@
       }]
     }, {
       "confirmText": "Are you sure you want to embarrass Kumar like that?",
+      "yesText": "I want to discourage others from this kind of behaviour",
+      "noText": "perhaps that won’t let me cultivate a trusting relationship",
       "correct": false,
       "text": "You gave Kumar a dressing down in front of others. He resents you now as he has become a laughing stock for a group of warehouse workers. \nHe wants to quit and his friends are not happy about how things panned out either.",
       "scene": [{
@@ -86,6 +90,8 @@
       }]
     }, {
       "confirmText": "Are you sure you want to give Kumar a second chance?",
+      "yesText": "it’s the only way I’ll be able to build trust in the team",
+      "noText": "he lacks discipline and won’t change his behaviour",
       "correct": true,
       "text": "You did the right thing by giving Kumar a chance to take responsibility and become more professional. You made him and—by extension—others in the team feel supported and laid the ground for cultivating a more trusting relationship with the employees.",
       "scene": [{
@@ -151,6 +157,8 @@
     ],
     "reactions": [{
       "confirmText": "Are you sure you want to avoid any confrontations?",
+      "yesText": "it would be too uncomfortable",
+      "noText": "I should address it somehow",
       "correct": false,
       "text": "It’s not good to let conflicts fester in the workplace. \nIt may not affect their productivity, but it might affect the general environment at work and there’s a real chance that one or both individuals may engage in passive-aggressive behaviour.",
       "scene": [{
@@ -158,6 +166,8 @@
       }]
     }, {
       "confirmText": "Are you sure you want to talk to only Maya?",
+      "yesText": "it was an accident and Maya shouldn’t have shouted at Jay",
+      "noText": "I should lead both Maya and Jay into an open discussion",
       "correct": false,
       "text": "Research has shown that telling people not to take conflicts personally doesn’t work. \nRegardless of such a disclaimer, Maya is very likely to hold a grudge against Jay that will ultimately affect their working relationship.",
       "scene": [{
@@ -165,6 +175,8 @@
       }]
     }, {
       "confirmText": "Are you sure you want to spend time on discussing such a minor issue?",
+      "yesText": "if they don’t talk it out, they will act it out",
+      "noText": "why stir the pot further unnecessarily?",
       "correct": true,
       "text": "The sooner you address an issue and allow employees to engage in a dialogue, the sooner they can go back to a healthy working relationship and remain productive and engaged. \nAsk both parties to share their perspectives and invite them to come up with ideas for a resolution that may include apologies or changes in behaviour (labelling food containers, in this case, for instance) to prevent similar disputes from recurring.",
       "scene": [{
@@ -219,6 +231,8 @@
     ],
     "reactions": [{
       "confirmText": "Are you sure you want to make this decision on behalf of both parties?",
+      "yesText": "it would be the easiest way to resolve this conflict",
+      "noText": "I want to inculcate decision-making skills in my staff",
       "correct": false,
       "text": "You analysed the load and priority of both customer operations and made the decision to allocate the stacker towards checking the inventory of the customer that brings in greater revenue. \n The team leader in charge of the other account is not happy about your decision and, in the absence of an open discussion, thinks that you showed favouritism.\nMoreover, it does not give people the confidence that they are capable of handling issues on their own.",
       "scene": [{
@@ -231,6 +245,8 @@
       }]
     }, {
       "confirmText": "Are you sure you want to spend time on motivating the team leaders to arrive at a solution together? It would easier to make a decision yourself.",
+      "yesText": "the team leaders should be able to collaborate on a solution",
+      "noText": "that’s right, it would be easier to make a decision on my own",
       "correct": true,
       "text": "Allowing members to work together in finding a resolution is a great approach. An open discussion that looks at the perspectives of both parties and identifies the conflict’s impacts on their separate operations leads to a greater understanding between colleagues.\nThis not only improves employee relationships but increases collaboration and efficiency as people learn to arrive at solutions together without always pushing the issues up the organisational chain.",
       "scene": [{
@@ -243,6 +259,8 @@
       }]
     }, {
       "confirmText": "Are you sure you want to purchase an additional stacker?",
+      "yesText": "TEXT MISSING",
+      "noText": "TEXT MISSING",
       "correct": false,
       "text": "The management tells you that they can purchase another stacker at the start of next quarter, ifthe budget allows it.",
       "scene": [{
@@ -302,6 +320,8 @@
     ],
     "reactions": [{
       "confirmText": "Are you sure you want to permanently move some people from the inbound to the outbound team?",
+      "yesText": "this will solve the issue once and for all",
+      "noText": "I need to look for a more lasting solution",
       "correct": false,
       "text": "While moving a few people from one team to another will solve the issue for the time being, the situation is not likely to always remain the same. It’s more important to align each team’s goals       with the overall goals of the organisation so that whatever the conditions, the teams feel motivated to work out a way to achieve the organisational goals together.",
       "scene": [{
@@ -309,6 +329,8 @@
       }]
     }, {
       "confirmText": "Are you sure you want to spend time motivating teams to collaborate instead of reorganising teams to achieve the productivity targets for the day?",
+      "yesText": "this will ensure that teams work towards common goals",
+      "noText": "I need to meet the day’s targets by hook or by crook",
       "correct": true,
       "text": "Devoting time to encourage teams to collaborate and reminding everyone what the common objectives are helps to create accountability.\nFocus on finding long-term solutions through such actions as motivating teams to achieve group goals instead of always chasing short-term goals.",
       "scene": [{
@@ -321,6 +343,8 @@
       }]
     }, {
       "confirmText": "Are you sure you want to spend time and resources on recruiting more workers?",
+      "yesText": "more people means more productivity",
+      "noText": "it will cost too much to train new people",
       "correct": false,
       "text": "Adding more resources to a team would sure help to increase productivity but it will also add to the labour costs. As a manager, you have to be mindful of the costs while working towards increased throughput.",
       "scene": [{

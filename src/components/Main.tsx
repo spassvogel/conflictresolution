@@ -22,15 +22,15 @@ gsap.registerPlugin(PixiPlugin);
 
 interface Props {
   content: AnyContent[];
+  answers: number[];
   avatar: string;
-  setCompleted: (value: boolean) => void;
+  setAnswers: (value: number[]) => void;
 }
 
 const Main = (props: Props) => {
-  const { content, avatar } = props;
+  const { content, avatar, answers } = props;
   const viewportRef = useRef<PixiViewport>(null);
   const [selectedSituation, setSelectedSituation] = useState<number | null>(null);
-  const [answers, setAnswers] = useState<number[]>([]);
 
   const worldWidth = 3497;
   const worldHeight = 1419;
@@ -91,10 +91,8 @@ const Main = (props: Props) => {
     // gets called from within modal once the correct answer is selected
     const copy = [...answers];
     copy[selectedSituation!] = answer;
-    console.log(copy)
 
-    props.setCompleted(copy.filter(Boolean).length === content.length);
-    setAnswers(copy);
+    props.setAnswers(copy);
   }
 
   const selectedContent = useMemo(() => {

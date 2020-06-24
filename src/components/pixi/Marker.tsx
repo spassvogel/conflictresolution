@@ -59,7 +59,6 @@ const Marker = (props: Props & ComponentProps<typeof Sprite>) => {
     
     const onDragEnd = () => {
         data.current = undefined;
-        console.log(position);
     }
     
     const onDragMove = () => {
