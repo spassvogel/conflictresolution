@@ -278,8 +278,9 @@
   "header": "Inbound/Outbound",
   "content": {
     "scene": [{
-      "image":  "images/conflict/inbound/intro.png"
-      }, {
+      "image":  "images/conflict/inbound/intro.png",
+      "position": [100, 0]
+    }, {
       "type": "avatar",
       "position": [564, 326],
       "pose": "back"
@@ -307,9 +308,9 @@
         "image":  "images/conflict/inbound/floor-supervisor.png"
       }, {
         "type": "avatar",
-        "position": [870, 125],
+        "position": [870, 145],
         "scale": 0.85,
-        "pose": "bothhandsup"
+        "pose": "front"
       }]
     }],
     "description": "How should you manage this contentious situation?",
