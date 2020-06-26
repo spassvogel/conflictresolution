@@ -25,10 +25,11 @@ interface Props {
   answers: number[];
   avatar: string;
   setAnswers: (value: number[]) => void;
+  setSituationOpen: (value: boolean) => void;
 }
 
 const Main = (props: Props) => {
-  const { content, avatar, answers } = props;
+  const { content, avatar, answers, setSituationOpen } = props;
   const viewportRef = useRef<PixiViewport>(null);
   const [selectedSituation, setSelectedSituation] = useState<number | null>(null);
 
@@ -70,7 +71,9 @@ const Main = (props: Props) => {
     } else {
       gsap.to(viewportRef.current, {duration: .5, pixi: {blur:0}});
     }
-  }, [selectedSituation]);
+
+    setSituationOpen(selectedSituation !== null)
+  }, [selectedSituation, setSituationOpen]);
 
   useEffect(() => {
     sound.add('plops', {
