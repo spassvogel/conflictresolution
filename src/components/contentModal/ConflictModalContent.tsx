@@ -258,8 +258,8 @@ const ConflictModalContent = (props: Props) => {
         { reaction?.correct && (<p className="right-option">You’ve chosen the right option!</p>)}
         {reaction.text.split("\n").map(p => <p key={p.substring(0, 10)}>{p}</p>)}
         { (!reaction?.correct) && (
-         <button onClick={handleReplay} className="replay">
-           Replay
+         <button onClick={handleNo} className="button-replay">
+           try again
          </button>
         )}     
       </>
