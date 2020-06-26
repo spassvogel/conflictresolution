@@ -191,7 +191,7 @@
 }, {
   "position": [500, 500],
   "type": "conflict",
-  "header": "Stacked against us",
+  "header": "Stacked Against Us",
   "content": {
     "scene": [{
       "image":  "images/conflict/stacker/background.png"
@@ -241,7 +241,7 @@
         "type": "avatar",
         "position": [960, 95],
         "scale": 0.85,
-        "pose": "stress"
+        "pose": "thinking"
       }]
     }, {
       "confirmText": "Are you sure you want to spend time on motivating the team leaders to arrive at a solution together? It would easier to make a decision yourself.",
