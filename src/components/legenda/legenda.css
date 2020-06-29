@@ -1,0 +1,43 @@
+.legenda {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    background: rgba(255, 255, 255, .8);
+}
+
+.legenda .avatar {
+    width: 200px;
+    height: 128px;
+    background-size: cover;
+    background-position: center 16px;
+    background-repeat: no-repeat;
+}
+
+.legenda ul {
+    list-style: none;
+    margin: 8px 0 0 0;
+    padding: 4px;
+}
+
+.legenda ul li {
+    margin: 6px 0 4px 32px;
+}
+
+.legenda ul li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.legenda ul li.completed {
+    margin: 4px 0;
+}
+
+.legenda ul li.completed:hover {
+    text-decoration: none;
+}
+
+.legenda ul li .check {
+    width: 16px;
+    height: 16px;
+    margin: 0 8px -2px 8px;
+}

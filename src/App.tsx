@@ -1,9 +1,9 @@
 import React, { useState, useMemo } from 'react';
-import './App.css';
 import content from './content/parseContent';
 import Main from './components/Main';
 import IntroModal from './components/introModal/introModal';
 import CompleteModal from './components/completeModal/completeModal';
+import './App.css';
 
 function App() {
 

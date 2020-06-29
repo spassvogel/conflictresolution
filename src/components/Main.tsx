@@ -11,6 +11,7 @@ import { PixiPlugin } from 'gsap/all';
 import { gsap } from 'gsap'
 import Conveyor from "./pixi/Conveyor";
 import BigRacks from "./pixi/BigRacks";
+import Legenda from "./legenda";
 
 PixiPlugin.registerPIXI(PIXI);
 gsap.registerPlugin(PixiPlugin);
@@ -124,30 +125,30 @@ const Main = (props: Props) => {
   return (
     <>
       <Stage width={canvasWidth} height={canvasHeight} options={{transparent: true}} >
-      <Viewport screenWidth={canvasWidth} screenHeight={canvasHeight} worldWidth={worldWidth} worldHeight={worldHeight} ref={viewportRef} >
-        <Sprite image={`${process.env.PUBLIC_URL}/images/map/warehouse-back.png`} >
-          <BigRacks x={1153} y={207} />
-          <Sprite image={`${process.env.PUBLIC_URL}/images/map/safe.png`} x={2086} y={296} />
-          <Sprite image={`${process.env.PUBLIC_URL}/images/map/middle.png`} x={806} y={334} />
+        <Viewport screenWidth={canvasWidth} screenHeight={canvasHeight} worldWidth={worldWidth} worldHeight={worldHeight} ref={viewportRef} >
+          <Sprite image={`${process.env.PUBLIC_URL}/images/map/warehouse-back.png`} >
+            <BigRacks x={1153} y={207} />
+            <Sprite image={`${process.env.PUBLIC_URL}/images/map/safe.png`} x={2086} y={296} />
+            <Sprite image={`${process.env.PUBLIC_URL}/images/map/middle.png`} x={806} y={334} />
 
-          <Conveyor name={"Conveyor"} x={269} y={498} />
-          <Sprite image={`${process.env.PUBLIC_URL}/images/map/packing.png`} x={995} y={848} name="packing-table"/>
+            <Conveyor name={"Conveyor"} x={269} y={498} />
+            <Sprite image={`${process.env.PUBLIC_URL}/images/map/packing.png`} x={995} y={848} name="packing-table"/>
 
-          <Sprite image={`${process.env.PUBLIC_URL}/images/map/warehouse-front-wall.png`} y={705} name="front-wall"/>
-          {content.map((contentItem, index) => renderMarker(contentItem, index))}
-        </Sprite>
-      </Viewport>
-    </Stage>
-    { selectedContent && (
-      <ContentModal 
-        content={selectedContent} 
-        onClose={handleClose}
-        avatar={avatar}
-        setCorrectAnswer={handleCorrectAnswer}
-        selectedAnswer={(answers[selectedSituation!])}
-      /> 
-    )}
-
+            <Sprite image={`${process.env.PUBLIC_URL}/images/map/warehouse-front-wall.png`} y={705} name="front-wall"/>
+            {content.map((contentItem, index) => renderMarker(contentItem, index))}
+          </Sprite>
+        </Viewport>
+      </Stage>
+      <Legenda avatar={props.avatar} content={content} answers={answers} setSituationSelected={setSelectedSituation}/>
+      { selectedContent && (
+        <ContentModal 
+          content={selectedContent} 
+          onClose={handleClose}
+          avatar={avatar}
+          setCorrectAnswer={handleCorrectAnswer}
+          selectedAnswer={(answers[selectedSituation!])}
+        /> 
+      )}
     </>
   )
 };
