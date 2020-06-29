@@ -193,6 +193,7 @@ const ConflictModalContent = (props: Props) => {
     if (!sequence.current) return;
     const currentIndex = parseInt(sequence.current.currentLabel().substring('seq-'.length));
     if (isNaN(currentIndex)) return;
+    // @ts-ignore
     sequence.current.seek(`seq-${currentIndex+1}`, false);
   }
 
@@ -230,6 +231,7 @@ const ConflictModalContent = (props: Props) => {
     setSceneConfig(props.content.scene);
     selectOption(null);
     setConfirmed(false);
+    // @ts-ignore
     sequence.current.seek('end', false);
   }
 
