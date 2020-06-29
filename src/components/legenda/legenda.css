@@ -11,6 +11,7 @@
     background-size: cover;
     background-position: center 16px;
     background-repeat: no-repeat;
+    margin: auto;
 }
 
 .legenda ul {
@@ -20,7 +21,7 @@
 }
 
 .legenda ul li {
-    margin: 6px 0 4px 32px;
+    margin: 6px 8px 4px 32px;
 }
 
 .legenda ul li:hover {
