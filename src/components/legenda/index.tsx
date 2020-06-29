@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from "react";
+import React from "react";
 import { AnyContent } from "../../common/constants";
 import { ReactComponent as CheckSvg } from './../../images/ui/check.svg';
 import "./legenda.css";
@@ -20,14 +20,14 @@ const Legenda = (props: Props) => {
         }
         if (completed) {
             return (
-                <li className="" onClick={handleClick}>
+                <li className="" onClick={handleClick} key={item.header}>
                     {item.header}
                 </li>
             )
         }
 
         return (
-            <li className="completed">
+            <li className="completed" key={item.header}>
                 <CheckSvg className="check" />
                 {item.header}
             </li>

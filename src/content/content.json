@@ -133,7 +133,7 @@
         "image":  "images/conflict/cantina/maya-sitting.png"
       }, {
         "type": "avatar",
-        "position": [424, 155],
+        "position": [424, 135],
         "pose": "seatside"
       }, {
         "image":  "images/conflict/cantina/table.png",

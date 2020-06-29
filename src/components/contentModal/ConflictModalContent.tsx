@@ -117,7 +117,6 @@ const ConflictModalContent = (props: Props) => {
         case SequenceItemType.caption:
           tl.to(balloonText, {
             onStart,
-            delay: 0 / SPEED_MODIFIER,
             duration: sequenceItem.text.length * 0.025 / SPEED_MODIFIER,
             text: {
               value: sequenceItem.text, 
@@ -126,11 +125,11 @@ const ConflictModalContent = (props: Props) => {
             },
             ease: Linear.easeNone,
           });
+          tl.to(balloonText, { duration: 3});
           break;
         case SequenceItemType.speech:
           tl.to(balloonText, {
             onStart,
-            delay: 3 / SPEED_MODIFIER,
             duration: sequenceItem.text.length * 0.045 / SPEED_MODIFIER,
             ease: Linear.easeNone,
           });
@@ -141,13 +140,12 @@ const ConflictModalContent = (props: Props) => {
             duration: .25,
             autoAlpha: 0,
             ease: Linear.easeNone,
-          }, "-=.5");
+          });
           tl.to(balloonArrowRef.current, {
-            delay: 3 / SPEED_MODIFIER,
-            duration: .5,
+            duration: .25,
             autoAlpha: 0,
             ease: Linear.easeNone,
-          }, "-=.5");
+          }, "-=.25");
           break;
       }
     });
@@ -194,6 +192,7 @@ const ConflictModalContent = (props: Props) => {
   const handleSkipSequenceStep = () => {
     if (!sequence.current) return;
     const currentIndex = parseInt(sequence.current.currentLabel().substring('seq-'.length));
+    if (isNaN(currentIndex)) return;
     sequence.current.seek(`seq-${currentIndex+1}`, false);
   }
 
