@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
-import './modal.css';
+import './style/modal.css';
 import { AnyContent, ContentType, YoutubeContent, OptionsContent, IframeContent, ConflictContent } from '../../common/constants';
 import YoutubeModalContent from './YoutubeModalContent';
 import OptionsModalContent from './OptionsModalContent';

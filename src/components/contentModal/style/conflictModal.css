@@ -112,6 +112,15 @@
   box-sizing: border-box;
 }
 
+.modal .modal-content.modal-conflict .inset .yesno {
+  display: flex;
+}
+
+.modal .modal-content.modal-conflict .inset .yesno button{
+  width: 94px;
+}
+
+
 .modal .modal-content.modal-conflict .situation-image {
   width: 100%;
   height: 100%;
@@ -152,7 +161,7 @@
 }
 
 .modal .modal-content.modal-conflict .balloon-arrow {
-  background: url("/conflictresolution/images/ui/text-balloon-arrow.png");
+  background: url("./images/text-balloon-arrow.png");
   width: 16px;
   height: 32px;
   position: absolute;

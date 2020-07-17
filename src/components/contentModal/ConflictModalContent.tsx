@@ -4,7 +4,7 @@ import { gsap, Linear, Sine } from 'gsap'
 import { TextPlugin } from 'gsap/all';
 import sound from 'pixi-sound';
 import SituationScene from '../pixi/SituationScene';
-import "./conflictModal.css";
+import "./style/conflictModal.css";
 
 gsap.registerPlugin(TextPlugin);
 const SPEED_MODIFIER = 1; // for debugging
@@ -243,11 +243,11 @@ const ConflictModalContent = (props: Props) => {
       return (
         <>
           <p>{reaction.confirmText}</p>
-          <p>
+          <p className="yesno">
             <button onClick={handleYes}>yes</button>
             <span className="motivation">{reaction.yesText}</span>
           </p>
-          <p>
+          <p className="yesno">
             <button onClick={handleNo}>no</button>
             <span className="motivation">{reaction.noText}</span>
           </p>
@@ -299,7 +299,7 @@ const ConflictModalContent = (props: Props) => {
     <div className="modal-content modal-conflict" ref={ref}>
       <div className="situation" onClick={handleSkipSequenceStep}>
         { props.content.scene && <SituationScene sceneConfig={sceneConfig} avatar={avatar}/>}
-        <div className="inset" ref={insetRef}>
+        <div className="inset" ref={insetRef} >
           <p>
             {content.description}
           </p>
