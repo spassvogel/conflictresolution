@@ -1,8 +1,4 @@
-// {process.env.REACT_APP_PLAYER_MODE  && (
-//     <div id="close">
-//       X
-//     </div>
-//   )}
+
 import React, {  useEffect } from 'react';
 import './style/styles.css';
 import { ReactComponent as CloseIcon } from './style/close.svg';
