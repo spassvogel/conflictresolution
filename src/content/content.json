@@ -259,8 +259,8 @@
       }]
     }, {
       "confirmText": "Are you sure you want to purchase an additional stacker?",
-      "yesText": "TEXT MISSING",
-      "noText": "TEXT MISSING",
+      "yesText": "it would prevent this kind of problem from occurring ever again",
+      "noText": "it would mean a huge expense for an infrequent scheduling issue",
       "correct": false,
       "text": "The management tells you that they can purchase another stacker at the start of next quarter, ifthe budget allows it.",
       "scene": [{
