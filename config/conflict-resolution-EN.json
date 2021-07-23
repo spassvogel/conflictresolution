@@ -1,0 +1,738 @@
+{
+  "userId": 2,
+  "settings": {
+    "muted": false
+  },
+  "content": [{
+    "position": [1381, 848],
+    "header": "scenario-kumar-header",
+    "scene": [{
+      "image": "images/conflict/kumar/background.png"
+    }, {
+      "image":  "images/conflict/kumar/dev.png",
+      "position": [784, 175]
+    }, {
+      "type": "avatar",
+      "position": [1124, 155],
+      "pose": "angle",
+      "scale": 0.85,
+      "flipped": true
+    }],
+    "sequence": [{
+      "type": "caption",
+      "text": "scenario-kumar-caption"
+    }, {
+      "type": "speech",
+      "text": "scenario-kumar-speech1",
+      "balloonArrowPos": 33
+    }, {
+      "type": "speech",
+      "text": "scenario-kumar-speech2",
+      "scene": [{
+        "image":  "images/conflict/kumar/background.png"
+      }, {
+        "image":  "images/conflict/kumar/dev.png",
+        "position": [784, 175]
+      }, {
+        "image":  "images/conflict/kumar/kumar-playing.png",
+        "position": [112, 77]
+      }, {
+        "type": "avatar",
+        "image":  "images/conflict/kumar/dev.png",
+        "position": [1124, 155],
+        "pose": "angle",
+        "scale": 0.85,
+        "flipped": true
+      }]
+    }, {
+      "type": "speech",
+      "text": "scenario-kumar-speech3"
+    }, {
+      "type": "speech",
+      "text": "scenario-kumar-speech4",
+      "scene": [{
+        "image":  "images/conflict/kumar/background.png"
+      }, {
+        "image":  "images/conflict/kumar/dev-handsup.png",
+        "position": [758, 175]
+      }, {
+        "type": "avatar",
+        "position": [1124, 155],
+        "pose": "angle",
+        "scale": 0.85,
+        "flipped": true
+      }]
+    }],
+    "description": "scenario-kumar-description",
+    "options": [
+      "scenario-kumar-option1",
+      "scenario-kumar-option2",
+      "scenario-kumar-option3"
+    ],
+    "reactions": [{
+      "confirmText": "scenario-kumar-reaction1-confirm",
+      "yesText": "scenario-kumar-reaction1-confirm-yes",
+      "noText": "scenario-kumar-reaction1-confirm-no",
+      "correct": false,
+      "text": "scenario-kumar-reaction1-text",
+      "scene": [{
+        "image":  "images/conflict/kumar/kumar-fired.png"
+      }]
+    }, {
+      "confirmText": "scenario-kumar-reaction2-confirm",
+      "yesText": "scenario-kumar-reaction2-confirm-yes",
+      "noText": "scenario-kumar-reaction2-confirm-no",
+      "correct": false,
+      "text": "scenario-kumar-reaction2-text",
+      "scene": [{
+        "image":  "images/conflict/kumar/kumar-humiliated.png"
+      }, {
+        "type": "avatar",
+        "position": [824, 125],
+        "pose": "angry"
+      }]
+    }, {
+      "confirmText": "scenario-kumar-reaction3-confirm",
+      "yesText": "scenario-kumar-reaction3-confirm-yes",
+      "noText": "scenario-kumar-reaction3-confirm-no",
+      "correct": true,
+      "text": "scenario-kumar-reaction3-text",
+      "scene": [{
+        "image":  "images/conflict/kumar/kumar-working.png"
+      }, {
+        "type": "avatar",
+        "position": [824, 125],
+        "pose": "angle"
+      }]
+    }]
+  }, {
+    "position": [2135, 1039],
+    "header": "scenario-jayandmaya-header",
+    "scene": [{
+      "image":  "images/conflict/cantina/intro.png"
+    }],
+    "sequence": [{
+      "type": "caption",
+      "text": "scenario-jayandmaya-caption"
+    }, {
+      "type": "speech",
+      "text": "scenario-jayandmaya-speech1",
+      "balloonArrowPos": 27,
+      "scene": [{
+        "image":  "images/conflict/cantina/jay-stockroom.png"
+      }, {
+        "type": "avatar",
+        "position": [624, 155],
+        "pose": "handup"
+      }]
+    }, {
+      "type": "speech",
+      "text": "scenario-jayandmaya-speech2",
+      "balloonArrowPos": 20,
+      "scene": [{
+        "image":  "images/conflict/cantina/maya-sitting.png"
+      }, {
+        "type": "avatar",
+        "position": [424, 135],
+        "pose": "seatside"
+      }, {
+        "image":  "images/conflict/cantina/table.png",
+        "position": [228, 510]
+      }]
+    }, {
+      "type": "image",
+      "scene": [{
+        "type": "avatar",
+        "position": [969, 74],
+        "pose": "front"
+      }, {
+        "image": "images/conflict/cantina/jay-and-maya.png"
+      }]
+    }],
+    "description": "scenario-jayandmaya-description",
+    "options": [
+      "scenario-jayandmaya-option1",
+      "scenario-jayandmaya-option2",
+      "scenario-jayandmaya-option3"
+    ],
+    "reactions": [{
+      "confirmText": "scenario-jayandmaya-reaction1-confirm",
+      "yesText": "scenario-jayandmaya-reaction1-confirm-yes",
+      "noText": "scenario-jayandmaya-reaction1-confirm-no",
+      "correct": false,
+      "text": "scenario-jayandmaya-reaction1-text",
+      "scene": [{
+        "image": "images/conflict/cantina/fester.png"
+      }]
+    }, {
+      "confirmText": "scenario-jayandmaya-reaction2-confirm",
+      "yesText": "scenario-jayandmaya-reaction2-confirm-yes",
+      "noText": "scenario-jayandmaya-reaction2-confirm-no",
+      "correct": false,
+      "text": "scenario-jayandmaya-reaction2-text",
+      "scene": [{
+        "image": "images/conflict/cantina/grudge.png"
+      }]
+    }, {
+      "confirmText": "scenario-jayandmaya-reaction3-confirm",
+      "yesText": "scenario-jayandmaya-reaction3-confirm-yes",
+      "noText": "scenario-jayandmaya-reaction2-confirm-no",
+      "correct": true,
+      "text": "scenario-jayandmaya-reaction3-text",
+      "scene": [{
+        "type": "avatar",
+        "position": [924, 75],
+        "pose": "seatfront"
+      }, {
+        "image":  "images/conflict/cantina/handshake.png"
+      }]
+    }]
+  }, {
+    "position": [500, 500],
+    "header": "scenario-stackedagainstus-header",
+    "scene": [{
+      "image":  "images/conflict/stacker/background.png"
+      }, {
+      "type": "avatar",
+      "position": [824, 165],
+      "pose": "angle",
+      "scale": 0.85,
+      "flipped": true
+    }],
+    "sequence": [{
+      "type": "caption",
+      "text": "scenario-stackedagainstus-caption"
+    }, {
+      "type": "speech",
+      "text": "scenario-stackedagainstus-speech1",
+      "balloonArrowPos": 68
+    }, {
+      "type": "speech",
+      "text": "scenario-stackedagainstus-speech2"
+    }, {
+      "type": "image",
+      "scene": [{
+        "image":  "images/conflict/stacker/question.png"
+      }, {
+        "type": "avatar",
+        "position": [960, 95],
+        "scale": 0.85,
+        "pose": "stress"
+      }]
+    }],
+    "description": "scenario-stackedagainstus-description",
+    "options": [
+      "scenario-stackedagainstus-option1",
+      "scenario-stackedagainstus-option2",
+      "scenario-stackedagainstus-option3"
+    ],
+    "reactions": [{
+      "confirmText": "scenario-stackedagainstus-reaction1-confirm",
+      "yesText": "scenario-stackedagainstus-reaction1-confirm-yes",
+      "noText": "scenario-stackedagainstus-reaction1-confirm-no",
+      "correct": false,
+      "text": "scenario-stackedagainstus-reaction1-text",
+      "scene": [{
+        "image":  "images/conflict/stacker/question.png"
+      }, {
+        "type": "avatar",
+        "position": [960, 95],
+        "scale": 0.85,
+        "pose": "thinking"
+      }]
+    }, {
+      "confirmText": "scenario-stackedagainstus-reaction2-confirm",
+      "yesText": "scenario-stackedagainstus-reaction2-confirm-yes",
+      "noText": "scenario-stackedagainstus-reaction2-confirm-no",
+      "correct": true,
+      "text": "scenario-stackedagainstus-reaction2-text",
+      "scene": [{
+        "image":  "images/conflict/stacker/resolved.png"
+      }, {
+        "type": "avatar",
+        "position": [1060, 65],
+        "pose": "happy",
+        "flipped": true
+      }]
+    }, {
+      "confirmText": "scenario-stackedagainstus-reaction3-confirm",
+      "yesText": "scenario-stackedagainstus-reaction3-confirm-yes",
+      "noText": "scenario-stackedagainstus-reaction3-confirm-no",
+      "correct": false,
+      "text": "scenario-stackedagainstus-reaction3-text",
+      "scene": [{
+        "image":  "images/conflict/stacker/call-mgmt.png"
+      }, {
+        "type": "avatar",
+        "position": [1060, 65],
+        "pose": "call"
+      }]
+    }]
+  }, {
+    "position": [2318, 500],
+    "header": "scenario-inboundoutbound-header",
+    "scene": [{
+      "image":  "images/conflict/inbound/intro.png",
+      "position": [100, 0]
+    }, {
+      "type": "avatar",
+      "position": [564, 326],
+      "pose": "back"
+    }],
+    "sequence": [{
+      "type": "caption",
+      "text": "scenario-inboundoutbound-caption"
+    }, {
+      "type": "speech",
+      "text": "scenario-inboundoutbound-speech1",
+      "balloonArrowPos": 10,
+      "scene": [{
+        "image":  "images/conflict/inbound/floor-supervisor.png"
+      }, {
+        "type": "avatar",
+        "position": [870, 125],
+        "scale": 0.85,
+        "pose": "bothhandsup"
+      }]
+    }, {
+      "type": "speech",
+      "text": "scenario-inboundoutbound-speech1",
+      "balloonArrowPos": 10,
+      "scene": [{
+        "image":  "images/conflict/inbound/floor-supervisor.png"
+      }, {
+        "type": "avatar",
+        "position": [870, 145],
+        "scale": 0.85,
+        "pose": "front"
+      }]
+    }],
+    "description": "scenario-inboundoutbound-description",
+    "options": [
+      "scenario-inboundoutbound-option1",
+      "scenario-inboundoutbound-option2",
+      "scenario-inboundoutbound-option3"
+    ],
+    "reactions": [{
+      "confirmText": "scenario-inboundoutbound-reaction1-confirm",
+      "yesText": "scenario-inboundoutbound-reaction1-confirm-yes",
+      "noText": "scenario-inboundoutbound-reaction1-confirm-no",
+      "correct": false,
+      "text": "scenario-inboundoutbound-reaction1-text",
+      "scene": [{
+        "image":  "images/conflict/inbound/puzzle.png"
+      }]
+    }, {
+      "confirmText": "scenario-inboundoutbound-reaction2-confirm",
+      "yesText": "scenario-inboundoutbound-reaction2-confirm-yes",
+      "noText": "scenario-inboundoutbound-reaction2-confirm-no",
+      "correct": true,
+      "text": "scenario-inboundoutbound-reaction2-text",
+      "scene": [{
+        "image":  "images/conflict/inbound/both-groups.png"
+      }, {
+        "type": "avatar",
+        "position": [950, 295],
+        "pose": "backhandup",
+        "flipped": true
+      }]
+    }, {
+      "confirmText": "scenario-inboundoutbound-reaction3-confirm",
+      "yesText": "scenario-inboundoutbound-reaction3-confirm-yes",
+      "noText": "scenario-inboundoutbound-reaction3-confirm-no",
+      "correct": false,
+      "text": "scenario-inboundoutbound-reaction3-text",
+      "scene": [{
+        "image":  "images/conflict/inbound/costs-up.png"
+      }, {
+        "type": "avatar",
+        "position": [860, 65],
+        "pose": "stress"
+      }]
+    }]
+  }],
+  "translations": [
+    {
+      "key": "intro-header",
+      "value": "Strife and Fracas"
+    },
+    {
+      "key": "intro-subtext",
+      "value": "Discord and tensions are particularly high in the warehouse today. As a manager, you have to play the role of a mediator to resolve conflicts and get people working towards common goals. See if you can resolve the conflicts popping up all over the warehouse."
+    },
+    {
+      "key": "intro-choose-avatar",
+      "value": "Choose an avatar to start playing."
+    },
+    {
+      "key": "intro-start",
+      "value": "Start"
+    },
+    {
+      "key": "yes",
+      "value": "Yes"
+    },
+    {
+      "key": "no",
+      "value": "No"
+    },
+    {
+      "key": "right-option",
+      "value": "You’ve chosen the right option!"
+    },
+    {
+      "key": "try-again-button",
+      "value": "try again"
+    },
+    {
+      "key": "replay-button",
+      "value": "replay"
+    },
+
+    {
+      "key": "complete-header",
+      "value": "Game completed!"
+    },
+    {
+      "key": "complete-congrats",
+      "value": "Congratulations, your warehouse is now a conflict-free zone!      "
+    },
+
+    {
+        "key": "scenario-kumar-header",
+        "value": "The Trouble with Kumar"
+    },    
+    {
+        "key": "scenario-kumar-caption",
+        "value": "As you’re taking a round in the warehouse in the morning, Dev approaches you with a complaint against his team mate, Kumar"
+    },
+    {
+        "key": "scenario-kumar-speech1",
+        "value": "Kumar and I are scheduled for the same warehouse shift."
+    },
+    {
+        "key": "scenario-kumar-speech2",
+        "value": "He regularly plays games on his cell phone while I pick the orders."
+    },
+    {
+        "key": "scenario-kumar-speech3",
+        "value": "I have to do the bulk of the work while he plays."
+    },
+    {
+        "key": "scenario-kumar-speech4",
+        "value": "I've asked him on four different occasions to help me, but he doesn't listen to me."
+    },
+    {
+        "key": "scenario-kumar-description",
+        "value": "You’ve already reprimanded Kumar in the past about his slack behaviour. What kind of disciplinary action should you take against him now?"
+    },
+    {
+        "key": "scenario-kumar-option1",
+        "value": "Send Kumar a notification of termination"
+    },
+    {
+        "key": "scenario-kumar-option2",
+        "value": "Scold Kumar in front of his team mates"
+    },
+    {
+        "key": "scenario-kumar-option3",
+        "value": "Set strict productivity targets for Kumar"
+    },
+    {
+        "key": "scenario-kumar-reaction1-confirm",
+        "value": "Are you sure you want to terminate Kumar without giving him a chance to take responsibility?"
+    },
+    {
+      "key": "scenario-kumar-reaction1-confirm-yes",
+      "value": "he’s hampering warehouse productivity"
+    },
+    {
+      "key": "scenario-kumar-reaction1-confirm-no",
+      "value": "I’m a softie; I can’t fire anyone really"
+    },
+    {
+      "key": "scenario-kumar-reaction1-text",
+      "value": "You’ve fired Kumar without allowing him a chance to take responsibility. This has negatively affected the morale of the employees. \nWorkers feel that your response was disproportionate to Kumar’s offence and now feel discouraged and worried about their own job security."
+    },
+    {
+      "key": "scenario-kumar-reaction1-text",
+      "value": "You’ve fired Kumar without allowing him a chance to take responsibility. This has negatively affected the morale of the employees. \nWorkers feel that your response was disproportionate to Kumar’s offence and now feel discouraged and worried about their own job security."
+    },
+    {
+      "key": "scenario-kumar-reaction2-confirm",
+      "value": "Are you sure you want to embarrass Kumar like that?"
+    },
+    {
+      "key": "scenario-kumar-reaction2-confirm-yes",
+      "value": "I want to discourage others from this kind of behaviour"
+    },
+    {
+      "key": "scenario-kumar-reaction2-confirm-no",
+      "value": "perhaps that won’t let me cultivate a trusting relationship"
+    },
+    {
+      "key": "scenario-kumar-reaction2-text",
+      "value": "You gave Kumar a dressing down in front of others. He resents you now as he has become a laughing stock for a group of warehouse workers. \nHe wants to quit and his friends are not happy about how things panned out either."
+    },
+    {
+      "key": "scenario-kumar-reaction3-confirm",
+      "value": "Are you sure you want to give Kumar a second chance?"
+    },
+    {
+      "key": "scenario-kumar-reaction3-confirm-yes",
+      "value": "it’s the only way I’ll be able to build trust in the team"
+    },
+    {
+      "key": "scenario-kumar-reaction3-confirm-no",
+      "value": "he lacks discipline and won’t change his behaviour"
+    },
+    {
+      "key": "scenario-kumar-reaction3-text",
+      "value": "You did the right thing by giving Kumar a chance to take responsibility and become more professional. You made him and—by extension—others in the team feel supported and laid the ground for cultivating a more trusting relationship with the employees."
+    },
+    
+    {
+        "key": "scenario-jayandmaya-header",
+        "value": "Jay and Maya"
+    },
+    {
+        "key": "scenario-jayandmaya-caption",
+        "value": "You’re having a meal in the break room when you hear some gossip about Maya shouting at Jay the day before. You see Jay and Maya separately and ask them what had happened."
+    },
+    {
+        "key": "scenario-jayandmaya-speech1",
+        "value": "I clean out the shared refrigerator regularly and accidentally threw out Maya’s leftovers yesterday. She absolutely went off at me for that! No one appreciates the effort I put in to keep this place clean."
+    },
+    {
+        "key": "scenario-jayandmaya-speech2",
+        "value": "I had left some food in the fridge and found it missing! What gave Jay the right to discard it? People should respect others’ personal belongings.."
+    },
+    {
+        "key": "scenario-jayandmaya-description",
+        "value": "Jay and Maya are not speaking to each other. How should you handle this situation?"
+    },
+    {
+        "key": "scenario-jayandmaya-option1",
+        "value": "Avoid confrontation as long as it doesn’t affect their productivity"
+    },
+    {
+        "key": "scenario-jayandmaya-option2",
+        "value": "Talk to Maya and tell her not to take Jay’s action personally"
+    },
+    {
+        "key": "scenario-jayandmaya-option3",
+        "value": "Facilitate a discussion between the two to arrive at a resolution"
+    },
+    {
+        "key": "scenario-jayandmaya-reaction1-confirm",
+        "value": "Are you sure you want to avoid any confrontations?"
+    },
+    {
+        "key": "scenario-jayandmaya-reaction1-confirm-yes",
+        "value": "it would be too uncomfortable"
+    },
+    {
+        "key": "scenario-jayandmaya-reaction1-confirm-no",
+        "value": "I should address it somehow"
+    },
+    {
+        "key": "scenario-jayandmaya-reaction1-text",
+        "value": "It’s not good to let conflicts fester in the workplace. \nIt may not affect their productivity, but it might affect the general environment at work and there’s a real chance that one or both individuals may engage in passive-aggressive behaviour."
+    },
+    {
+        "key": "scenario-jayandmaya-reaction2-confirm",
+        "value": "Are you sure you want to talk to only Maya?"
+    },
+    {
+        "key": "scenario-jayandmaya-reaction2-confirm-yes",
+        "value": "it was an accident and Maya shouldn’t have shouted at Jay"
+    },
+    {
+        "key": "scenario-jayandmaya-reaction2-confirm-no",
+        "value": "I should lead both Maya and Jay into an open discussion"
+    },
+    {
+        "key": "scenario-jayandmaya-reaction2-text",
+        "value": "Research has shown that telling people not to take conflicts personally doesn’t work. \nRegardless of such a disclaimer, Maya is very likely to hold a grudge against Jay that will ultimately affect their working relationship."
+    },
+    {
+        "key": "scenario-jayandmaya-reaction3-confirm",
+        "value": "Are you sure you want to spend time on discussing such a minor issue?"
+    },
+    {
+        "key": "scenario-jayandmaya-reaction3-confirm-yes",
+        "value": "if they don’t talk it out, they will act it out"
+    },
+    {
+        "key": "scenario-jayandmaya-reaction3-confirm-no",
+        "value": "why stir the pot further unnecessarily?"
+    },
+    {
+        "key": "scenario-jayandmaya-reaction3-text",
+        "value": "The sooner you address an issue and allow employees to engage in a dialogue, the sooner they can go back to a healthy working relationship and remain productive and engaged. \nAsk both parties to share their perspectives and invite them to come up with ideas for a resolution that may include apologies or changes in behaviour (labelling food containers, in this case, for instance) to prevent similar disputes from recurring.."
+    },
+
+    {
+        "key": "scenario-stackedagainstus-header",
+        "value": "Stacked Against Us"
+    },
+    {
+        "key": "scenario-stackedagainstus-caption",
+        "value": "Two team leaders visit you in your office with a scheduling conflict for which they can’t work out an amiable solution. "
+    },
+    {
+        "key": "scenario-stackedagainstus-speech1",
+        "value": "Both our teams are scheduled to carry out an inventory accuracy check right now for two different customers. As you know, we only have one electric stacker in the warehouse, and both our teams need it to bring down products from heavy duty racks"
+    },
+    {
+        "key": "scenario-stackedagainstus-speech2",
+        "value": "We can’t reach a compromise; which team should get the electric stacker?"
+    },
+    {
+        "key": "scenario-stackedagainstus-description",
+        "value": "How should you manage this intergroup conflict?"
+    },
+    {
+        "key": "scenario-stackedagainstus-option1",
+        "value": "Analyse load and priority of customers and allocate stacker accordingly"
+    },
+    {
+        "key": "scenario-stackedagainstus-option2",
+        "value": "Motivate the team leaders to collaborate on finding the best solution"
+    },
+    {
+        "key": "scenario-stackedagainstus-option3",
+        "value": "Tell management you need to buy another stacker for the warehouse"
+    },
+    {
+      "key": "scenario-stackedagainstus-reaction1-confirm",
+      "value": "Are you sure you want to make this decision on behalf of both parties?"
+    },
+    {
+        "key": "scenario-stackedagainstus-reaction1-confirm-yes",
+        "value": "it would be the easiest way to resolve this conflict"
+    },
+    {
+        "key": "scenario-stackedagainstus-reaction1-confirm-no",
+        "value": "I want to inculcate decision-making skills in my staff"
+    },
+    {
+        "key": "scenario-stackedagainstus-reaction1-text",
+        "value": "You analysed the load and priority of both customer operations and made the decision to allocate the stacker towards checking the inventory of the customer that brings in greater revenue. \n The team leader in charge of the other account is not happy about your decision and, in the absence of an open discussion, thinks that you showed favouritism.\nMoreover, it does not give people the confidence that they are capable of handling issues on their own."
+    },
+    {
+      "key": "scenario-stackedagainstus-reaction2-confirm",
+      "value": "Are you sure you want to spend time on motivating the team leaders to arrive at a solution together? It would easier to make a decision yourself."
+    },
+    {
+        "key": "scenario-stackedagainstus-reaction2-confirm-yes",
+        "value": "the team leaders should be able to collaborate on a solution"
+    },
+    {
+        "key": "scenario-stackedagainstus-reaction2-confirm-no",
+        "value": "that’s right, it would be easier to make a decision on my own"
+    },
+    {
+        "key": "scenario-stackedagainstus-reaction2-text",
+        "value": "Allowing members to work together in finding a resolution is a great approach. An open discussion that looks at the perspectives of both parties and identifies the conflict’s impacts on their separate operations leads to a greater understanding between colleagues.\nThis not only improves employee relationships but increases collaboration and efficiency as people learn to arrive at solutions together without always pushing the issues up the organisational chain."
+    },
+    {
+      "key": "scenario-stackedagainstus-reaction3-confirm",
+      "value": "Are you sure you want to purchase an additional stacker?"
+    },
+    {
+        "key": "scenario-stackedagainstus-reaction3-confirm-yes",
+        "value": "it would prevent this kind of problem from occurring ever again"
+    },
+    {
+        "key": "scenario-stackedagainstus-reaction3-confirm-no",
+        "value": "it would mean a huge expense for an infrequent scheduling issue"
+    },
+    {
+        "key": "scenario-stackedagainstus-reaction3-text",
+        "value": "The management tells you that they can purchase another stacker at the start of next quarter, if the budget allows it."
+    },
+
+    {
+        "key": "scenario-inboundoutbound-header",
+        "value": "Inbound/Outbound"
+    },
+    {
+        "key": "scenario-inboundoutbound-caption",
+        "value": "You notice that the outbound team is struggling to meet their targets for the day while the inbound team is relaxing and having a chat. You talk to a floor supervisor about it."
+    },
+    {
+        "key": "scenario-inboundoutbound-speech1",
+        "value": "The inbound team regularly completes their targets for the day by 4 p.m. but do not move on to help the outbound team."
+    },
+    {
+        "key": "scenario-inboundoutbound-speech2",
+        "value": "They say that they are paid wages and will only do the workload assigned to them in the morning."
+    },
+    {
+        "key": "scenario-inboundoutbound-description",
+        "value": "How should you manage this contentious situation?"
+    },
+    {
+        "key": "scenario-inboundoutbound-option1",
+        "value": "Move a few people from the inbound to the outbound team"
+    },
+    {
+        "key": "scenario-inboundoutbound-option2",
+        "value": "Encourage teams to collaborate to meet business objectives"
+    },
+    {
+        "key": "scenario-inboundoutbound-option3",
+        "value": "Recruit extra workers for the outbound team"
+    },
+    {
+      "key": "scenario-inboundoutbound-reaction1-confirm",
+      "value": "Are you sure you want to permanently move some people from the inbound to the outbound team?"
+    },
+    {
+        "key": "scenario-inboundoutbound-reaction1-confirm-yes",
+        "value": "this will solve the issue once and for all"
+    },
+    {
+        "key": "scenario-inboundoutbound-reaction1-confirm-no",
+        "value": "I need to look for a more lasting solution"
+    },
+    {
+        "key": "scenario-inboundoutbound-reaction1-text",
+        "value": "While moving a few people from one team to another will solve the issue for the time being, the situation is not likely to always remain the same. It’s more important to align each team’s goals       with the overall goals of the organisation so that whatever the conditions, the teams feel motivated to work out a way to achieve the organisational goals together."
+    },
+    {
+      "key": "scenario-inboundoutbound-reaction2-confirm",
+      "value": "Are you sure you want to spend time motivating teams to collaborate instead of reorganising teams to achieve the productivity targets for the day?"
+    },
+    {
+        "key": "scenario-inboundoutbound-reaction2-confirm-yes",
+        "value": "this will ensure that teams work towards common goals"
+    },
+    {
+        "key": "scenario-inboundoutbound-reaction2-confirm-no",
+        "value": "I need to meet the day’s targets by hook or by crook"
+    },
+    {
+        "key": "scenario-inboundoutbound-reaction2-text",
+        "value": "Devoting time to encourage teams to collaborate and reminding everyone what the common objectives are helps to create accountability.\nFocus on finding long-term solutions through such actions as motivating teams to achieve group goals instead of always chasing short-term goals."
+    },
+    {
+      "key": "scenario-inboundoutbound-reaction3-confirm",
+      "value": "Are you sure you want to spend time and resources on recruiting more workers?"
+    },
+    {
+        "key": "scenario-inboundoutbound-reaction3-confirm-yes",
+        "value": "more people means more productivity"
+    },
+    {
+        "key": "scenario-inboundoutbound-reaction3-confirm-no",
+        "value": "it will cost too much to train new people"
+    },
+    {
+        "key": "scenario-inboundoutbound-reaction3-text",
+        "value": "Adding more resources to a team would sure help to increase productivity but it will also add to the labour costs. As a manager, you have to be mindful of the costs while working towards increased throughput."
+    }
+],
+"levelsCompleted": []
+}
