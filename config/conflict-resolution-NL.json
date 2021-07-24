@@ -353,381 +353,376 @@
   }],
   "translations": [
     {
-      "key": "intro-header",
-      "value": "Strife and Fracas"
+        "key": "intro-header",
+        "value": "Frictie en strijd"
     },
     {
-      "key": "intro-subtext",
-      "value": "Discord and tensions are particularly high in the warehouse today. As a manager, you have to play the role of a mediator to resolve conflicts and get people working towards common goals. See if you can resolve the conflicts popping up all over the warehouse."
+        "key": "intro-subtext",
+        "value": "Onenigheid en spanningen kunnen soms hoog oplopen in het warehouse. Als manager moet je vaak de rol van bemiddelaar spelen om conflicten te helpen oplossen en mensen naar gemeenschappelijke doelen te laten werken. Kijk of je de conflicten die je hier in het warehouse opduiken kunt oplossen."
     },
     {
-      "key": "intro-choose-avatar",
-      "value": "Choose an avatar to start playing."
+        "key": "intro-choose-avatar",
+        "value": "Kies een avatar en start het spel"
     },
     {
-      "key": "intro-start",
-      "value": "Start"
+        "key": "intro-start",
+        "value": "Start"
     },
     {
-      "key": "yes",
-      "value": "Yes"
+        "key": "yes",
+        "value": "Ja"
     },
     {
-      "key": "no",
-      "value": "No"
+        "key": "no",
+        "value": "Nee"
     },
     {
-      "key": "right-option",
-      "value": "You’ve chosen the right option!"
+        "key": "right-option",
+        "value": "Je hebt de goede optie gekozen!"
     },
     {
-      "key": "try-again-button",
-      "value": "try again"
+        "key": "try-again-button",
+        "value": "Probeer nog eens"
     },
     {
-      "key": "replay-button",
-      "value": "replay"
-    },
-
-    {
-      "key": "complete-header",
-      "value": "Game completed!"
+        "key": "replay-button",
+        "value": "Opnieuw"
     },
     {
-      "key": "complete-congrats",
-      "value": "Congratulations, your warehouse is now a conflict-free zone!      "
+        "key": "complete-header",
+        "value": "Het spel is afgerond"
     },
-
+    {
+        "key": "complete-congrats",
+        "value": "Gefeliciteerd, jouw warehouse is nu conflictvrij!"
+    },
     {
         "key": "scenario-kumar-header",
-        "value": "The Trouble with Kumar"
-    },    
+        "value": "Problemen met Paul"
+    },
     {
         "key": "scenario-kumar-caption",
-        "value": "As you’re taking a round in the warehouse in the morning, Dev approaches you with a complaint against his team mate, Kumar"
+        "value": "Terwijl je 's ochtends een rondje door het magazijn maakt, benadert Johan je met een klacht tegen zijn teamgenoot, Paul"
     },
     {
         "key": "scenario-kumar-speech1",
-        "value": "Kumar and I are scheduled for the same warehouse shift."
+        "value": "Paul en ik staan ingeroosterd voor dezelfde shift."
     },
     {
         "key": "scenario-kumar-speech2",
-        "value": "He regularly plays games on his cell phone while I pick the orders."
+        "value": "Hij speelt regelmatig spelletjes op zijn mobiel terwijl ik de orders pick."
     },
     {
         "key": "scenario-kumar-speech3",
-        "value": "I have to do the bulk of the work while he plays."
+        "value": "Ik heb al het werk te doen terwijl hij aan het spelen is."
     },
     {
         "key": "scenario-kumar-speech4",
-        "value": "I've asked him on four different occasions to help me, but he doesn't listen to me."
+        "value": "Ik heb hem al 4 keer gevraagd om me te helpen, maar hij luistert niet naar mij."
     },
     {
         "key": "scenario-kumar-description",
-        "value": "You’ve already reprimanded Kumar in the past about his slack behaviour. What kind of disciplinary action should you take against him now?"
+        "value": "Je hebt Paul in het verleden al toegesproken over zijn lakse gedrag. Op welke manier zou je hem nu moeten benaderen?"
     },
     {
         "key": "scenario-kumar-option1",
-        "value": "Send Kumar a notification of termination"
+        "value": "Laat Paul weten dat hij is ontslagen."
     },
     {
         "key": "scenario-kumar-option2",
-        "value": "Scold Kumar in front of his team mates"
+        "value": "Vertel Paul in het bijzijn van zijn teamgenoten waar het op staat."
     },
     {
         "key": "scenario-kumar-option3",
-        "value": "Set strict productivity targets for Kumar"
+        "value": "Laat Paul heel precies weten welke productiviteit je van hem verwacht."
     },
     {
         "key": "scenario-kumar-reaction1-confirm",
-        "value": "Are you sure you want to terminate Kumar without giving him a chance to take responsibility?"
+        "value": "Weet je zeker dat je Paul wil ontslaan zonder hem een kans te geven om zijn verantwoordelijkheid te nemen?"
     },
     {
-      "key": "scenario-kumar-reaction1-confirm-yes",
-      "value": "he’s hampering warehouse productivity"
+        "key": "scenario-kumar-reaction1-confirm-yes",
+        "value": "hij belemmert de productiviteit"
     },
     {
-      "key": "scenario-kumar-reaction1-confirm-no",
-      "value": "I’m a softie; I can’t fire anyone really"
+        "key": "scenario-kumar-reaction1-confirm-no",
+        "value": "ik ben een softie en kan iemand niet zo maar ontslaan"
     },
     {
-      "key": "scenario-kumar-reaction1-text",
-      "value": "You’ve fired Kumar without allowing him a chance to take responsibility. This has negatively affected the morale of the employees. \nWorkers feel that your response was disproportionate to Kumar’s offence and now feel discouraged and worried about their own job security."
+        "key": "scenario-kumar-reaction1-text",
+        "value": "Je hebt Paul ontslagen zonder hem de kans te geven verantwoordelijkheid te nemen. Dit heeft een negatieve invloed op het moreel van de werknemers. \\nWerknemers vinden dat uw reactie niet in verhouding staat tot Kumars overtreding en voelen zich nu ontmoedigd en bezorgd over hun eigen baan."
     },
     {
-      "key": "scenario-kumar-reaction2-confirm",
-      "value": "Are you sure you want to embarrass Kumar like that?"
+        "key": "scenario-kumar-reaction2-confirm",
+        "value": "Weet je zeker dat je Paul zo in verlegenheid wil brengen?"
     },
     {
-      "key": "scenario-kumar-reaction2-confirm-yes",
-      "value": "I want to discourage others from this kind of behaviour"
+        "key": "scenario-kumar-reaction2-confirm-yes",
+        "value": "Ik wil anderen ontmoedigen om dit gedrag te vertonen."
     },
     {
-      "key": "scenario-kumar-reaction2-confirm-no",
-      "value": "perhaps that won’t let me cultivate a trusting relationship"
+        "key": "scenario-kumar-reaction2-confirm-no",
+        "value": "misschien helpt dat niet om een goede vertrouwensband op te bouwen."
     },
     {
-      "key": "scenario-kumar-reaction2-text",
-      "value": "You gave Kumar a dressing down in front of others. He resents you now as he has become a laughing stock for a group of warehouse workers. \nHe wants to quit and his friends are not happy about how things panned out either."
+        "key": "scenario-kumar-reaction2-text",
+        "value": "Je gaf Paul een standje in het bijzijn van anderen. Hij heeft nu een hekel aan je omdat hij een lachertje is geworden voor een groep medewerkers. \\nHij wil stoppen en zijn vrienden zijn ook niet blij met hoe het is gelopen."
     },
     {
-      "key": "scenario-kumar-reaction3-confirm",
-      "value": "Are you sure you want to give Kumar a second chance?"
+        "key": "scenario-kumar-reaction3-confirm",
+        "value": "Weet je zeker dat je Paul een 2e kans wil geven?"
     },
     {
-      "key": "scenario-kumar-reaction3-confirm-yes",
-      "value": "it’s the only way I’ll be able to build trust in the team"
+        "key": "scenario-kumar-reaction3-confirm-yes",
+        "value": "het is de enige manier om vertrouwen in het team op te bouwen"
     },
     {
-      "key": "scenario-kumar-reaction3-confirm-no",
-      "value": "he lacks discipline and won’t change his behaviour"
+        "key": "scenario-kumar-reaction3-confirm-no",
+        "value": "hij heeft geen discipline en zal zijn gedrag niet veranderen"
     },
     {
-      "key": "scenario-kumar-reaction3-text",
-      "value": "You did the right thing by giving Kumar a chance to take responsibility and become more professional. You made him and—by extension—others in the team feel supported and laid the ground for cultivating a more trusting relationship with the employees."
+        "key": "scenario-kumar-reaction3-text",
+        "value": "Je hebt het juiste gedaan door Paul de kans te geven verantwoordelijkheid te nemen en zich professioneler te gedragen. Je zorgde ervoor dat hij en anderen zich in het team gesteund voelen en legt de basis voor het opbouwen van een vertrouwensrelatie met de medewerkers."
     },
-    
     {
         "key": "scenario-jayandmaya-header",
-        "value": "Jay and Maya"
+        "value": "Jay en Maya"
     },
     {
         "key": "scenario-jayandmaya-caption",
-        "value": "You’re having a meal in the break room when you hear some gossip about Maya shouting at Jay the day before. You see Jay and Maya separately and ask them what had happened."
+        "value": "Je zit te eten in de kantine als je wat roddels hoort over Maya die gisteren tegen Jay heeft geschreeuwd. Je spreekt Jay en Maya apart en vraagt ​​wat er is gebeurd."
     },
     {
         "key": "scenario-jayandmaya-speech1",
-        "value": "I clean out the shared refrigerator regularly and accidentally threw out Maya’s leftovers yesterday. She absolutely went off at me for that! No one appreciates the effort I put in to keep this place clean."
+        "value": "Ik ruim de gedeelde koelkast regelmatig op en gooide gisteren per ongeluk Maya's restjes weg. Zij viel keihard uit tegen mij! Niemand waardeert de moeite die ik doe om deze plek schoon te houden."
     },
     {
         "key": "scenario-jayandmaya-speech2",
-        "value": "I had left some food in the fridge and found it missing! What gave Jay the right to discard it? People should respect others’ personal belongings.."
+        "value": "Ik had wat eten in de koelkast achtergelaten en ontdekte dat het weg was! Wat gaf Jay het recht om het weg te gooien? Mensen moeten de persoonlijke bezittingen van anderen respecteren."
     },
     {
         "key": "scenario-jayandmaya-description",
-        "value": "Jay and Maya are not speaking to each other. How should you handle this situation?"
+        "value": "Jay en Maya spreken niet meer tegen elkaar. Hoe zou jij deze situatie aanpakken?"
     },
     {
         "key": "scenario-jayandmaya-option1",
-        "value": "Avoid confrontation as long as it doesn’t affect their productivity"
+        "value": "Ik zou een confrontatie vermijden zoland het hun productiviteit niet raakt."
     },
     {
         "key": "scenario-jayandmaya-option2",
-        "value": "Talk to Maya and tell her not to take Jay’s action personally"
+        "value": "Ik ga me Maya praten en vertel haar dat ze de actie van Jay niet persoonlijk moet opnemen."
     },
     {
         "key": "scenario-jayandmaya-option3",
-        "value": "Facilitate a discussion between the two to arrive at a resolution"
+        "value": "Ik faciliteer een gesprek tussen de twee om samen tot een oplossing te komen."
     },
     {
         "key": "scenario-jayandmaya-reaction1-confirm",
-        "value": "Are you sure you want to avoid any confrontations?"
+        "value": "Weet je zeker dat je een confrontatie wil vermijden?"
     },
     {
         "key": "scenario-jayandmaya-reaction1-confirm-yes",
-        "value": "it would be too uncomfortable"
+        "value": "het zou te ongemakkelijk voelen"
     },
     {
         "key": "scenario-jayandmaya-reaction1-confirm-no",
-        "value": "I should address it somehow"
+        "value": "ik moet het op een manier bespreekbaar maken"
     },
     {
         "key": "scenario-jayandmaya-reaction1-text",
-        "value": "It’s not good to let conflicts fester in the workplace. \nIt may not affect their productivity, but it might affect the general environment at work and there’s a real chance that one or both individuals may engage in passive-aggressive behaviour."
+        "value": "Het is niet goed om conflicten op de werkvloer te laten etteren. \\nHet heeft misschien geen invloed op hun productiviteit, maar het kan van invloed zijn op de anderen en er is een reële kans dat één of beide personen passief-agressief gedrag gaan vertonen."
     },
     {
         "key": "scenario-jayandmaya-reaction2-confirm",
-        "value": "Are you sure you want to talk to only Maya?"
+        "value": "Ben je zeker dat je alleen met Maya wil praten?"
     },
     {
         "key": "scenario-jayandmaya-reaction2-confirm-yes",
-        "value": "it was an accident and Maya shouldn’t have shouted at Jay"
+        "value": "het was een ongeluk en Maya had niet tegen Jay mogen schreeuwen"
     },
     {
         "key": "scenario-jayandmaya-reaction2-confirm-no",
-        "value": "I should lead both Maya and Jay into an open discussion"
+        "value": "Ik zou Maya en Jay een open discussie met elkaar moeten laten hebben"
     },
     {
         "key": "scenario-jayandmaya-reaction2-text",
-        "value": "Research has shown that telling people not to take conflicts personally doesn’t work. \nRegardless of such a disclaimer, Maya is very likely to hold a grudge against Jay that will ultimately affect their working relationship."
+        "value": "Onderzoek heeft aangetoond dat het niet werkt om mensen te vertellen dat ze conflicten niet persoonlijk moeten opvatten. \\nOngeacht een dergelijke disclaimer, is het zeer waarschijnlijk dat Maya het wel persoonlijk opvat en een wrok koestert tegen Jay. Grote kans dat dit uiteindelijk hun werkrelatie zal beïnvloeden."
     },
     {
         "key": "scenario-jayandmaya-reaction3-confirm",
-        "value": "Are you sure you want to spend time on discussing such a minor issue?"
+        "value": "Ben je zeker dat je tijd wil besteden om zo'n klein ding te bespreken?"
     },
     {
         "key": "scenario-jayandmaya-reaction3-confirm-yes",
-        "value": "if they don’t talk it out, they will act it out"
+        "value": "als ze het niet uitspreken, zullen ze ernaar gaan handelen"
     },
     {
         "key": "scenario-jayandmaya-reaction3-confirm-no",
-        "value": "why stir the pot further unnecessarily?"
+        "value": "waarom het onnodig aandacht geven?"
     },
     {
         "key": "scenario-jayandmaya-reaction3-text",
-        "value": "The sooner you address an issue and allow employees to engage in a dialogue, the sooner they can go back to a healthy working relationship and remain productive and engaged. \nAsk both parties to share their perspectives and invite them to come up with ideas for a resolution that may include apologies or changes in behaviour (labelling food containers, in this case, for instance) to prevent similar disputes from recurring.."
+        "value": "Hoe eerder u een probleem aanpakt en medewerkers in staat stelt een dialoog aan te gaan, hoe eerder ze terug kunnen keren naar een gezonde werkrelatie en productief en betrokken kunnen blijven. \\nVraag beide partijen om hun perspectieven te delen en nodig hen uit om met ideeën te komen voor een oplossing. Dit kunnen excuses zijn of een gedachtsverandering (bijvoorbeeld het etiketteren van voedselcontainers) om te voorkomen dat soortgelijke ruzies zich herhalen."
     },
-
     {
         "key": "scenario-stackedagainstus-header",
-        "value": "Stacked Against Us"
+        "value": "Opgestapelde problemen"
     },
     {
         "key": "scenario-stackedagainstus-caption",
-        "value": "Two team leaders visit you in your office with a scheduling conflict for which they can’t work out an amiable solution. "
+        "value": "2 teamleiders komen naar je toe met een planningsconflict, waarvoor ze geen oplossing kunnen vinden."
     },
     {
         "key": "scenario-stackedagainstus-speech1",
-        "value": "Both our teams are scheduled to carry out an inventory accuracy check right now for two different customers. As you know, we only have one electric stacker in the warehouse, and both our teams need it to bring down products from heavy duty racks"
+        "value": "Onze beide teams staan op dit moment ingepland om een voorraadnauwkeurigheidscontrole uit te voeren voor twee verschillende klanten. Zoals u weet, hebben we slechts één elektrische stapelaar in het magazijn en onze beide teams hebben deze nodig om zware producten uit de rekken te halen"
     },
     {
         "key": "scenario-stackedagainstus-speech2",
-        "value": "We can’t reach a compromise; which team should get the electric stacker?"
+        "value": "Jullie kunnen geen compromis sluiten welk team de stapelaar mag gebruiken?"
     },
     {
         "key": "scenario-stackedagainstus-description",
-        "value": "How should you manage this intergroup conflict?"
+        "value": "Hoe zou je dit groepsconflict managen?"
     },
     {
         "key": "scenario-stackedagainstus-option1",
-        "value": "Analyse load and priority of customers and allocate stacker accordingly"
+        "value": "Analyseer de lading en de prioriteit van de klanten en wijs de stapelaar toe aan de betreffende groep"
     },
     {
         "key": "scenario-stackedagainstus-option2",
-        "value": "Motivate the team leaders to collaborate on finding the best solution"
+        "value": "Motiveer de teamleiders om samen te werken en de beste oplossing te vinden."
     },
     {
         "key": "scenario-stackedagainstus-option3",
-        "value": "Tell management you need to buy another stacker for the warehouse"
+        "value": "Vertel het management dat je een nieuwe stapelaar wil kopen"
     },
     {
-      "key": "scenario-stackedagainstus-reaction1-confirm",
-      "value": "Are you sure you want to make this decision on behalf of both parties?"
+        "key": "scenario-stackedagainstus-reaction1-confirm",
+        "value": "Ben je er zeker van dat je deze beslissing namens beide groepen wil nemen?"
     },
     {
         "key": "scenario-stackedagainstus-reaction1-confirm-yes",
-        "value": "it would be the easiest way to resolve this conflict"
+        "value": "het is de makkelijkste manier om het conflict op te lossen"
     },
     {
         "key": "scenario-stackedagainstus-reaction1-confirm-no",
-        "value": "I want to inculcate decision-making skills in my staff"
+        "value": "I wil rekening houden met de besluitvaardigheid van mijn mensen"
     },
     {
         "key": "scenario-stackedagainstus-reaction1-text",
-        "value": "You analysed the load and priority of both customer operations and made the decision to allocate the stacker towards checking the inventory of the customer that brings in greater revenue. \n The team leader in charge of the other account is not happy about your decision and, in the absence of an open discussion, thinks that you showed favouritism.\nMoreover, it does not give people the confidence that they are capable of handling issues on their own."
+        "value": "Je analyseerde de belasting en prioriteit van beide klantactiviteiten en nam de beslissing om de stapelaar toe te wijzen aan het controleren van de voorraad van de klant die de meeste inkomsten oplevert. \\n De teamleider die verantwoordelijk is voor het andere account is niet blij met je beslissing en, bij gebrek aan een open discussie, denkt dat je vriendjespolitiek hebt getoond.\\nBovendien geeft het mensen niet het vertrouwen dat ze in staat zijn om problemen zelfstandig op te lossen ."
     },
     {
-      "key": "scenario-stackedagainstus-reaction2-confirm",
-      "value": "Are you sure you want to spend time on motivating the team leaders to arrive at a solution together? It would easier to make a decision yourself."
+        "key": "scenario-stackedagainstus-reaction2-confirm",
+        "value": "Weet je zeker dat je tijd wilt besteden aan het motiveren van de teamleiders om samen tot een oplossing te komen? Het zou makkelijker zijn om zelf een beslissing te nemen."
     },
     {
         "key": "scenario-stackedagainstus-reaction2-confirm-yes",
-        "value": "the team leaders should be able to collaborate on a solution"
+        "value": "de teamleiders zouden in staat moeten zijn om tot een oplossing te komen"
     },
     {
         "key": "scenario-stackedagainstus-reaction2-confirm-no",
-        "value": "that’s right, it would be easier to make a decision on my own"
+        "value": "dat is waar, het zou makkelijker zijn om zelf een beslissing te nemen"
     },
     {
         "key": "scenario-stackedagainstus-reaction2-text",
-        "value": "Allowing members to work together in finding a resolution is a great approach. An open discussion that looks at the perspectives of both parties and identifies the conflict’s impacts on their separate operations leads to a greater understanding between colleagues.\nThis not only improves employee relationships but increases collaboration and efficiency as people learn to arrive at solutions together without always pushing the issues up the organisational chain."
+        "value": "Leden laten samenwerken bij het vinden van een oplossing is een geweldige aanpak. Een open discussie die kijkt naar de perspectieven van beide partijen en de impact van het conflict op hun afzonderlijke operaties, leidt tot meer begrip tussen collega's.\\nDit verbetert niet alleen de werkrelaties, maar verhoogt ook de samenwerking en efficiëntie. Omdat mensen leren samen tot oplossingen te komen en niet altijd de vraagstukken hoger in de organisatie te leggen."
     },
     {
-      "key": "scenario-stackedagainstus-reaction3-confirm",
-      "value": "Are you sure you want to purchase an additional stacker?"
+        "key": "scenario-stackedagainstus-reaction3-confirm",
+        "value": "Ben je zeker dat je een extra stapelaar wil aanschaffen?"
     },
     {
         "key": "scenario-stackedagainstus-reaction3-confirm-yes",
-        "value": "it would prevent this kind of problem from occurring ever again"
+        "value": "het zou zo'n probleem in de toekomst voorkomen"
     },
     {
         "key": "scenario-stackedagainstus-reaction3-confirm-no",
-        "value": "it would mean a huge expense for an infrequent scheduling issue"
+        "value": "het zou een enorme uitgave betekenen voor een probleem dat niet vaak voorkomt."
     },
     {
         "key": "scenario-stackedagainstus-reaction3-text",
-        "value": "The management tells you that they can purchase another stacker at the start of next quarter, if the budget allows it."
+        "value": "Het management vertelt je dat ze een nieuwe stapelaar kunnen aanschaffen aan het begin van het volgende kwartaal, als het budget het toestaat."
     },
-
     {
         "key": "scenario-inboundoutbound-header",
-        "value": "Inbound/Outbound"
+        "value": "Inbound/outbound "
     },
     {
         "key": "scenario-inboundoutbound-caption",
-        "value": "You notice that the outbound team is struggling to meet their targets for the day while the inbound team is relaxing and having a chat. You talk to a floor supervisor about it."
+        "value": "Je merkt dat het outbound team moeite heeft om hun doelen voor de dag te halen terwijl het Inbound team aan het relaxen is en een praatje met elkaar maakt. Je praat erover met een supervisor."
     },
     {
         "key": "scenario-inboundoutbound-speech1",
-        "value": "The inbound team regularly completes their targets for the day by 4 p.m. but do not move on to help the outbound team."
+        "value": "Het Inbound team voltooit regelmatig hun doelen voor 16.00 uur. maar werkt niet door om het outbound team te helpen."
     },
     {
         "key": "scenario-inboundoutbound-speech2",
-        "value": "They say that they are paid wages and will only do the workload assigned to them in the morning."
+        "value": "Ze zeggen dat ze loon krijgen voor het werk dat hen is toegewezen."
     },
     {
         "key": "scenario-inboundoutbound-description",
-        "value": "How should you manage this contentious situation?"
+        "value": "Hoe zou je deze situatie oplossen?"
     },
     {
         "key": "scenario-inboundoutbound-option1",
-        "value": "Move a few people from the inbound to the outbound team"
+        "value": "Verplaats een paar mensen van het Inbound naar het outbound team"
     },
     {
         "key": "scenario-inboundoutbound-option2",
-        "value": "Encourage teams to collaborate to meet business objectives"
+        "value": "Moedig teams aan om samen te werken om zakelijke doelstellingen te behalen"
     },
     {
         "key": "scenario-inboundoutbound-option3",
-        "value": "Recruit extra workers for the outbound team"
+        "value": "Werf extra mensen voor het outbound team"
     },
     {
-      "key": "scenario-inboundoutbound-reaction1-confirm",
-      "value": "Are you sure you want to permanently move some people from the inbound to the outbound team?"
+        "key": "scenario-inboundoutbound-reaction1-confirm",
+        "value": "Weet u zeker dat u een aantal mensen permanent van het inbound naar het outbound team wilt verplaatsen?"
     },
     {
         "key": "scenario-inboundoutbound-reaction1-confirm-yes",
-        "value": "this will solve the issue once and for all"
+        "value": "dit lost het probleem voor altijd op"
     },
     {
         "key": "scenario-inboundoutbound-reaction1-confirm-no",
-        "value": "I need to look for a more lasting solution"
+        "value": "Ik moet een langere termijn oplossing bedenken"
     },
     {
         "key": "scenario-inboundoutbound-reaction1-text",
-        "value": "While moving a few people from one team to another will solve the issue for the time being, the situation is not likely to always remain the same. It’s more important to align each team’s goals       with the overall goals of the organisation so that whatever the conditions, the teams feel motivated to work out a way to achieve the organisational goals together."
+        "value": "Hoewel het verplaatsen van een paar mensen van het ene team naar het andere het probleem voorlopig zal oplossen, zal de situatie waarschijnlijk niet altijd hetzelfde blijven. Het is belangrijker om de doelen van elk team af te stemmen op de algemene doelen van de organisatie, zodat de teams, ongeacht de omstandigheden, gemotiveerd zijn om samen een manier te vinden om de organisatiedoelen te bereiken."
     },
     {
-      "key": "scenario-inboundoutbound-reaction2-confirm",
-      "value": "Are you sure you want to spend time motivating teams to collaborate instead of reorganising teams to achieve the productivity targets for the day?"
+        "key": "scenario-inboundoutbound-reaction2-confirm",
+        "value": "Weet u zeker dat u tijd wilt besteden aan het motiveren van teams om samen te werken in plaats van teams te reorganiseren om de productiviteitsdoelen voor die dag te behalen?"
     },
     {
         "key": "scenario-inboundoutbound-reaction2-confirm-yes",
-        "value": "this will ensure that teams work towards common goals"
+        "value": "dit zal er zeker voor zorgen dat teams samenwerken aan de gezamenlijke doelstellingen"
     },
     {
         "key": "scenario-inboundoutbound-reaction2-confirm-no",
-        "value": "I need to meet the day’s targets by hook or by crook"
+        "value": "hoe dan ook, ik  moet de doelen van de dag halen"
     },
     {
         "key": "scenario-inboundoutbound-reaction2-text",
-        "value": "Devoting time to encourage teams to collaborate and reminding everyone what the common objectives are helps to create accountability.\nFocus on finding long-term solutions through such actions as motivating teams to achieve group goals instead of always chasing short-term goals."
+        "value": "Tijd besteden aan het aanmoedigen van teams om samen te werken en iedereen eraan herinneren wat de gemeenschappelijke doelstellingen zijn, helpt om verantwoordelijkheid te creëren.\\nFocus op het vinden van langetermijn oplossingen door bijvoorbeeld teams te motiveren om groepsdoelen te bereiken in plaats van alleen kortetermijn doelen na te jagen."
     },
     {
-      "key": "scenario-inboundoutbound-reaction3-confirm",
-      "value": "Are you sure you want to spend time and resources on recruiting more workers?"
+        "key": "scenario-inboundoutbound-reaction3-confirm",
+        "value": "Weet je zeker dat je tijd en geld wil besteden aan het recruiten van nieuwe medewerkers?"
     },
     {
         "key": "scenario-inboundoutbound-reaction3-confirm-yes",
-        "value": "more people means more productivity"
+        "value": "meer mensen betekent meer productiviteit"
     },
     {
         "key": "scenario-inboundoutbound-reaction3-confirm-no",
-        "value": "it will cost too much to train new people"
+        "value": "het kost teveel om nieuwe mensen te trainen"
     },
     {
         "key": "scenario-inboundoutbound-reaction3-text",
-        "value": "Adding more resources to a team would sure help to increase productivity but it will also add to the labour costs. As a manager, you have to be mindful of the costs while working towards increased throughput."
+        "value": "Het toevoegen van meer mensen aan een team zou zeker helpen om de productiviteit te verbeteren, maar het zal ook de arbeidskosten verhogen. Als manager moet u zich bewust zijn van de kosten en tegelijkertijd werken aan een hogere productiviteit.."
     }
 ],
 "levelsCompleted": []
